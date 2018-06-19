@@ -1,4 +1,5 @@
 
+
 <html>
 
 <head>
@@ -6,31 +7,53 @@
     <title style="text-align:center" >Play Dots</title>
     <style>
         .dot {
-            background-color:gray;
+            background-color:black;
             width:20px;
             height:20px;
             border-radius:20px;
         }
-        .dot.active {
-            background-color:black;
-        }
+
         .line {
-            background-color:green;
+            background-color:lightslategrey;
             height:40px;
             width:10px;
             position:relative;
+        ;
             left:5px;
+        }
+        .rules{
+            max-width: 800px;
+            padding:0 50px 0 50px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 
+
 <body style="background-color:powderblue;">
 <h1 style= "color:black; text-align:center">Play Dots!</h1>
-<h2 style="text-align:center">Play an interactive learning version of the game Dots now</h2>
+<h2 style="text-align:center">Play an interactive computer science game of Dots now</h2>
+<h3 class="rules">  Two players will take turns to join two adjacent
+    dots with a horizontal or vertical line. When a player completes the fourth
+    side of a box they must answer a computer science question. If they fail to
+    answer the question correctly their opposing player gets to answer the question.
+    If their opponent answers correctly they get the point. When all the boxes
+    have been completed the winner is the player who has initialized
+    the most boxes.</h3>
 
-<a class="trigger_popup_fricc">Click here to show the popup</a>
 
-
+<div id="playfield">
+    <div class="dot active"></div>
+    <div class="line"></div>
+    <div class="dot"></div>
+    <div class="line"></div>
+    <div class="dot"></div>
+    <div class="line"></div>
+    <div class="dot"></div>
+    <div class="line"></div>
+    <div class="dot"></div>
+</div>
 
 
 <div id="playfield">
@@ -48,4 +71,3 @@
 </body>
 
 </html>
-
