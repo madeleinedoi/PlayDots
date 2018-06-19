@@ -2,22 +2,7 @@
 <html>
 
 <head>
-    <script>
-        // Get the container element
-        var btnContainer = document.getElementById("playfield");
 
-        // Get all buttons with class="btn" inside the container
-        var btns = btnContainer.getElementsByClassName("dot");
-
-        // Loop through the buttons and add the active class to the current/clicked button
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function() {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
-        }
-    </script>
     <title style="text-align:center" >Play Dots</title>
     <style>
         .dot {
@@ -42,7 +27,12 @@
 <body style="background-color:powderblue;">
 <h1 style= "color:black; text-align:center">Play Dots!</h1>
 <h2 style="text-align:center">Play an interactive learning version of the game Dots now</h2>
-<p1 style="text-align: center">Choose your color</p1>
+
+<a class="trigger_popup_fricc">Click here to show the popup</a>
+
+
+
+
 <div id="playfield">
     <div class="dot active"></div>
     <div class="line"></div>
@@ -58,3 +48,4 @@
 </body>
 
 </html>
+
