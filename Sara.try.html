@@ -1,12 +1,60 @@
-<html> 
+
+<html>
 
 <head>
+    <script>
+        // Get the container element
+        var btnContainer = document.getElementById("playfield");
+
+        // Get all buttons with class="btn" inside the container
+        var btns = btnContainer.getElementsByClassName("dot");
+
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
     <title style="text-align:center" >Play Dots</title>
+    <style>
+        .dot {
+            background-color:gray;
+            width:20px;
+            height:20px;
+            border-radius:20px;
+        }
+        .dot.active {
+            background-color:black;
+        }
+        .line {
+            background-color:green;
+            height:40px;
+            width:10px;
+            position:relative;
+            left:5px;
+        }
+    </style>
 </head>
 
 <body style="background-color:powderblue;">
-    <h1 style= "color:black;text-align:center ">Start Game</h1>
-    <p1>Begin playing an interactive learning version of the game Dots</p1>  
+<h1 style= "color:black; text-align:center">Play Dots!</h1>
+<h2 style="text-align:center">Play an interactive learning version of the game Dots now</h2>
+<p1 style="text-align: center">Choose your color /p1>
+<div id="playfield">
+    <div class="dot active"></div>
+    <div class="line"></div>
+    <div class="dot"></div>
+    <div class="line"></div>
+    <div class="dot"></div>
+    <div class="line"></div>
+    <div class="dot"></div>
+    <div class="line"></div>
+    <div class="dot"></div>
+</div>
+
 </body>
 
-</html> 
+</html>
