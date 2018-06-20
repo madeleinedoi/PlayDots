@@ -27,11 +27,36 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .button {
+            display: inline-block;
+            padding: 5px 5px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: darkmagenta;
+            border: none;
+            width:100%;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            float:right;
+
+        }
+
+        .button:hover {background-color: black}
+
+        .button:active {
+            background-color: black;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
     </style>
 </head>
 
 
-<body style="background-color:powderblue;">
+<body style="background-color:white;">
 <h1 style= "color:black; text-align:center">Play Dots!</h1>
 <h2 style="text-align:center">Play an interactive computer science game of Dots now</h2>
 <h3 class="rules">  Two players will take turns to join two adjacent
@@ -41,7 +66,12 @@
     If their opponent answers correctly they get the point. When all the boxes
     have been completed the winner is the player who has initialized
     the most boxes.</h3>
+<button class="button">Click Me to Begin</button>
 
+
+<br>
+<br>
+<br>
 
 <div id="playfield">
     <div class="dot active"></div>
