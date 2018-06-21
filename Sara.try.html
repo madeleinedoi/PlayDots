@@ -1,5 +1,3 @@
-
-
 <html>
 
 <head>
@@ -43,7 +41,6 @@
             postion: relative;
             top: 50%;
             left: 50%;
-
             position: relative;
         }
         .button:hover {
@@ -77,11 +74,22 @@
         }
         tr:nth-child(1) td{
             border-top:5px gray solid;
+        }
+        /*.btn {*/
+        /*border: none;*/
+        /*outline: none;*/
+        /*padding: 10px 16px;*/
+        /*background-color: #f1f1f1;*/
+        /*cursor: pointer;*/
+        /*}*/
 
+        /*!* Style the active class (and buttons on mouse-over) *!*/
+        /*.active, .btn:hover {*/
+        /*background-color: #666;*/
+        /*color: white;*/
         }
     </style>
 </head>
-
 
 <body style="background-color:white;">
 <h1 style= "color:black; text-align:center">Play Dots!</h1>
@@ -93,7 +101,36 @@
     If their opponent answers correctly they get the point. When all the boxes
     have been completed the winner is the player who has initialized
     the most boxes.</h3>
-<button class="button">Click Me to Begin</button>
+<!--<button class="button" onclick= BeginGame()>Click Me to Begin</button>-->
+<div class="row" id="quotebox">
+    <div class="text-center">
+        <button class="button" onclick ="randomQuote()"type="submit">Click me to begin</button>
+    </div>
+</div>
+
+
+<script>
+    var $quoteBox = document.getElementById('quotebox');
+
+    var quotesList = [
+    {
+        quote: "Player 1",
+
+    }
+    ];
+    function randomQuote() {
+        var randIdx = Math.floor(Math.random() * quotesList.length);
+        var randQuote = quotesList[randIdx];
+        $quoteBox.setAttribute('style','font-size: 25px; color: darkmagenta; text-align:center;');
+    $quoteBox.innerHTML = "Player 1, please take your turn to begin";
+}
+</script>
+
+<!--<script>-->
+    <!--function BeginGame(){-->
+        <!--console.log("Player 1, select a one line to begin ");-->
+    <!--}-->
+<!--</script>-->
 
 
 <br>
@@ -103,11 +140,11 @@
 <table>
 
     <tbody>
-    <tr id ="a1">
-        <td></td><td></td><td></td><td></td>
+    <tr>
+        <td id="a1" ></td><td id="a2"></td><td id="a3"></td><td id="a4"></td>
     </tr>
     <tr >
-        <td></td><td></td><td></td><td></td>
+        <td id="a5"></td><td></td><td></td><td></td>
     </tr>
     <tr>
         <td></td><td></td><td></td><td></td>
@@ -118,6 +155,15 @@
     </tbody>
 </table>
 
+
+
+<!--<div id="myDIV">-->
+<!--<button class="btn">a1</button>-->
+<!--<button class="btn">a2</button>-->
+<!--<button class="btn">a3</button>-->
+<!--<button class="btn">a4</button>-->
+<!--<button class="btn">a5</button>-->
+<!--</div>-->
 
 
 <!--<div id="playfield">-->
@@ -133,5 +179,3 @@
 <!--</div>-->
 
 </body>
-
-</html>
