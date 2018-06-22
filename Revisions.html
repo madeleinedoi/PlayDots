@@ -1,21 +1,37 @@
 <html>
 
 <head>
-    <script type="text/javascript" src="variables.js"></script>
+
     <title style="text-align:center" >Play Dots</title>
     <style>
-        .dot {
+        .dotvertical {
             background-color:black;
             width:20px;
             height:20px;
             border-radius:20px;
         }
-        .line {
+        .linevertical {
             background-color:lightslategrey;
             height:40px;
             width:10px;
             position:relative;
             left:5px;
+        }
+        .dothorizontal{
+            background-color:black;
+            width:12px;
+            height:12px;
+            border-radius:15px;
+            display: inline-block;
+
+        }
+        .linehorizontal{
+            background-color:lightslategrey;
+            height:10px;
+            width:50px;
+            position: relative;
+            left:0px;
+            display: inline-block;
         }
         .rules{
             max-width: 800px;
@@ -75,45 +91,29 @@
         tr:nth-child(1) td{
             border-top:5px gray solid;
         }
-        tr td.top-active
-        {
-            border-top:5px solid black;
+        .top-active{
+            background-color: green;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
         }
-        tr td.bottom-active
-        {
-
-            border-top:5px solid black;
+        .top-hover{
+            background-color: black;
         }
-        .right-active
-        {
+        .top-below{
 
-            border-top:5px red;
         }
-        .left-active
-        {
 
-            border-top:5px red;
+        .mystyle {
+            width: 100%;
+            padding: 25px;
+            background-color: coral;
+            color: white;
+            font-size: 25px;
         }
-        .filled-cell{
-            background-color:black;
-        }
-        </style>
 
-
-        <!--/*.btn {*/-->
-        <!--/*border: none;*/-->
-        <!--/*outline: none;*/-->
-        <!--/*padding: 10px 16px;*/-->
-        <!--/*background-color: #f1f1f1;*/-->
-        <!--/*cursor: pointer;*/-->
-        <!--/*}*/-->
-
-        <!--/*!* Style the active class (and buttons on mouse-over) *!*/-->
-        <!--/*.active, .btn:hover {*/-->
-        <!--/*background-color: #666;*/-->
-        <!--/*color: white;*/-->
-
+    </style>
 </head>
+
 
 <body background="https://d39l2hkdp2esp1.cloudfront.net/img/photo/121172/121172_00_2x.jpg?20170515031019">
 <h1 style= "color:black; text-align:center">Play Dots!</h1>
@@ -132,31 +132,19 @@
     </div>
 </div>
 
-
 <script>
     var $quoteBox = document.getElementById('quotebox');
-
     var quotesList = [
-    {
-        quote: "Player 1",
-
-    }
+        {
+            quote: "Player 1",
+        }
     ];
     function randomQuote() {
         var randIdx = Math.floor(Math.random() * quotesList.length);
         var randQuote = quotesList[randIdx];
-        $quoteBox.setAttribute('style','font-size: 30px; color: darkmagenta; text-align:center;');
-    $quoteBox.innerHTML = "Player 1, please take your turn to begin";
-}
-</script>
-
-<!--<script>-->
-    <!--function BeginGame(){-->
-        <!--console.log("Player 1, select a one line to begin ");-->
-    <!--}-->
-<!--</script>-->
-<script>
-    ("a1").addClass('.top.active');
+        $quoteBox.setAttribute('style','font-size: 25px; color: darkmagenta; text-align:center;');
+        $quoteBox.innerHTML = "Player 1, please take your turn to begin";
+    }
 </script>
 
 
@@ -164,48 +152,34 @@
 <br>
 <br>
 
-<table>
+<!--<table>-->
 
-    <tbody>
-    <tr>
-        <td class="bottom-active" id="a1" ></td><td id="a2"></td><td id="a3"></td><td id="a4"></td>
-    </tr>
-    <tr >
-        <td id="a5"></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-        <td></td><td></td><td></td><td></td>
-    </tr>
-    <tr>
-        <td></td><td></td><td></td><td></td>
-    </tr>
-    </tbody>
-</table>
-
-
-<!--<div id="myDIV">-->
-<!--<button class="btn">a1</button>-->
-<!--<button class="btn">a2</button>-->
-<!--<button class="btn">a3</button>-->
-<!--<button class="btn">a4</button>-->
-<!--<button class="btn">a5</button>-->
-<!--</div>-->
+<!--<tbody>-->
+<!--<tr>-->
+<!--<td id="a1" ></td><td id="a2"></td><td id="a3"></td><td id="a4"></td>-->
+<!--</tr>-->
+<!--<tr >-->
+<!--<td id="b1"></td><td id="b2"></td><td></td><td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td></td><td></td><td></td><td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td></td><td></td><td></td><td></td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
 
 
-<!--<div id="playfield">-->
-<!--<div class="dot active"></div>-->
-<!--<div class="line"></div>-->
-<!--<div class="dot"></div>-->
-<!--<div class="line"></div>-->
-<!--<div class="dot"></div>-->
-<!--<div class="line"></div>-->
-<!--<div class="dot"></div>-->
-<!--<div class="line"></div>-->
-<!--<div class="dot"></div>-->
-<!--</div>-->
+<div id="play">
+<div class= "dothorizontal"></div>
+<div class="linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class="linehorizontal"></div>
+<div class= "dot"></div>
+<div class="line">
 
-
-
+</div>
 
 
 </body>
