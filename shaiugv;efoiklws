@@ -11,14 +11,16 @@
             background-color:black;
             width:12px;
             height:12px;
-            border-radius:20px;
+            border-radius:15px;
         }
         .linevertical {
             background-color:lightslategrey;
             height:50px;
             width:10px;
             position:relative;
-            left:0px;
+            left:5px;
+            display: inline-block;
+
         }
         .dothorizontal{
             background-color:black;
@@ -26,18 +28,17 @@
             height:12px;
             border-radius:15px;
             display: inline-block;
-
         }
         .linehorizontal{
             background-color:lightslategrey;
             height:10px;
             width:50px;
             position:relative;
-            left:0px;
             display: inline-block;
-        }
 
         }
+
+
         .rules{
             max-width: 800px;
             padding:0 50px 0 50px;
@@ -59,7 +60,6 @@
             border-radius: 15px;
             box-shadow: 0 9px #999;
             margin: 10px -125px;
-            postion: relative;
             top: 50%;
             left: 50%;
             position: relative;
@@ -127,15 +127,16 @@
             color: white;
             font-size: 25px;
         }
-
-
-
-
+        label {
+            white-space: pre;
+            top: 50%;
+            left: 50%;
+        }
 
     </style>
 </head>
 
-<body background="w3s.png">
+<body background="https://d39l2hkdp2esp1.cloudfront.net/img/photo/121172/121172_00_2x.jpg?20170515031019">
 
 <h1 style= "color:black; text-align:center">Play Dots!</h1>
 <h2 style="text-align:center">Play an interactive computer science game of Dots now</h2>
@@ -155,10 +156,6 @@
 
 
 
-
-
-
-
 <script>
     var $quoteBox = document.getElementById('quotebox');
     var quotesList = [
@@ -172,11 +169,17 @@
         $quoteBox.setAttribute('style','font-size: 25px; color: darkmagenta; text-align:center;');
         $quoteBox.innerHTML = "Player 1, please take your turn to begin";
     }
+
+function ChangeColor()
+{
+    linevertical.style.color = red;
+}
+
+
 </script>
 
 
-
-
+<div style= "cursor: pointer;" onclick="ChangeColor()">
 
 
 <br>
@@ -185,20 +188,20 @@
 
 <!--<table>-->
 
-    <!--<tbody>-->
-    <!--<tr>-->
-        <!--<td id="a1" ></td><td id="a2"></td><td id="a3"></td><td id="a4"></td>-->
-    <!--</tr>-->
-    <!--<tr >-->
-        <!--<td id="b1"></td><td id="b2"></td><td></td><td></td>-->
-    <!--</tr>-->
-    <!--<tr>-->
-        <!--<td></td><td></td><td></td><td></td>-->
-    <!--</tr>-->
-    <!--<tr>-->
-        <!--<td></td><td></td><td></td><td></td>-->
-    <!--</tr>-->
-    <!--</tbody>-->
+<!--<tbody>-->
+<!--<tr>-->
+<!--<td id="a1" ></td><td id="a2"></td><td id="a3"></td><td id="a4"></td>-->
+<!--</tr>-->
+<!--<tr >-->
+<!--<td id="b1"></td><td id="b2"></td><td></td><td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td></td><td></td><td></td><td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td></td><td></td><td></td><td></td>-->
+<!--</tr>-->
+<!--</tbody>-->
 <!--</table>-->
 
 
@@ -206,31 +209,169 @@
 
 
 <div id="hor1"
-    {<div class= "dothorizontal"></div>
-<div class= "linehorizontal"></div>
-<div class= "dothorizontal"></div>
-<div class= "linehorizontal"></div>
-<div class= "dothorizontal"></div>
-<div class= "linehorizontal"></div>
-<div class= "dothorizontal"></div>
-<div class= "linehorizontal"></div>
+     {
 
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+
+<br />
 
 <div id="vert1"{
 <div class="linevertical"></div>
-<div class="dotvertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
 <div class = "linevertical"></div>
-<div class="dotvertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
 <div class = "linevertical"></div>
-<div class="dotvertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
 <div class = "linevertical"></div>
-<div class = "dotvertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<div class = "linevertical"></div>
+
+<br />
+
+<div id="hor2"
+     {
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
 
 
+<br />
+
+<div id="vert2"{
+<div class="linevertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<div class = "linevertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<div class = "linevertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<div class = "linevertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<div class = "linevertical"></div>
 
 
+<br />
 
+<div id="hor3"
+     {
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
 
+<br />
+
+<div id="vert3"{
+<div class="linevertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<div class = "linevertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<div class = "linevertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<div class = "linevertical"></div>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<label> </label>
+<div class = "linevertical"></div>
+
+<br />
+
+<div id="hor4"
+     {
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
+<div class= "linehorizontal"></div>
+<div class= "dothorizontal"></div>
 
 
 <!--<div id="vert1"-->
@@ -242,19 +383,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
+</html>
 
