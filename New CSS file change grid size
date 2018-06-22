@@ -1,0 +1,142 @@
+.dotvertical {
+    background-color:black;
+    width:12px;
+    height:12px;
+    border-radius:15px;
+}
+.linevertical {
+    background-color:lightslategrey;
+    height:100px;
+    width:10px;
+    position:relative;
+    left:5px;
+    display: inline-block;
+
+}
+
+.linevertical:hover{
+    background-color:yellow;
+
+}
+.dothorizontal{
+    background-color:black;
+    width:12px;
+    height:12px;
+    border-radius:15px;
+    display: inline-block;
+}
+.linehorizontal{
+    background-color:lightslategrey;
+    height:10px;
+    width:100px;
+    position:relative;
+    display: inline-block;
+
+}
+.linehorizontal:hover{
+    background-color:yellow;
+}
+
+
+.rules{
+    max-width: 800px;
+    padding:0 50px 0 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button {
+    display: inline-block;
+    padding: 5px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: darkmagenta;
+    border: none;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin: 10px -125px;
+    top: 50%;
+    left: 50%;
+    position: relative;
+}
+.button:hover {
+    background-color: black;
+}
+.button:active {
+    background-color: black;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+tr th {
+    width: 50px;
+    height: 50px;
+    border-bottom: 5px gray solid;
+}
+tr td {
+    width:50px;
+    height:50px;
+    border-left:5px gray solid;
+    border-bottom: 5px gray solid;
+}
+tr td:nth-last-child(1){
+    width:50px;
+    height:50px;
+    border-right:5px gray solid;
+    border-bottom: 5px gray solid;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+tr:nth-child(1) td{
+    border-top:5px gray solid;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+canvas {
+    width: 100%;
+    background-color: black;
+}
+
+.top-active{
+    background-color: green;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+
+
+}
+.top-hover{
+    background-color: black;
+}
+.top-below{
+
+}
+
+.mystyle {
+    width: 100%;
+    padding: 25px;
+    background-color: coral;
+    color: white;
+    font-size: 25px;
+}
+
+.cell{
+    display:inline-block;
+    width:100px;
+
+}
+.playfield {
+    margin: 0 auto;
+    width: 600px;
+
+}
+.active {
+    color: white
