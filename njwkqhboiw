@@ -1,57 +1,156 @@
 
-//
-// var hl = [
-//     {col:1 row:1} ,{col:2, row:1}];
-// var vl = [{row:1 col:1},{row:1 col:2}];
+<br />
 
-function generateCells(numCol, numRow){
-    var cells = [];
-    for(var col =0; col<numCol; col++){
-        for(var row =0; row<numRow; row++){
-            cells.push({
-                col:col,
-                row:row,
-                filled:false,
-              
-            })
-        }
+<div class="playfield">
 
-    }
-    return cells;
-};
-//console.info(generateCells(4, 4));//Test
+    <div id="hor1">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
 
-function generateHorizontal(numCol,numRow){
-    var cells = [];
-    for(var col =0; col<numCol; col++){
-        for(var row =0; row<=numRow; row++){
-            cells.push({
-                col:col,
-                row:row,
-                filled:false,
+    </div>
 
-            })
-        }
 
-    }
-    return cells;
-};
-//console.info(generateHorizontal(4, 3));//Test
+    <div id="vert1">
+        <div class="linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
 
-function generateVertical(numCol,numRow){
-    var cells = [];
-    for(var col =0; col<=numCol; col++){
-        for(var row =0; row<numRow; row++){
-            cells.push({
-                col:col,
-                row:row,
-                filled:false,
+    </div>
 
-            })
-        }
 
-    }
-    return cells;
-};
-console.info(generateVertical(2, 2));//Test
+    <div id="hor2">
 
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+
+    </div>
+
+
+
+    <div id="vert2">
+        <div class="linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+    </div>
+
+
+
+    <div id="hor3">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+
+    </div>
+
+
+    <div id="vert3">
+        <div class="linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+    </div>
+
+
+    <div id="hor4">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+
+    </div>
+    <div id="vert4">
+        <div class="linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+
+    </div>
+
+    <div id="hor5">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+
+    </div>
+
+</div>
+<!--<div id="vert1"-->
+<!--{-->
+<!--<div class="linevertical"></div>-->
+<!--<div class="dotvertical"></div>-->
+<!--<div class="linevertical"></div>-->
+<!--<div class= "dotvertical"></div>-->
+
+</body>
+</html>
