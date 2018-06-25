@@ -6,12 +6,15 @@
 }
 .linevertical {
     background-color:lightslategrey;
-    height:50px;
+    height:100px;
     width:10px;
     position:relative;
     left:5px;
     display: inline-block;
 
+}
+.linevertical:hover{
+    background-color:yellow;
 }
 .dothorizontal{
     background-color:black;
@@ -23,13 +26,17 @@
 .linehorizontal{
     background-color:lightslategrey;
     height:10px;
-    width:50px;
+    width:100px;
     position:relative;
     display: inline-block;
 
 }
-
-
+.linehorizontal:hover{
+    background-color:yellow;
+}
+.linevertical:active{
+background-color:red;
+}
 .rules{
     max-width: 800px;
     padding:0 50px 0 50px;
@@ -40,6 +47,7 @@
     display: inline-block;
     padding: 5px 5px;
     font-size: 20px;
+    font-family: Verdana, sans-serif;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -118,15 +126,4 @@ canvas {
     background-color: coral;
     color: white;
     font-size: 25px;
-}
-
-.cell{
-    display:inline-block;
-    width:50px;
-
-}
-.playfield{
-    margin:0 auto;
-    width: 300px;
-
 }
