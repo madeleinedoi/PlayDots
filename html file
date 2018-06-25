@@ -1,16 +1,18 @@
 <html>
 
+
 <head>
     <script type="text/javascript" src="variables.js"></script>
     <link rel="stylesheet" type="text/css" href="./styles.css"  />
-    <title style="text-align:center">Play Dots</title>
+
+    <title>Play Dots</title>
 </head>
 
 
 
-<body background="https://d39l2hkdp2esp1.cloudfront.net/img/photo/121172/121172_00_2x.jpg?20170515031019">
-    <h1 style= "color:black; text-align:center">Play Dots!</h1>
-    <h2 style="text-align:center">Play an interactive computer science game of Dots now</h2>
+<body background="http://crownandshield.ndsj.org/wp-content/uploads/2018/03/2249112-watercolor-wallpaper.jpg">
+    <h1>Play Dots!</h1>
+    <h2>Play an interactive computer science game of Dots now</h2>
     <h3 class="rules">  Two players will take turns to join two adjacent
         dots with a horizontal or vertical line. When a player completes the fourth
         side of a box they must answer a computer science question. If they fail to
@@ -25,7 +27,24 @@
     </div>
 </div>
 
+    <script>
+        var $quoteBox = document.getElementById('quotebox');
+        var quotesList = [
+            {
+                quote: "Player 1",
+            }
+        ];
+        function randomQuote() {
+            var randIdx = Math.floor(Math.random() * quotesList.length);
+            var randQuote = quotesList[randIdx];
+            $quoteBox.setAttribute('style','font-size: 25px; color: darkmagenta; text-align:center;');
+            $quoteBox.innerHTML = "Player 1, please take your turn to begin";
+        }
+    </script>
+
+
 <br />
+
 
 <div class="playfield">
 
@@ -39,6 +58,9 @@
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal"></div>
         <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+
     </div>
 
 
@@ -52,11 +74,16 @@
         <div class = "linevertical"></div>
         <div class="cell"></div>
         <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+
     </div>
 
 
     <div id="hor2">
 
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal"></div>
         <div class= "dothorizontal"></div>
@@ -81,6 +108,8 @@
         <div class = "linevertical"></div>
         <div class="cell"></div>
         <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
     </div>
 
 
@@ -95,11 +124,16 @@
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal"></div>
         <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+
     </div>
 
 
     <div id="vert3">
         <div class="linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
         <div class="cell"></div>
         <div class = "linevertical"></div>
         <div class="cell"></div>
@@ -121,6 +155,38 @@
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal"></div>
         <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+
+    </div>
+    <div id="vert4">
+        <div class="linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+        <div class="cell"></div>
+        <div class = "linevertical"></div>
+
+    </div>
+
+    <div id="hor5">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+
     </div>
 
 </div>
