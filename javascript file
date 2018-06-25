@@ -1,4 +1,4 @@
-
+var cells, hLines, vLines;
 // var hl = [
 //     {col:1 row:1} ,{col:2, row:1}];
 // var vl = [{row:1 col:1},{row:1 col:2}];
@@ -19,7 +19,7 @@ function generateCells(numCol, numRow){
     }
     return cells;
 };
-//console.info(generateCells(4, 4));//Test
+
 
 function generateHorizontal(numCol,numRow){
     var cells = [];
@@ -28,7 +28,7 @@ function generateHorizontal(numCol,numRow){
             cells.push({
                 col:col,
                 row:row,
-                filled:false,
+                active:false,
 
             })
         }
@@ -45,7 +45,7 @@ function generateVertical(numCol,numRow){
             cells.push({
                 col:col,
                 row:row,
-                filled:false,
+                active:true,
 
             })
         }
@@ -53,7 +53,7 @@ function generateVertical(numCol,numRow){
     }
     return cells;
 };
-console.info(generateVertical(2, 2));//Test
+//console.info(generateVertical(2, 2));//Test
 
 
 var $quoteBox = document.getElementById('quotebox');
@@ -70,41 +70,74 @@ function randomQuote() {
 }
 
 
+// function points(cells){
+//     for(var c=0; c< cells.length; c++){
+//         if(cells[c]==="active"){
+//             if(playerTurn === "p1")){
+//                 p1points++;}
+//             else{
+//                 p2points++;}
+// }
+// }
+// }
 
-function changeClassStyle(){
-    var c = document.getElementsByClassName("linevertical");
-    for (var i=0; i<c.length; i++) {
-        c[i].style.color = "red";
-    }
+function checkLines(cell){
+    return (checkHorizontal(cell) && checkVertical(cell));
+
 }
-
-function typeOfLine(userSelection){
-    if(userSelection.equals("linevertical")){
-
-    }
-}
-
-function checkLinesAround(cell){
-    //implement more code to know whether the lines are all active
-        if(allLines.equals("active")){
-            if(playerTurn.equals("p1")){
-                p1points++;}
-            else{
-                p2points++;}
-        }
-}
-
-var filledElements = new Arraylist();//an arraylist of filled cells
 function checkCells(){
-    var cells = generateCells(5, 4);
-    for(var row=0; row<cells.length;row++){
-        for(var col=0; col<cells[0].length; col++){
-            if(row.equals("filled") && col.equals("filled")){
-                filledElements.add(cells[row][col]);
-                //how to name each cell before adding it to filled elements?
-            }
+    cells.forEach(function(cell){
+        if(checkLines(cell)){
+            cell.filled=true;
+            cell.owner="owned";//change later
         }
-    }
+        console.info(`${cell.row}:${cell.col} is${cell.filled ? "" : " not"} filled.`);
+        //change score here
+
+    });
 }
+
+function setUpBoard(){
+    hLines=generateHorizontal(5,5);
+    vLines=generateVertical(5,5);
+    cells=generateCells(5,5);
+
+}
+
+function checkHorizontal(cell) {
+    var topline = false;
+    var bottomline = false;
+    hLines.forEach(function(line) {
+        if (line.col === cell.col && line.row === cell.row && line.active) {
+            topline = true;
+        }
+        if (line.col === cell.col && line.row === cell.row + 1 && line.active) {
+            bottomline = true;
+        }
+    });
+    return topline && bottomline;
+};
+
+function checkVertical(cell) {
+    var rightline = false;
+    var leftline = false;
+    vLines.forEach(function(line) {
+        if (line.col === cell.col && line.row === cell.row && line.active) {
+            leftline = true;
+        }
+        if (line.col === cell.col+1 && line.row === cell.row && line.active) {
+            rightline = true;
+        }
+
+    })
+    return leftline && rightline;
+};
+
+
+
+setUpBoard();
+
+console.info(checkCells(cells));//Test
+
 
 
