@@ -42,7 +42,7 @@
 /*}*/
 /*.linehorizontal:active{*/
     /*background-color:red;*/
-}
+/*}*/
 .rules{
     max-width: 800px;
     padding:0 50px 0 50px;
@@ -100,7 +100,7 @@
 /*}*/
 /*tr:nth-child(1) td{*/
 /*border-top:5px gray solid;*/
-}
+/*}*/
 html, body {
     height: 100%;
     width: 100%;
