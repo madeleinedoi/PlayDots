@@ -167,7 +167,6 @@ function addListenerForVElements(element) {
         // target.addClass("linehorizontal:active");
      }
  }
-func
 
 // function clickFunction(element){
 //     document.log(document.getElementById("hor1").getElementsByClassName("linehorizontal")[0]);
@@ -178,9 +177,6 @@ func
 //Tests
 //setUpBoard();
 //console.info(checkCells(cells));//Test
-
-
-
 
 
 
