@@ -39,7 +39,7 @@
     background-color:yellow;
 }
 .linehorizontal:active{
-background-color:red;
+    background-color:red;
 }
 .rules{
     max-width: 800px;
@@ -76,28 +76,28 @@ background-color:red;
     transform: translateY(4px);
 }
 /*tr th {*/
-    /*width: 50px;*/
-    /*height: 50px;*/
-    /*border-bottom: 5px gray solid;*/
+/*width: 50px;*/
+/*height: 50px;*/
+/*border-bottom: 5px gray solid;*/
 /*}*/
 /*tr td {*/
-    /*width:50px;*/
-    /*height:50px;*/
-    /*border-left:5px gray solid;*/
-    /*border-bottom: 5px gray solid;*/
+/*width:50px;*/
+/*height:50px;*/
+/*border-left:5px gray solid;*/
+/*border-bottom: 5px gray solid;*/
 /*}*/
 /*tr td:nth-last-child(1){*/
-    /*width:50px;*/
-    /*height:50px;*/
-    /*border-right:5px gray solid;*/
-    /*border-bottom: 5px gray solid;*/
+/*width:50px;*/
+/*height:50px;*/
+/*border-right:5px gray solid;*/
+/*border-bottom: 5px gray solid;*/
 /*}*/
 /*table{*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
+/*margin-left: auto;*/
+/*margin-right: auto;*/
 /*}*/
 /*tr:nth-child(1) td{*/
-    /*border-top:5px gray solid;*/
+/*border-top:5px gray solid;*/
 }
 html, body {
     height: 100%;
@@ -147,6 +147,11 @@ h1{
     color:black;
     font-family: Verdana, sans-serif;
     text-align: center;
+    border-style: solid;
+    border-width: 3px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-color: darkslateblue;
 }
 h2{
     text-align:center;

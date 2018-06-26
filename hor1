@@ -1,0 +1,15 @@
+
+    <div id="hor1">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal" onclick="clickFunction(hor1,linehorizontal, 0)"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal"></div>
+        <div class= "dothorizontal"></div>
+
+    </div>

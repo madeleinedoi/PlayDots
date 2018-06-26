@@ -1,0 +1,49 @@
+function checkVertical(cell) {
+    var rightline = false;
+    var leftline = false;
+    vLines.forEach(function(line) {
+        if (line.col === cell.col && line.row === cell.row && line.active) {
+            leftline = true;
+        }
+        if (line.col === cell.col+1 && line.row === cell.row && line.active) {
+            rightline = true;
+        }
+
+    })
+    return leftline && rightline;
+};
+
+
+function addListenerForHElements(element) {
+    var hElements = document.getElementsByClassName('linehorizontal');
+    for(var i = 0; i < hElements.length; i++){
+        hElements[i].addEventListener("click", clickFunction)
+    }
+}
+window.onload = function(){
+    addListenerForHElements();
+    addListenerForVElements()
+};
+function addListenerForVElements(element) {
+    var vElements = document.getElementsByClassName('linevertical');
+    for(var i = 0; i < vElements.length; i++){
+        vElements[i].addEventListener("click", clickFunction)
+    }
+}
+ function clickFunction(event) {
+     var element = event.target;
+     var className = element.classList;
+     var rowNum;
+     var colNum;
+     element.classList.add("active");
+     for (var c = 0; c < className.length; c++) {
+         if (className[c].startsWith("row-")){
+             rowNum = className[c].length - 1;
+         }
+         if (className[c].startsWith("col-")) {
+             colNum = className[c].length - 1;
+            //update row and col for check vert/hor
+         }
+        // target.addClass("linehorizontal:active");
+     }
+ }

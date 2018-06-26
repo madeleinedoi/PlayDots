@@ -11,6 +11,7 @@ function generateCells(numCol, numRow){
                 col:col,
                 row:row,
                 filled:false,
+                owner:""
 
             })
         }
@@ -68,7 +69,40 @@ function randomQuote() {
     $quoteBox.innerHTML = "Player 1, please take your turn to begin";
 }
 
-function ChangeColor()
-{
-    document.getElementsByClassName("linevertical").style.color = "red";
+
+
+function changeClassStyle(){
+    var c = document.getElementsByClassName("linevertical");
+    for (var i=0; i<c.length; i++) {
+        c[i].style.color = "red";
+    }
 }
+
+function typeOfLine(userSelection){
+    if(userSelection.equals("linevertical")){
+
+    }
+}
+
+
+function checkLinesAround(cell){
+    //implement more code to know whether the lines are all active
+        if(allLines.equals("active")){
+            if(playerTurn.equals("p1")){
+                p1points++;}
+            else{
+                p2points++;}
+        }
+}
+A
+function checkCells(cells){
+    generateCells(5, 4)
+    for(var row=0; row<cells.length;row++){
+        for(var col=0; col<cells[0].length; col++){
+            if(row.equals("filled") && col.equals("filled"){
+                filledElements(cell
+            }
+        }
+    }
+}
+
