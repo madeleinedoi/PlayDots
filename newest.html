@@ -1,60 +1,71 @@
 <html>
 
+
 <head>
     <script type="text/javascript" src="variables.js"></script>
     <link rel="stylesheet" type="text/css" href="./styles.css"  />
-    <title style="text-align:center">Play Dots</title>
+
+    <title>Play Dots</title>
 </head>
 
 
-<body background="http://crownandshield.ndsj.org/wp-content/uploads/2018/03/2249112-watercolor-wallpaper.jpg">
-    <h1 style= "color:black; text-align:center">Play Dots!</h1>
-    <h2 style="text-align:center">Play an interactive computer science game of Dots now</h2>
-    <h3 class="rules">  Two players will take turns to join two adjacent
-        dots with a horizontal or vertical line. When a player completes the fourth
-        side of a box they must answer a computer science question. If they fail to
-        answer the question correctly their opposing player gets to answer the question.
-        If their opponent answers correctly they get the point. When all the boxes
-        have been completed the winner is the player who has initialized
-        the most boxes.</h3>
-    <!--<button class="button" onclick= BeginGame()>Click Me to Begin</button>-->
+<body background="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-0.3.5&s=d693648e19dfa31c2a6f91e0d512a88c&auto=format&fit=crop&w=1867&q=80">
+<h1>Play Dots!</h1>
+<h2>Play an interactive computer science game of Dots now</h2>
+<h3 class="rules">  Two players will take turns to join two adjacent
+    dots with a horizontal or vertical line. When a player completes the fourth
+    side of a box they must answer a computer science question. If they fail to
+    answer the question correctly their opposing player gets to answer the question.
+    If their opponent answers correctly they get the point. When all the boxes
+    have been completed the winner is the player who has initialized
+    the most boxes.</h3>
+
+
+
+
+</body>
+
+
+
+<!--<button class="button" onclick= BeginGame()>Click Me to Begin</button>-->
 <div class="row" id="quotebox">
     <div class="text-center">
         <button class="button" onclick ="randomQuote()"type="submit">Click me to begin</button>
     </div>
 </div>
 
-    <script>
-        var $quoteBox = document.getElementById('quotebox');
-        var quotesList = [
-            {
-                quote: "Player 1",
-            }
-        ];
-        function randomQuote() {
-            var randIdx = Math.floor(Math.random() * quotesList.length);
-            var randQuote = quotesList[randIdx];
-            $quoteBox.setAttribute('style','font-size: 25px; color: darkmagenta; text-align:center;');
-            $quoteBox.innerHTML = "Player 1, please take your turn to begin";
+<script>
+    var $quoteBox = document.getElementById('quotebox');
+    var quotesList = [
+        {
+            quote: "Player 1",
         }
-    </script>
+    ];
+    function randomQuote() {
+        var randIdx = Math.floor(Math.random() * quotesList.length);
+        var randQuote = quotesList[randIdx];
+        $quoteBox.setAttribute('style','font-size: 25px; color: rebeccapurple; text-align:center;');
+        $quoteBox.innerHTML = "Player 1, please take your turn to begin";
+    }
+</script>
 
 
 <br />
+
 
 <div class="playfield">
 
     <div id="hor1">
         <div class= "dothorizontal"></div>
-        <div class= "linehorizontal"></div>
+        <div class= "linehorizontal row-0 col-0"></div>
         <div class= "dothorizontal"></div>
-        <div class= "linehorizontal"></div>
+        <div class= "linehorizontal row-0 col-1"></div>
         <div class= "dothorizontal"></div>
-        <div class= "linehorizontal"></div>
+        <div class= "linehorizontal row-0 col-2"></div>
         <div class= "dothorizontal"></div>
-        <div class= "linehorizontal"></div>
+        <div class= "linehorizontal row-0 col-3"></div>
         <div class= "dothorizontal"></div>
-        <div class= "linehorizontal"></div>
+        <div class= "linehorizontal row-0 col-4"></div>
         <div class= "dothorizontal"></div>
 
     </div>
@@ -192,6 +203,22 @@
 <!--<div class="dotvertical"></div>-->
 <!--<div class="linevertical"></div>-->
 <!--<div class= "dotvertical"></div>-->
+<style>
+    table, th, td {
+        border: 3px solid black;
+        border-collapse: collapse;
+        margin-right: auto ;
+        margin-left: auto;
 
-</body>
+    }
+    th, td {
+        padding: 10px;
+
+
+
+</style>
 </html>
+
+
+
+
