@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles.css"  />
+
+    <title>Play Dots</title>
+</head>
+
+
+<body background="https://images.unsplash.com/photo-1526635229611-9a2482c8427b?ixlib=rb-0.3.5&s=315c184260096ef3f19405792223ac7b&auto=format&fit=crop&w=2550&q=80">
+<div class="playfield">
+    <div id="hor1">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-0 col-0"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-0 col-1"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-0 col-2"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-0 col-3"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-0 col-4"></div>
+        <div class= "dothorizontal"></div>
+    </div>
+
+    <div id="vert1">
+        <div class="linevertical row-0 col-0 "></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-1 col-0"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-2 col-0"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-3 col-0"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-4 col-0"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-5 col-0"></div>
+    </div>
+
+    <div id="hor2">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-1 col-0"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-1 col-1"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-1 col-2"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-1 col-3"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-1 col-4"></div>
+        <div class= "dothorizontal"></div>
+    </div>
+
+    <div id="vert2">
+        <div class="linevertical row-0 col-1"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-1 col-1"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-2 col-1"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-3 col-1"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-4 col-1"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-5 col-1"></div>
+    </div>
+
+    <div id="hor3">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-2 col-0"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-2 col-1"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-2 col-2"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-2 col-3"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-2 col-4"></div>
+        <div class= "dothorizontal"></div>
+    </div>
+
+    <div id="vert3">
+        <div class="linevertical row-0 col-2"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-1 col-2"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-2 col-2"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-3 col-2"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-4 col-2"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-5 col-2"></div>
+    </div>
+
+    <div id="hor4">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-3 col-0"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-3 col-1"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-3 col-2"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-3 col-3"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-3 col-4"></div>
+        <div class= "dothorizontal"></div>
+    </div>
+
+    <div id="vert4">
+        <div class="linevertical row-0 col-3"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-1 col-3"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-2 col-3"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-3 col-3"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-4 col-3"></div>
+        <div class="cell"></div>
+        <div class = "linevertical row-5 col-3"></div>
+
+    </div>
+
+    <div id="hor5">
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-4 col-0"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-4 col-1"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-4 col-2"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-4 col-3"></div>
+        <div class= "dothorizontal"></div>
+        <div class= "linehorizontal row-4 col-4"></div>
+        <div class= "dothorizontal"></div>
+    </div>
+</div>
+<!--<div id="vert1"-->
+<!--{-->
+<!--<div class="linevertical"></div>-->
+<!--<div class="dotvertical"></div>-->
+<!--<div class="linevertical"></div>-->
+<!--<div class= "dotvertical"></div>-->
+<style>
+    table, th, td {
+        border: 3px solid black;
+        border-collapse: collapse;
+        margin-right: auto ;
+        margin-left: auto;
+    }
+    th, td {
+        padding: 10px;
+    }
+</style>
+
+</body>
+</html>
