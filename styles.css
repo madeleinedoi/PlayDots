@@ -18,9 +18,8 @@
 /*}*/
 /*.linevertical:active{*/
     /*background-color:red;*/
-
-
 /*}*/
+
 .dothorizontal{
     background-color:grey;
     width:12px;
@@ -34,6 +33,10 @@
     width:100px;
     position:relative;
     display: inline-block;
+}
+
+.active{
+    background-color: deeppink;
 }
 /*.linehorizontal:hover{*/
     /*background-color:yellow;*/
@@ -142,10 +145,10 @@ canvas {
     margin: 0 auto;
     width: 630px;
 }
-.active {
-    color: white;
-    background-color: red;
-}
+/*.active {*/
+    /*background-color: red;*/
+/*}*/
+
 h1{
     color:black;
     font-family: Verdana, sans-serif;
