@@ -10,9 +10,8 @@ function generateCells(numCol, numRow){
             cells.push({
                 col:col,
                 row:row,
-                filled:false,
+                active:false,
                 owner:""
-
             })
         }
 
@@ -45,8 +44,7 @@ function generateVertical(numCol,numRow){
             cells.push({
                 col:col,
                 row:row,
-                active:true,
-
+                active:false,
             })
         }
 
@@ -59,7 +57,7 @@ function generateVertical(numCol,numRow){
 var $quoteBox = document.getElementById('quotebox');
 var quotesList = [
     {
-        quote: "Player 1",
+        quote: " ",
     }
 ];
 function randomQuote() {
@@ -91,7 +89,7 @@ function checkCells(){
             cell.filled=true;
             cell.owner="owned";//change later
         }
-        console.info(`${cell.row}:${cell.col} is${cell.filled ? "" : " not"} filled.`);
+        //console.info(`${cell.row}:${cell.col} is${cell.filled ? "" : " not"} filled.`);
         //change score here
 
     });
@@ -142,7 +140,7 @@ function addListenerForHElements(element) {
 }
 window.onload = function(){
     addListenerForHElements();
-    addListenerForVElements()
+    addListenerForVElements();
 };
 function addListenerForVElements(element) {
     var vElements = document.getElementsByClassName('linevertical');
@@ -150,37 +148,46 @@ function addListenerForVElements(element) {
         vElements[i].addEventListener("click", clickFunction)
     }
 }
- function clickFunction(event) {
-     var element = event.target;
-     var className = element.classList;
-     var rowNum;
-     var colNum;
-     element.classList.add("active");
-     for (var c = 0; c < className.length; c++) {
-         if (className[c].startsWith("row-")){
-             rowNum = className[c].length - 1;
-         }
-         if (className[c].startsWith("col-")) {
-             colNum = className[c].length - 1;
-            //update row and col for check vert/hor
-         }
+var turnCount = 0;
+function clickFunction(event) {
+    var rowNum;
+    var colNum;
+    var element = event.target;
+    var className = element.classList;
+    turnCount++;
+    let currentTurn = "p1";
+    if (turnCount%2 === 0) {
+        currentTurn = "p2";
+        element.classList.add("activep2");
+    }
+    else{
+        currentTurn = "p1";
+        element.classList.add("activep1");}
+    console.info(currentTurn);
+
+    for (var c = 0; c < className.length; c++) {
+        if (className[c].startsWith("row-")){
+            rowNum = className[c].length - 1;
+        }
+        if (className[c].startsWith("col-")) {
+            colNum = className[c].length - 1;
+        }
         // target.addClass("linehorizontal:active");
-     }
- }
-func
+    }
+    //update row and col for each line
+    // if(element.classList[rowNum][colNum].contains("active")){
+    //     element.classList[rowNum][colNum].
+}
+
 
 // function clickFunction(element){
 //     document.log(document.getElementById("hor1").getElementsByClassName("linehorizontal")[0]);
 //     document.getElementById("hor1").getElementsByClassName("linehorizontal")[0].style.backgroundColor = "red";
 // }
 
-
 //Tests
 //setUpBoard();
 //console.info(checkCells(cells));//Test
-
-
-
 
 
 
@@ -191,4 +198,3 @@ func
 //         return "Game Over";
 //     }
 // }
-

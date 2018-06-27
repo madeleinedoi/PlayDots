@@ -6,42 +6,46 @@
     border-radius:15px;
 }
 .linevertical {
-    background-color:rebeccapurple;
+    background-color: darkgray;
     height:100px;
     width:10px;
     position:relative;
     left:5px;
     display: inline-block;
-
 }
 /*.linevertical:hover{*/
-    /*background-color:yellow;*/
+/*background-color:yellow;*/
 /*}*/
 /*.linevertical:active{*/
-    /*background-color:red;*/
-
-
+/*background-color:red;*/
 /*}*/
+
 .dothorizontal{
-    background-color:grey;
+    background-color: black;
     width:12px;
     height:12px;
     border-radius:15px;
     display: inline-block;
 }
 .linehorizontal{
-    background-color:rebeccapurple;
+    background-color:darkgray;
     height:10px;
     width:100px;
     position:relative;
     display: inline-block;
+}
 
+.activep1{
+     background-color: yellow;
+ }
+.activep2{
+    background-color: pink;
 }
 /*.linehorizontal:hover{*/
-    /*background-color:yellow;*/
+/*background-color:yellow;*/
 /*}*/
 /*.linehorizontal:active{*/
-    /*background-color:red;*/
+/*background-color:red;*/
 /*}*/
 .rules{
     max-width: 800px;
@@ -142,12 +146,12 @@ canvas {
 }
 .playfield {
     margin: 0 auto;
-    width: 629px;
+    width: 630px;
 }
-.active {
-    color: white;
-    background-color: red;
-}
+/*.active {*/
+/*background-color: red;*/
+/*}*/
+
 h1{
     color:black;
     font-family: Verdana, sans-serif;
@@ -156,13 +160,15 @@ h1{
     border-width: 3px;
     border-left-width: 2px;
     border-right-width: 2px;
-    border-color: darkslateblue;
+    border-color: white;
 }
 h2{
     text-align:center;
+    color:black;
     font-family: Verdana, sans-serif;
 }
 h3{
     font-family: Verdana, sans-serif;
+    color:black;
     text-align: center;
 }
