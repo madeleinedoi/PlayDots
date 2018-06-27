@@ -1,12 +1,12 @@
 
 .dotvertical {
-    background-color:grey;
+    background-color:darkslateblue;
     width:12px;
     height:12px;
     border-radius:15px;
 }
 .linevertical {
-    background-color:rebeccapurple;
+    background-color:darkslategray;
     height:100px;
     width:10px;
     position:relative;
@@ -19,24 +19,25 @@
 /*.linevertical:active{*/
     /*background-color:red;*/
 /*}*/
-
 .dothorizontal{
-    background-color:grey;
+    background-color:black;
     width:12px;
     height:12px;
     border-radius:15px;
     display: inline-block;
 }
 .linehorizontal{
-    background-color:rebeccapurple;
+    background-color:darkslategray;
     height:10px;
     width:100px;
     position:relative;
     display: inline-block;
 }
-
-.active{
-    background-color: deeppink;
+.activepo {
+    background-color: lightskyblue;
+}
+.activept{
+    background-color: rebeccapurple;
 }
 /*.linehorizontal:hover{*/
     /*background-color:yellow;*/
@@ -143,27 +144,69 @@ canvas {
 }
 .playfield {
     margin: 0 auto;
-    width: 630px;
+    width: 750px;
+    margin-left:525px;
+    margin-top:200px;
 }
 /*.active {*/
     /*background-color: red;*/
 /*}*/
 
 h1{
-    color:black;
+    color:-moz-cellhighlight;
     font-family: Verdana, sans-serif;
     text-align: center;
     border-style: solid;
     border-width: 3px;
     border-left-width: 2px;
     border-right-width: 2px;
-    border-color: darkslateblue;
+    border-color: blanchedalmond;
 }
 h2{
     text-align:center;
+    color:white;
     font-family: Verdana, sans-serif;
 }
 h3{
     font-family: Verdana, sans-serif;
+    color:white;
     text-align: center;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    font-size: 17px;
+}
+
+.container {
+    position: relative;
+    max-width:100%;
+    margin: 0 auto;
+}
+
+.container img {vertical-align: middle;}
+
+.container .content {
+    position: absolute;
+    bottom: 400px;
+    background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+.btn{
+    background-color: white;
+    cursor:pointer;
+    background: blanchedalmond;
+    color: black;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 25px;
+    width: 150px;
+    font: bold 15px Verdana, sans-serif;
+    text-shadow:none;
 }
