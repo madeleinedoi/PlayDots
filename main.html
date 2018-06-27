@@ -1,29 +1,77 @@
+
 <html>
 
 
 <head>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="variables.js"></script>
     <link rel="stylesheet" type="text/css" href="./styles.css"  />
 
     <title>Play Dots</title>
 </head>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-<body background="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-0.3.5&s=d693648e19dfa31c2a6f91e0d512a88c&auto=format&fit=crop&w=1867&q=80">
-<h1>Play Dots!</h1>
-<h2>Play an interactive computer science game of Dots now</h2>
-<h3 class="rules">  Two players will take turns to join two adjacent
-    dots with a horizontal or vertical line. When a player completes the fourth
-    side of a box they must answer a computer science question. If they fail to
-    answer the question correctly their opposing player gets to answer the question.
-    If their opponent answers correctly they get the point. When all the boxes
-    have been completed the winner is the player who has initialized
-    the most boxes.</h3>
+    body {
+        margin: 0;
+        font-family: Arial;
+        font-size: 17px;
+    }
+
+    .container {
+        position: relative;
+        max-width:100%;
+        margin: 0 auto;
+    }
+
+    .container img {vertical-align: middle;}
+
+    .container .content {
+        position: absolute;
+        bottom: 400px;
+        background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://images.unsplash.com/photo-1515787366009-7cbdd2dc587b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8812dae86619e2e88fdc7e26d13f0feb&auto=format&fit=crop&w=2550&q=80"  style="width:100%;">
+    <div class="content">
+        <h1>PlayDots</h1>
+        <h2> Play an interactive game of Dots now</h2>
+        <p>Two players will take turns to join two adjacent
+            dots with a horizontal or vertical line. When a player completes the fourth
+            side of a box they must answer a computer science question. If they fail to
+            answer the question correctly their opposing player gets to answer the question.
+            If their opponent answers correctly they get the point. When all the boxes
+            have been completed the winner is the player who has initialized
+            the most boxes</p>
+    </div>
+</div>
+
+
+<body background="https://images.unsplash.com/photo-1508614823792-1f56af914148?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=303ba70a337f7cebdbf6c73df4a7ce47&auto=format&fit=crop&w=3300&q=80">
+<!--&lt;!&ndash;&lt;!&ndash;<h1>Play Dots!</h1>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<h2>Play an interactive computer science game of Dots now</h2>&ndash;&gt;-->
+<!--<h3 class="rules">  Two players will take turns to join two adjacent-->
+    <!--dots with a horizontal or vertical line. When a player completes the fourth-->
+    <!--side of a box they must answer a computer science question. If they fail to-->
+    <!--answer the question correctly their opposing player gets to answer the question.-->
+    <!--If their opponent answers correctly they get the point. When all the boxes-->
+    <!--have been completed the winner is the player who has initialized-->
+    <!--the most boxes.</h3>-->
 
 
 
 
-</body>
+<!--</body>-->
 
 
 
@@ -192,7 +240,6 @@
         border-collapse: collapse;
         margin-right: auto ;
         margin-left: auto;
-
     }
     th, td {
         padding: 10px;
@@ -201,7 +248,6 @@
 
 
 </html>
-
 
 
 
