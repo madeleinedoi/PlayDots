@@ -54,19 +54,6 @@ function generateVertical(numCol,numRow){
 //console.info(generateVertical(2, 2));//Test
 
 
-var $quoteBox = document.getElementById('quotebox');
-var quotesList = [
-    {
-        quote: " ",
-    }
-];
-function randomQuote() {
-    var randIdx = Math.floor(Math.random() * quotesList.length);
-    var randQuote = quotesList[randIdx];
-    $quoteBox.setAttribute('style','font-size: 25px; color: darkmagenta; text-align:center;');
-    $quoteBox.innerHTML = "Player 1, please take your turn to begin";
-}
-
 
 // function points(cells){
 //     for(var c=0; c< cells.length; c++){
@@ -82,17 +69,6 @@ function randomQuote() {
 function checkLines(cell){
     return (checkHorizontal(cell) && checkVertical(cell));
 
-}
-function checkCells(){
-    cells.forEach(function(cell){
-        if(checkLines(cell)){
-            cell.filled=true;
-            cell.owner="owned";//change later
-        }
-        //console.info(`${cell.row}:${cell.col} is${cell.filled ? "" : " not"} filled.`);
-        //change score here
-
-    });
 }
 
 function setUpBoard(){
@@ -149,36 +125,54 @@ function addListenerForVElements(element) {
     }
 }
 var turnCount = 0;
+let currentTurn;
 function clickFunction(event) {
     var rowNum;
     var colNum;
     var element = event.target;
     var className = element.classList;
     turnCount++;
-    let currentTurn = "p1";
-    if (turnCount%2 === 0) {
+    currentTurn="p1";
+    if (turnCount%2 === 0){
         currentTurn = "p2";
-        element.classList.add("activep2");
+        element.classList.add("activept");
     }
     else{
         currentTurn = "p1";
-        element.classList.add("activep1");}
-    console.info(currentTurn);
+        element.classList.add("activepo");}
 
     for (var c = 0; c < className.length; c++) {
         if (className[c].startsWith("row-")){
-            rowNum = className[c].length - 1;
-        }
+            rowNum = className[c].length - 1;}
         if (className[c].startsWith("col-")) {
-            colNum = className[c].length - 1;
-        }
+            colNum = className[c].length - 1;}
         // target.addClass("linehorizontal:active");
     }
     //update row and col for each line
     // if(element.classList[rowNum][colNum].contains("active")){
     //     element.classList[rowNum][colNum].
 }
-
+var p1points, p2points;
+function checkCells(){
+    cells.forEach(function(cell){
+        if(checkLines(cell)){
+            cell.active=true;
+            cell.owner= currentTurn;//change later
+            console.log(cell.owner);
+        }
+        if(cell.active==="true"){
+            if(currentTurn ==="p1"){
+                p1points++;}
+            else{
+                p2points++;
+            }
+        }
+        // console.info(p1points);
+        // console.info(p2points);
+        //console.info(`${cell.row}:${cell.col} is${cell.filled ? "" : " not"} filled.`);
+        //change score here
+    });
+}
 
 // function clickFunction(element){
 //     document.log(document.getElementById("hor1").getElementsByClassName("linehorizontal")[0]);
@@ -186,15 +180,9 @@ function clickFunction(event) {
 // }
 
 //Tests
-//setUpBoard();
+setUpBoard();
+checkCells();
 //console.info(checkCells(cells));//Test
 
 
 
-
-//Work in Progress:
-// function gameOver(){
-//     if(filledCount === numOfCells){
-//         return "Game Over";
-//     }
-// }
