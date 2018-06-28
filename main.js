@@ -12,7 +12,6 @@ var vLines;
 function setUpBoard(){
     hLines=generateHorizontal(5,5);
     vLines=generateVertical(5,5);
-    console.info("%%%" + hLines);
     cells=generateCells(5,5);
     currentTurn = "p1";
 }
@@ -75,7 +74,7 @@ function generateVertical(numCol,numRow){
     }
     return cells;
 };
-//console.info(generateVertical(2, 2));//Test
+//console.info(generateVertical(5, 5));//Test
 
 
 //checks if a full cell is filled/active
@@ -166,7 +165,6 @@ function clickFunction(event) {
     //by changing clicked lines' active variable to true
        if(lineType==="linehorizontal"){
             let test;
-            console.info("&&&&&&" + hLines);
             console.info(hLines[rowNum][colNum]);
             hLines[rowNum][colNum].active=true;
         } else{
