@@ -33,12 +33,12 @@
     position:relative;
     display: inline-block;
 }
-.activepo {
-    background-color: lightskyblue;
-}
-.activept{
-    background-color: rebeccapurple;
-}
+/*.activepo {*/
+    /*background-color: lightskyblue;*/
+/*}*/
+/*.activept{*/
+    /*background-color: rebeccapurple;*/
+/*}*/
 /*.linehorizontal:hover{*/
     /*background-color:yellow;*/
 /*}*/
@@ -148,9 +148,9 @@ canvas {
     margin-left:525px;
     margin-top:200px;
 }
-/*.active {*/
-    /*background-color: red;*/
-/*}*/
+.active {
+    background-color: red;
+}
 
 h1{
     color:-moz-cellhighlight;
@@ -198,9 +198,9 @@ body {
     width: 100%;
     padding: 20px;
 }
-.btn{
+.btn {
     background-color: white;
-    cursor:pointer;
+    cursor: pointer;
     background: blanchedalmond;
     color: black;
     border-style: outset;
@@ -208,5 +208,17 @@ body {
     height: 25px;
     width: 150px;
     font: bold 15px Verdana, sans-serif;
-    text-shadow:none;
+    text-shadow: none;
 }
+#backgroundImage {
+background-image: url("http://yo2mo.com/wp-content/uploads/2016/05/chalkboard-background-blank.jpg");
+height: 100%;  
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+position: relative;
+z-index: -1; 
+/*overflow: scroll;*/
+}
+
