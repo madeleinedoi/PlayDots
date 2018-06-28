@@ -27,12 +27,12 @@ window.onload = function(){
 function generateCells(numCol, numRow){
     var cells = [];
     for(var col =0; col<numCol; col++){
-        for(var row =0; row<numRow; row++){
+        for(var row =0; row<numRow; row++) {
             cells.push({
-                col:col,
-                row:row,
-                active:false,
-                owner:""
+                col: col,
+                row: row,
+                active: false,
+                owner: ""
             })
         }
     }
