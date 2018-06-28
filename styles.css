@@ -14,10 +14,10 @@
     display: inline-block;
 }
 /*.linevertical:hover{*/
-/*background-color:yellow;*/
+    /*background-color:yellow;*/
 /*}*/
 /*.linevertical:active{*/
-/*background-color:red;*/
+    /*background-color:red;*/
 /*}*/
 .dothorizontal{
     background-color:black;
@@ -40,10 +40,10 @@
     background-color: rebeccapurple;
 }
 /*.linehorizontal:hover{*/
-/*background-color:yellow;*/
+    /*background-color:yellow;*/
 /*}*/
 /*.linehorizontal:active{*/
-/*background-color:red;*/
+    /*background-color:red;*/
 /*}*/
 .rules{
     max-width: 800px;
@@ -149,7 +149,7 @@ canvas {
     margin-top:200px;
 }
 /*.active {*/
-/*background-color: red;*/
+    /*background-color: red;*/
 /*}*/
 
 h1{

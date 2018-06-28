@@ -126,33 +126,33 @@ function addListenerForVElements(element) {
 }
 var turnCount = 0;
 let currentTurn;
-function clickFunction(event) {
-    var rowNum;
-    var colNum;
-    var element = event.target;
-    var className = element.classList;
-    turnCount++;
+ function clickFunction(event) {
+     var rowNum;
+     var colNum;
+     var element = event.target;
+     var className = element.classList;
+     turnCount++;
     currentTurn="p1";
-    if (turnCount%2 === 0){
-        currentTurn = "p2";
-        element.classList.add("activept");
-    }
-    else{
-        currentTurn = "p1";
-        element.classList.add("activepo");}
+     if (turnCount%2 === 0){
+         currentTurn = "p2";
+         element.classList.add("activept");
+         }
+     else{
+         currentTurn = "p1";
+         element.classList.add("activepo");}
 
-    for (var c = 0; c < className.length; c++) {
-        if (className[c].startsWith("row-")){
-            rowNum = className[c].length - 1;}
-        if (className[c].startsWith("col-")) {
-            colNum = className[c].length - 1;}
+     for (var c = 0; c < className.length; c++) {
+         if (className[c].startsWith("row-")){
+             rowNum = className[c].length - 1;}
+         if (className[c].startsWith("col-")) {
+             colNum = className[c].length - 1;}
         // target.addClass("linehorizontal:active");
-    }
-    //update row and col for each line
-    // if(element.classList[rowNum][colNum].contains("active")){
-    //     element.classList[rowNum][colNum].
-}
-var p1points, p2points;
+     }
+     //update row and col for each line
+     // if(element.classList[rowNum][colNum].contains("active")){
+     //     element.classList[rowNum][colNum].
+ }
+ var p1points, p2points;
 function checkCells(){
     cells.forEach(function(cell){
         if(checkLines(cell)){
@@ -183,6 +183,7 @@ function checkCells(){
 setUpBoard();
 checkCells();
 //console.info(checkCells(cells));//Test
+
 
 
 
