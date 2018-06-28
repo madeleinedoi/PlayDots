@@ -23,10 +23,10 @@ window.onload = function(){
 
 //generates all the cells coordinates using the row and col (25 total)
 //also keeps track of active variable and owner at each coordinate
-function generateCells(numCol, numRow){
+function generateCells(numCol, numRow) {
     var cells = [];
-    for(var col =0; col<numCol; col++){
-        for(var row =0; row<numRow; row++) {
+    for (var col = 0; col < numCol; col++) {
+        for (var row = 0; row < numRow; row++) {
             cells.push({
                 col: col,
                 row: row,
