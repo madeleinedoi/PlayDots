@@ -54,8 +54,8 @@ function generateHorizontal(numCol,numRow){
     }
     return cells;
 };
+//console.info(generateHorizontal(4, 4));//Test
 
-//console.info(generateHorizontal(4, 3));//Test
 
 
 //generates all the vertical lines row and col
@@ -74,7 +74,7 @@ function generateVertical(numCol,numRow){
     }
     return cells;
 };
-//console.info(generateVertical(5, 5));//Test
+//console.info(generateVertical(4, 5));//Test
 
 
 //checks if a full cell is filled/active
@@ -154,23 +154,21 @@ function clickFunction(event) {
             lineType = className[c];
         }
         if (className[c].startsWith("row-")) {
-            rowNum = className[c].length - 1;
+            rowNum = className[c][className[c].length - 1];
         }
         if (className[c].startsWith("col-")) {
-            colNum = className[c].length - 1;
+            colNum = className[c][className[c].length - 1];
         }
-        // target.addClass("linehorizontal:active");
     }
     //updating the vLines and hLines arrays
     //by changing clicked lines' active variable to true
-       if(lineType==="linehorizontal"){
-            let test;
-            console.info(hLines[rowNum][colNum]);
-            hLines[rowNum][colNum].active=true;
-        } else{
-           vLines[rowNum][colNum].active=true;
-        }
+    if (lineType === "linehorizontal") {
+        hLines[rowNum][colNum].active = true;
+    } else {
+        vLines[rowNum][colNum].active = true;
     }
+    }
+
 
 
 //checks if cell is filled by calling the checkLines function
@@ -197,9 +195,6 @@ function clickFunction(event) {
             //console.info(p2points);
         });
 }
-
-
-
 
 
 
