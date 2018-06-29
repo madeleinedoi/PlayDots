@@ -1,19 +1,21 @@
 
 //global variables
-let currentTurn;
-var p1points, p2points;
-var turnCount = 0;
 var cells;
 var hLines;
 var vLines;
+var turn;
+var turnCount = 1;
+var p1points = 0;
+var p2points = 0;
+// var cell = cells[row][col];
+
 
 //set ups hLines and vLines variables by
 //generating all the corresponding lines in an array
 function setUpBoard(){
-    hLines=generateHorizontal(5,5);
-    vLines=generateVertical(5,5);
+    hLines=generateHorizontal(6,5);
+    vLines=generateVertical(5,6);
     cells=generateCells(5,5);
-    currentTurn = "p1";
 }
 window.onload = function(){
     addListenerForHElements();
@@ -83,7 +85,7 @@ function checkLines(cell){
 }
 
 //checks if the two corresponding horizontal lines of a cell are active
-function checkHorizontal(cell) {
+function checkHorizontal(cell){
     var topline = false;
     var bottomline = false;
     if (hLines[cell.row][cell.col].active) {
@@ -94,6 +96,7 @@ function checkHorizontal(cell) {
     }
     return topline && bottomline;
 };
+
 
 //checks if the two corresponding vertical lines of a cell are active
 function checkVertical(cell) {
@@ -108,7 +111,7 @@ function checkVertical(cell) {
     return leftline && rightline;
 };
 
-//when helements are clicked, the click function is called
+//when hElements are clicked, the click function is called
 //and the active variable at that place in the
 //hLines array will be set to true
 function addListenerForHElements(element) {
@@ -129,25 +132,18 @@ function addListenerForVElements() {
     }
 }
 
-
 //changes color when line is clicked
-//updates currentTurn
 function clickFunction(event) {
     var rowNum;
     var colNum;
     var lineType;
     var element = event.target;
     var className = element.classList;
+    element.classList.add("active");
     turnCount++;
-    //determines whose turn it is and makes the line active
-    if (turnCount % 2 === 0) {
-        currentTurn = "p2";
-        element.classList.add("active");
-    }
-    else {
-        currentTurn = "p1";
-        element.classList.add("active");
-    }
+    currentTurn();
+    checkCells(); 
+
     //computing the row and col of the clicked line
     for (var c = 0; c < className.length; c++) {
         if (className[c].startsWith("line")) {
@@ -167,56 +163,46 @@ function clickFunction(event) {
     } else {
         vLines[rowNum][colNum].active = true;
     }
-    }
-
+}
 
 
 //checks if cell is filled by calling the checkLines function
 //if it is filled then change cells active variable to true and
 //determine the owner by using the currentTurn variable
-//also determine points by using the currentTurn
-    function checkCells() {
-        cells.forEach(function (cell) {
-            if (checkLines(cell)) {
-                cell.active = true;
-                if (!cell.owner) {
-                    cell.owner = currentTurn;
-                }
+function checkCells() {
+    cells.forEach(function (cell) {
+        if (checkLines(cell) && !cell.active && !cell.owner){
+            cell.active = true;
+            cell.owner = turn;
+            if (turn === "p1") {
+                p1points++;
             }
-            if (cell.active = true) {
-                if (currentTurn === "p1") {
-                    p1points++;
-                }
-                else {
-                    p2points++;
-                }
+            else {
+                p2points++;
             }
-            console.info(p1points);
-            //console.info(p2points);
-        });
+    }
+    console.info(p2points);
+    });
+}
+
+//switches between player 1's turn and player 2's turn
+function currentTurn(){
+  if(turnCount%2==0){
+      turn = "p1";
+  }
+  else{
+      turn = "p2";
+  }
 }
 
 
 
 
 
-
-
-
-
-// function points(){
-// var p1, p2;
-// if(p1){
-//     p1points++;}
-// else{
-//     p2points++;}
-// p1=!p1;
-// }
-
 //Tests
 setUpBoard();
-// checkCells();
-//console.info(checkCells(cells));//Test
+//checkCells();
+checkLines(cells[1]);
 
 
 
