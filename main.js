@@ -4,7 +4,7 @@ var cells;
 var hLines;
 var vLines;
 var turn;
-var turnCount = 1;
+var turnCount = 0;
 var p1points = 0;
 var p2points = 0;
 // var cell = cells[row][col];
@@ -142,7 +142,7 @@ function clickFunction(event) {
     element.classList.add("active");
     turnCount++;
     currentTurn();
-    checkCells();
+
     //computing the row and col of the clicked line
     for (var c = 0; c < className.length; c++) {
         if (className[c].startsWith("line")) {
@@ -162,6 +162,7 @@ function clickFunction(event) {
     } else {
         vLines[rowNum][colNum].active = true;
     }
+    checkCells();
 }
 
 
@@ -180,8 +181,10 @@ function checkCells() {
                 p2points++;
             }
     }
-    console.info(p2points);
+
     });
+    console.info("P1: " + p1points);
+    console.info("P2: " + p2points);
 }
 
 //switches between player 1's turn and player 2's turn
@@ -195,13 +198,10 @@ function currentTurn(){
 }
 
 
-
-
-
 //Tests
 setUpBoard();
 //checkCells();
-checkLines(cells[1]);
+//checkLines(cells[1]);
 
 
 
