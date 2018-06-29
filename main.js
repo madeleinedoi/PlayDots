@@ -43,9 +43,9 @@ function generateCells(numCol, numRow) {
 //generates all the horizontal lines row and col
 function generateHorizontal(numCol,numRow){
     var cells = [];
-    for(var j =0; j<numCol; j++){
+    for(var i =0; i<=numRow; i++){
         var row = [];
-        for(var i =0; i<=numRow; i++){
+        for(var j =0; j<numCol; j++){
             row.push({
                 col:j,
                 row:i,
@@ -63,9 +63,9 @@ function generateHorizontal(numCol,numRow){
 //generates all the vertical lines row and col
 function generateVertical(numCol,numRow){
     var cells = [];
-    for(var j =0; j<=numCol; j++){
+    for(var i =0; i<numRow; i++){
         var row = [];
-        for(var i =0; i<numRow; i++){
+        for(var j =0; j<=numCol; j++){
             row.push({
                 col:j,
                 row:i,
