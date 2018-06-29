@@ -142,8 +142,7 @@ function clickFunction(event) {
     element.classList.add("active");
     turnCount++;
     currentTurn();
-    checkCells(); 
-
+    checkCells();
     //computing the row and col of the clicked line
     for (var c = 0; c < className.length; c++) {
         if (className[c].startsWith("line")) {
