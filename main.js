@@ -7,6 +7,9 @@ var turn;
 var turnCount = 1;
 var p1points = 0;
 var p2points = 0;
+
+
+
 // var cell = cells[row][col];
 
 
@@ -182,8 +185,8 @@ function checkCells() {
     }
 
     });
-    // console.info("P1: " + p1points);
-    // console.info("P2: " + p2points);
+    console.info("P1: " + p1points);
+    console.info("P2: " + p2points);
 }
 
 //switches between player 1's turn and player 2's turn
@@ -195,7 +198,11 @@ function currentTurn(){
       turn = "p2";
   }
 }
-
+//
+// function op()
+// {
+//     document.getElementById('playerone').innerHTML=p1points;
+// }
 
 
 
