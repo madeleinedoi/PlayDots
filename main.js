@@ -9,7 +9,6 @@ var p1points = 0;
 var p2points = 0;
 
 
-
 // var cell = cells[row][col];
 
 
@@ -183,11 +182,15 @@ function checkCells() {
                 p2points++;
             }
     }
+    // document.getElementById("demo").innerHTML = p1points.innerHTML;
 
     });
+    // document.write(p1points);
     console.info("P1: " + p1points);
     console.info("P2: " + p2points);
+    // document.getElementById('division').innerHTML=p1points;
 }
+
 
 //switches between player 1's turn and player 2's turn
 function currentTurn(){
@@ -198,6 +201,8 @@ function currentTurn(){
       turn = "p2";
   }
 }
+
+
 //
 // function op()
 // {
@@ -210,6 +215,7 @@ function currentTurn(){
 setUpBoard();
 //checkCells();
 //checkLines(cells[1]);
+
 
 
 
