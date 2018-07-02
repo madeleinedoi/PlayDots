@@ -226,8 +226,11 @@ position: fixed;
 }
 
 .score-board {
-    text-align: center;
+    text-align: left;
     padding: 10px;
+    position: absolute;
+    top: 8px;
+    left: 16px;
 }
 .player {
     display: inline-block;
@@ -235,12 +238,13 @@ position: fixed;
 }
 .player h4 {
     font-weight: bold;
+    color: lightgrey;
     font: bold 20px Verdana, sans-serif;
 }
 .score-box {
-    border: 3px solid black;
+    border: 3px solid lightgrey;
     padding: 53px;
-    color:blue;
+    color:white;
 }
 
 
