@@ -197,10 +197,13 @@ function currentTurn(){
   if(player){
      turn = "p1";
      player = !player;
+     // document.getElementById("p1Go").innerHTML = "Player 1 Go";
   }
   else{
       turn = "p2";
       player = !player;
+      // document.getElementById("p2Go").innerHTML = "Player 2 Go";
+
   }
 }
 

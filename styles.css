@@ -173,6 +173,12 @@ h3{
     color:white;
     text-align: center;
 }
+h5{
+    text-align:center;
+    color:white;
+    font-family: Verdana, sans-serif;
+
+}
 * {
     box-sizing: border-box;
 }
@@ -223,6 +229,7 @@ position: fixed;
     position: fixed;
     height: 100%;
     width: 100%;
+    padding-left:220px;
 }
 
 .score-board {
@@ -237,7 +244,7 @@ position: fixed;
 .score {
     display: inline-block;
     padding: 15px;
-    color: lightgrey;
+    color: black;
     text-align: center;
 }
 .player-score{
@@ -247,13 +254,19 @@ position: fixed;
 }
 .player h4 {
     font-weight: bold;
-    color: lightgrey;
+    color: black;
     font: bold 20px Verdana, sans-serif;
 }
 .score-box {
-    border: 6px solid lightgrey;
+    border: 6px solid black;
     height: 150px;
     width: 150px;
+}
+p{
+    text-align: center;
+    font: bold 20px Verdana, sans-serif;
+    color: orange;
+
 }
 
 
