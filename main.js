@@ -177,15 +177,14 @@ function checkCells() {
             cell.owner = turn;
             if (turn === "p1") {
                 p1points++;
+                document.getElementById("p1").innerHTML = p1points;
             }
             else {
                 p2points++;
+                document.getElementById("p2").innerHTML = p2points;
             }
     }
-    // document.getElementById("demo").innerHTML = p1points.innerHTML;
-
     });
-    // document.write(p1points);
     console.info("P1: " + p1points);
     console.info("P2: " + p2points);
     // document.getElementById('division').innerHTML=p1points;
