@@ -241,7 +241,9 @@ position: fixed;
     text-align: center;
 }
 .player-score{
-    margin-top: 55px;
+    margin-top: 25px;
+    color: orange;
+    font-size: 75px;
 }
 .player h4 {
     font-weight: bold;
