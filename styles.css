@@ -132,7 +132,7 @@ canvas {
 .mystyle {
     width: 100%;
     padding: 25px;
-    background-color: coral;
+    background-color: orange;
     color: white;
     font-size: 25px;
 }
@@ -161,7 +161,7 @@ h1{
     border-width: 3px;
     border-left-width: 2px;
     border-right-width: 2px;
-    border-color: blanchedalmond;
+    border-color: orange;
 }
 h2{
     text-align:center;
@@ -172,6 +172,9 @@ h3{
     font-family: Verdana, sans-serif;
     color:white;
     text-align: center;
+}
+h4{
+    font-size: 20px;
 }
 h5{
     text-align:center;
@@ -205,8 +208,8 @@ body {
 .btn {
     background-color: white;
     cursor: pointer;
-    background: blanchedalmond;
-    color: black;
+    background: orange;
+    color: white;
     border-style: outset;
     border-color: #0066A2;
     height: 25px;
@@ -229,7 +232,7 @@ position: fixed;
     position: fixed;
     height: 100%;
     width: 100%;
-    padding-left:220px;
+    padding-left:270px;
 }
 
 .score-board {
@@ -248,7 +251,7 @@ position: fixed;
     text-align: center;
 }
 .player-score{
-    margin-top: 25px;
+    margin-top: 45px;
     color: orange;
     font-size: 75px;
 }
@@ -259,12 +262,13 @@ position: fixed;
 }
 .score-box {
     border: 6px solid black;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
 }
 p{
-    font: bold 30px Verdana, sans-serif;
+    font: bold 35px Verdana, sans-serif;
     color:yellow;
+    align: center;
 }
 
 

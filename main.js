@@ -3,7 +3,7 @@
 var cells;
 var hLines;
 var vLines;
-var turn;
+var turn = "p1";
 var player= true;
 var turnCount = 1;
 var p1points = 0;
@@ -19,6 +19,7 @@ function setUpBoard(){
     hLines=generateHorizontal(6,5);
     vLines=generateVertical(5,6);
     cells=generateCells(5,5);
+    turnTeller();
 }
 window.onload = function(){
     addListenerForHElements();
@@ -188,7 +189,6 @@ function checkCells() {
     });
     console.info("P1: " + p1points);
     console.info("P2: " + p2points);
-    // document.getElementById('division').innerHTML=p1points;
 }
 
 
@@ -197,14 +197,21 @@ function currentTurn(){
   if(player){
      turn = "p1";
      player = !player;
-     // document.getElementById("p1Go").innerHTML = "Player 1 Go";
   }
   else{
       turn = "p2";
       player = !player;
-      // document.getElementById("p2Go").innerHTML = "Player 2 Go";
-
   }
+  turnTeller();
+}
+function turnTeller(){
+    document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} go!`;
+    // if(turn ==="p1"){
+    //     document.getElementById("turnTeller1").innerHTML = "Player 2 go";
+    // }
+    // else{
+    //     document.getElementById("turnTeller1").innerHTML = "Player 2 go";
+    // }
 }
 
 
