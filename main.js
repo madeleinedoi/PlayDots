@@ -180,6 +180,7 @@ function checkCells() {
                 p2points++;
             }
     }
+
     });
     // console.info("P1: " + p1points);
     // console.info("P2: " + p2points);
@@ -194,6 +195,8 @@ function currentTurn(){
       turn = "p2";
   }
 }
+
+
 
 
 //Tests
