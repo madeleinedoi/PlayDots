@@ -4,6 +4,7 @@ var cells;
 var hLines;
 var vLines;
 var turn;
+var player= true;
 var turnCount = 1;
 var p1points = 0;
 var p2points = 0;
@@ -193,13 +194,17 @@ function checkCells() {
 
 //switches between player 1's turn and player 2's turn
 function currentTurn(){
-  if(turnCount%2==0){
-      turn = "p1";
+  if(player){
+     turn = "p1";
+     player = !player;
   }
   else{
       turn = "p2";
+      player = !player;
   }
 }
+
+
 
 
 //
