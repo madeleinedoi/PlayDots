@@ -151,7 +151,7 @@ canvas {
     z-index: 1000;
 }
 .active {
-    background-color: lightsteelblue;
+    background-color: orange;
 }
 h1{
     color:-moz-cellhighlight;
@@ -227,14 +227,21 @@ position: fixed;
 
 .score-board {
     text-align: left;
-    padding: 53px;
+    height: 100px;
+    width: 100px;
     position: absolute;
     top: 8px;
     left: 16px;
+    color: lightgrey;
 }
-.player {
+.score {
     display: inline-block;
     padding: 15px;
+    color: lightgrey;
+    text-align: center;
+}
+.player-score{
+    margin-top: 55px;
 }
 .player h4 {
     font-weight: bold;
@@ -242,9 +249,9 @@ position: fixed;
     font: bold 20px Verdana, sans-serif;
 }
 .score-box {
-    border: 3px solid lightgrey;
-    padding: 53px;
-    color:white;
+    border: 6px solid lightgrey;
+    height: 150px;
+    width: 150px;
 }
 
 
