@@ -163,6 +163,7 @@ function clickFunction(event) {
     }
     checkCells();
     currentTurn();
+    changeCellBackgroundColor(event);
 };
 
 
@@ -202,6 +203,29 @@ function currentTurn(){
 
 function updateDisplayedPlayerTurn(){
     document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
+};
+
+function changeCellBackgroundColor(event){
+    var rowNum;
+    var colNum;
+    var element = event.target;
+    var className = element.classList;
+    if(checkCells()){
+        element.classList.add("element");
+    }
+
+    // //computing the row and col of the clicked line
+    // for (var c = 0; c < className.length; c++) {
+    //     if (className[c].startsWith("row-")) {
+    //         rowNum = className[c][className[c].length - 1];
+    //     }
+    //     if (className[c].startsWith("col-")) {
+    //         colNum = className[c][className[c].length - 1];
+    //     }
+    // }
+    // if(checkCells()){
+    //    cells[rowNum][colNum].style.backgroundColor ="red";
+    // }
 };
 
 

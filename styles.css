@@ -136,6 +136,14 @@ canvas {
     color: white;
     font-size: 25px;
 }
+.element{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
 
 .cell{
     display:inline-block;
