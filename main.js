@@ -180,10 +180,12 @@ function checkCells() {
             if (turn === "p1") {
                 p1points++;
                 document.getElementById("p1").innerHTML = p1points;
+                player= true;
             }
             else {
                 p2points++;
                 document.getElementById("p2").innerHTML = p2points;
+                player= false
             }
     }
     });
@@ -205,7 +207,14 @@ function currentTurn(){
   turnTeller();
 }
 function turnTeller(){
-    document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} go!`;
+    if(checkCells()) {
+        document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p2" ? "2" : "1"} Go!`;
+    }
+    else{
+        document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p2" ? "1" : "2"} Go!`;
+    }
+
+
     // if(turn ==="p1"){
     //     document.getElementById("turnTeller1").innerHTML = "Player 2 go";
     // }
