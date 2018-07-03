@@ -136,8 +136,16 @@ canvas {
     color: white;
     font-size: 25px;
 }
-.element{
+.cell.p1{
     background-color: blue;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+.cell.p2{
+    background-color: red;
     width: 100px;
     height: 100px;
     padding: 0px;
@@ -159,7 +167,7 @@ canvas {
     z-index: 1000;
 }
 .active {
-    background-color: orange;
+    background-color: deeppink;
 }
 h1{
     color:-moz-cellhighlight;

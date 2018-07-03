@@ -163,7 +163,7 @@ function clickFunction(event) {
     }
     checkCells();
     currentTurn();
-    changeCellBackgroundColor(event);
+
 };
 
 
@@ -177,16 +177,15 @@ function checkCells() {
             cell.active = true;
             cell.owner = turn;
             pointThisTurn=true;
+            changeCellBackgroundColor(cell.row, cell.col);
+            //seperate function
             if (turn === "p1") {
                 p1points++;
                 document.getElementById("p1").innerHTML = p1points;
-
-
             }
             else {
                 p2points++;
                 document.getElementById("p2").innerHTML = p2points;
-
             }
     }
     });
@@ -205,27 +204,15 @@ function updateDisplayedPlayerTurn(){
     document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
 };
 
-function changeCellBackgroundColor(event){
-    var rowNum;
-    var colNum;
-    var element = event.target;
-    var className = element.classList;
-    if(checkCells()){
-        element.classList.add("element");
+function changeCellBackgroundColor(rowNum, colNum){
+    var htmlCells= [];
+    htmlCells = document.getElementsByClassName("cell");
+    console.info(htmlCells);
+    for(var c = 0; c<htmlCells.length; c++){
+        if (htmlCells[c].classList.contains("row-" + rowNum) && htmlCells[c].classList.contains("col-" + colNum)) {
+            htmlCells[c].classList.add(turn);
+        }
     }
-
-    // //computing the row and col of the clicked line
-    // for (var c = 0; c < className.length; c++) {
-    //     if (className[c].startsWith("row-")) {
-    //         rowNum = className[c][className[c].length - 1];
-    //     }
-    //     if (className[c].startsWith("col-")) {
-    //         colNum = className[c][className[c].length - 1];
-    //     }
-    // }
-    // if(checkCells()){
-    //    cells[rowNum][colNum].style.backgroundColor ="red";
-    // }
 };
 
 
