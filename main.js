@@ -4,13 +4,11 @@ var cells;
 var hLines;
 var vLines;
 var turn = "p1";
-var player= true;
 var turnCount = 1;
 var p1points = 0;
 var p2points = 0;
+pointThisTurn = false;
 
-
-// var cell = cells[row][col];
 
 
 //set ups hLines and vLines variables by
@@ -19,7 +17,7 @@ function setUpBoard(){
     hLines=generateHorizontal(6,5);
     vLines=generateVertical(5,6);
     cells=generateCells(5,5);
-    turnTeller();
+    updateDisplayedPlayerTurn();
 }
 window.onload = function(){
     addListenerForHElements();
@@ -60,7 +58,7 @@ function generateHorizontal(numCol,numRow){
     }
     return cells;
 };
-//console.info(generateHorizontal(4, 4));//Test
+
 
 
 
@@ -80,13 +78,13 @@ function generateVertical(numCol,numRow){
     }
     return cells;
 };
-//console.info(generateVertical(4, 5));//Test
+
 
 
 //checks if a full cell is filled/active
 function checkLines(cell){
     return (checkHorizontal(cell) && checkVertical(cell));
-}
+};
 
 //checks if the two corresponding horizontal lines of a cell are active
 function checkHorizontal(cell){
@@ -122,9 +120,8 @@ function addListenerForHElements(element) {
     var hElements = document.getElementsByClassName('linehorizontal');
     for(var i = 0; i < hElements.length; i++){
         hElements[i].addEventListener("click", clickFunction);
-        // hLines[i].setAttribute("active", true);
-        }
-}
+    }
+};
 //when velements are clicked, the click function is called
 //and the active variable at that place in the
 //vLines array will be set to true
@@ -132,9 +129,8 @@ function addListenerForVElements() {
     var vElements = document.getElementsByClassName('linevertical');
     for(var i = 0; i < vElements.length; i++){
         vElements[i].addEventListener("click", clickFunction);
-        // vLines[i].setAttribute("active", true);
     }
-}
+};
 
 //changes color when line is clicked
 function clickFunction(event) {
@@ -145,7 +141,7 @@ function clickFunction(event) {
     var className = element.classList;
     element.classList.add("active");
     turnCount++;
-    currentTurn();
+    pointThisTurn=false;
     //computing the row and col of the clicked line
     for (var c = 0; c < className.length; c++) {
         if (className[c].startsWith("line")) {
@@ -166,71 +162,51 @@ function clickFunction(event) {
         vLines[rowNum][colNum].active = true;
     }
     checkCells();
-}
+    currentTurn();
+};
 
 
 //checks if cell is filled by calling the checkLines function
 //if it is filled then change cells active variable to true and
 //determine the owner by using the currentTurn variable
 function checkCells() {
+    console.log(turn);
     cells.forEach(function (cell) {
         if (checkLines(cell) && !cell.active && !cell.owner){
             cell.active = true;
             cell.owner = turn;
+            pointThisTurn=true;
             if (turn === "p1") {
                 p1points++;
                 document.getElementById("p1").innerHTML = p1points;
-                player= true;
+
+
             }
             else {
                 p2points++;
                 document.getElementById("p2").innerHTML = p2points;
-                player= false
+
             }
     }
     });
-    console.info("P1: " + p1points);
-    console.info("P2: " + p2points);
-}
+};
 
 
 //switches between player 1's turn and player 2's turn
 function currentTurn(){
-  if(player){
-     turn = "p1";
-     player = !player;
-  }
-  else{
-      turn = "p2";
-      player = !player;
-  }
-  turnTeller();
-}
-function turnTeller(){
-    if(checkCells()) {
-        document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p2" ? "2" : "1"} Go!`;
+    if(!pointThisTurn){
+        turn = turn === "p1" ? "p2" : "p1";
     }
-    else{
-        document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p2" ? "1" : "2"} Go!`;
-    }
+  updateDisplayedPlayerTurn();
+};
 
-
-    // if(turn ==="p1"){
-    //     document.getElementById("turnTeller1").innerHTML = "Player 2 go";
-    // }
-    // else{
-    //     document.getElementById("turnTeller1").innerHTML = "Player 2 go";
-    // }
-}
+function updateDisplayedPlayerTurn(){
+    document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
+};
 
 
 
 
-//
-// function op()
-// {
-//     document.getElementById('playerone').innerHTML=p1points;
-// }
 
 
 
@@ -244,17 +220,3 @@ setUpBoard();
 
 
 
-// var lineUtil = {
-//     checkHorizontal: function(cell) {
-//         var topline = false;
-//         var bottomline = false;
-//         if (hLines[cell.row][cell.col].active) {
-//             topline = true;
-//         }
-//         if (hLines[cell.row+1][cell.col].active) {
-//             bottomline = true;
-//         }
-//         return topline && bottomline;
-//     }//lineUtil.checkHorizontal
-//
-// }
