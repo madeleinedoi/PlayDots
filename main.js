@@ -220,7 +220,6 @@ function changeCellBackgroundColor(rowNum, colNum){
 
 
 
-
 //Tests
 setUpBoard();
 //checkCells();

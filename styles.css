@@ -155,7 +155,7 @@ canvas {
 .playfield {
     margin: 0 auto;
     width: 750px;
-    margin-left: 650px;
+    margin-left: 670px;
     margin-top: 185px;
     position: absolute;
     z-index: 1000;
