@@ -8,7 +8,10 @@ var turnCount = 1;
 var p1points = 0;
 var p2points = 0;
 pointThisTurn = false;
-
+var rowNum;
+var colNum;
+var lineType;
+let solvedQuestion = false;
 
 
 //set ups hLines and vLines variables by
@@ -134,9 +137,6 @@ function addListenerForVElements() {
 
 //changes color when line is clicked
 function clickFunction(event) {
-    var rowNum;
-    var colNum;
-    var lineType;
     var element = event.target;
     var className = element.classList;
     element.classList.add("active");
@@ -173,18 +173,25 @@ function checkCells() {
     console.log(turn);
     cells.forEach(function (cell) {
         if (checkLines(cell) && !cell.active && !cell.owner){
-            cell.active = true;
-            cell.owner = turn;
-            pointThisTurn=true;
-            changeCellBackgroundColor(cell.row, cell.col);
-            //seperate function
-            if (turn === "p1") {
-                p1points++;
-                document.getElementById("p1").innerHTML = p1points;
-            }
-            else {
-                p2points++;
-                document.getElementById("p2").innerHTML = p2points;
+            let correctAnswer = askQuestion();
+
+            if(correctAnswer && !solvedQuestion){
+                solvedQuestion = true;
+                cell.active = true;
+                cell.owner = turn;
+                pointThisTurn=true;
+                changeCellBackgroundColor(cell.row, cell.col);
+                if (turn === "p1") {
+                    p1points++;
+                    //add here fourth line/mogal
+                    document.getElementById("p1").innerHTML = p1points;
+                }
+                else {
+                    p2points++;
+                    document.getElementById("p2").innerHTML = p2points;
+                }
+            } else {
+                deactivateLine(row, col);
             }
     }
     });
@@ -195,9 +202,11 @@ function checkCells() {
 function currentTurn(){
     if(!pointThisTurn){
         turn = turn === "p1" ? "p2" : "p1";
+        let solvedQuestion = false;
     }
   updateDisplayedPlayerTurn();
 };
+
 
 function updateDisplayedPlayerTurn(){
     document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
@@ -213,7 +222,6 @@ function changeCellBackgroundColor(rowNum, colNum){
         }
     }
 };
-
 
 
 
