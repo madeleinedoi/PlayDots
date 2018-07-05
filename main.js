@@ -163,7 +163,6 @@ function clickFunction(event) {
     }
     checkCells();
     currentTurn();
-
 };
 
 

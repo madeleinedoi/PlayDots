@@ -12,7 +12,6 @@
 
 
 <body>
-
 <div class="score-board">
     <div class="score">
         <p id="turnTeller1">Player 1 Go!</p>
@@ -32,6 +31,140 @@
 
 
 <img src=https://png.pngtree.com/element_origin_min_pic/16/11/05/35024b4c23212849a29801a14c60b04e.jpg class="bg">
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+
+    <button type = "playfield" class ="linehorizontal" data-toggle="modal" data-target="#myModal"></button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    <script>
+                        var questions = new Array();
+                        questions[0] = 'Is there a difference between a jungle and a rain forest?';
+                        questions[1] = 'What is the world\'s most common religion?',
+                            questions[2] = 'What is the second largest country (in size) in the world?';
+                        var choices = new Array();
+                        choices[0] = ['No difference', 'Some difference', 'Completely different'],
+                            choices[1] = ['Christianity', 'Buddhism', 'Hinduism', 'Islam'],
+                            choices[2] = ['USA', 'China', 'Canada', 'Russia'];
+                        var answers = new Array();
+                        answers[0] = ['Some difference'],
+                            answers[1] = ['Christianity'],
+                            answers[2] = ['Canada'];
+                        var score = 0;
+                        i= 0;
+                        var listQuestion = function(){
+                            if(i<questions.length){
+                                document.getElementById("myDiv1").innerHTML = '<p>'+questions[i]+'</p>';
+                                var choicesOutput=[];//new Array()
+                                for (var k=0; k<choices[i].length; k++){
+                                    choicesOutput.push(
+                                        '<p><input type = "radio" name ='
+                                        +' "questionchoice">'+choices[i][k]+'</p>');
+                                }
+                                document.getElementById("myDiv2").innerHTML =choicesOutput.join("");
+                                document.getElementById("myDiv3").innerHTML =
+                                    '<p><button onClick = "getRadioValue()">Check</button></p> <br>';
+                            }
+                        };
+                        var getRadioValue = function(){
+                            var value = '';
+                            for (var h = 0;
+                                 h < document.getElementsByName('questionchoice').length; h++){
+                                if (document.getElementsByName('questionchoice')[h]
+                                    .checked==true){
+                                    value = document.getElementsByName('questionchoice')[h].value;
+                                    score++;
+                                }
+                            }
+                            if (value== answers[i]){
+                                document.getElementById("myDiv4").innerHTML =
+                                    "That is correct. </br><button input type = "
+                                    +"'submit' onClick = 'loadContent()'> Next Question</button>";
+                            }
+                            else {
+                                document.getElementById("myDiv4").innerHTML ="That is incorrect. "
+                                    +"</br><button input type = 'submit' onClick = 'loadContent()'> N"
+                                    +"ext Question</button>";
+                            }
+                            i++;
+                        };
+                        var whatIsScore = function(){
+                            return score;
+                        };
+                        function loadContent(){
+                            document.getElementById("myDiv4").innerHTML="";
+                            listQuestion();
+                        }
+                        window.onload = listQuestion;
+                    </script>
+                    </head>
+                    <body>
+                    <div id="myDiv1"></div>
+                    <div id="myDiv2"></div>
+                    <div id="myDiv3"></div>
+                    <div id="myDiv4"></div>
+                    </body>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="playfield">
     <div id="hor1">
         <div class= "dothorizontal"></div>
