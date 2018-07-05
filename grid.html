@@ -27,10 +27,10 @@
         </div>
     </div>
 </div>
-
-
-
 <img src=https://png.pngtree.com/element_origin_min_pic/16/11/05/35024b4c23212849a29801a14c60b04e.jpg class="bg">
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -43,14 +43,9 @@
 </head>
 <body>
 
+
+
 <div class="container">
-
-    <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-
-    <button type = "playfield" class ="linehorizontal" data-toggle="modal" data-target="#myModal"></button>
-
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -62,6 +57,13 @@
 
                 </div>
                 <div class="modal-body">
+
+                        <body>
+                            <div id="myDiv1"></div>
+                            <div id="myDiv2"></div>
+                            <div id="myDiv3"></div>
+                            <div id="myDiv4"></div>
+                            </body>
                     <script>
                         var questions = new Array();
                         questions[0] = 'Is there a difference between a jungle and a rain forest?';
@@ -75,11 +77,12 @@
                         answers[0] = ['Some difference'],
                             answers[1] = ['Christianity'],
                             answers[2] = ['Canada'];
-                        var score = 0;
+
                         i= 0;
                         var listQuestion = function(){
                             if(i<questions.length){
                                 document.getElementById("myDiv1").innerHTML = '<p>'+questions[i]+'</p>';
+
                                 var choicesOutput=[];//new Array()
                                 for (var k=0; k<choices[i].length; k++){
                                     choicesOutput.push(
@@ -123,12 +126,6 @@
                         window.onload = listQuestion;
                     </script>
                     </head>
-                    <body>
-                    <div id="myDiv1"></div>
-                    <div id="myDiv2"></div>
-                    <div id="myDiv3"></div>
-                    <div id="myDiv4"></div>
-                    </body>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -147,28 +144,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="playfield">
     <div id="hor1">
         <div class= "dothorizontal"></div>
-        <div class= "linehorizontal row-0 col-0"></div>
+        <button div class ="linehorizontal row-0 col-0" data-toggle="modal" data-target="#myModal"></button>
+        <!--<div class= "linehorizontal row-0 col-0"></div>-->
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-0 col-1"></div>
         <div class= "dothorizontal"></div>
