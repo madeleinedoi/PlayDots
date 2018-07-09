@@ -59,8 +59,8 @@
                 <div class="modal-body">
 
                     <script>
-                        var questions = new Array();
-                        questions[0] = 'Is there a difference between a jungle and a rain forest?';
+                        var questions = [{
+                            questions[0] = 'Is there a difference between a jungle and a rain forest?';
                         questions[1] = 'What is the world\'s most common religion?',
                             questions[2] = 'What is the second largest country (in size) in the world?';
                         var choices = new Array();
@@ -71,7 +71,7 @@
                         answers[0] = ['Some difference'],
                             answers[1] = ['Christianity'],
                             answers[2] = ['Canada'];
-
+                        }];
                         i= 0;
                         var listQuestion = function(){
                             if(i<questions.length){
@@ -144,11 +144,11 @@
 <div class="playfield">
     <div id="hor1">
         <div class= "dothorizontal"></div>
-        <button div class ="linehorizontal row-0 col-0" data-toggle="modal" data-target="#myModal"></button>
-        <!--<div class= "linehorizontal row-0 col-0"></div>-->
+        <!--<button div class ="linehorizontal row-0 col-0" data-toggle="modal" data-target="#myModal"></button>-->
+        <div class= "linehorizontal row-0 col-0"></div>
         <div class= "dothorizontal"></div>
-        <button div class ="linehorizontal row-0 col-1" data-toggle="modal" data-target="#myModal"></button>
-        <!--<div class= "linehorizontal row-0 col-1"></div>-->
+        <!--<button div class ="linehorizontal row-0 col-1" data-toggle="modal" data-target="#myModal"></button>-->
+        <div class= "linehorizontal row-0 col-1"></div>
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-0 col-2"></div>
         <div class= "dothorizontal"></div>
