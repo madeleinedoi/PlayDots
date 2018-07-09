@@ -173,22 +173,60 @@ function checkCells() {
     console.log(turn);
     cells.forEach(function (cell) {
         if (checkLines(cell) && !cell.active && !cell.owner){
+            var questions = [];
+            questions[0]="What is the capital of California?";
+            var correctanswers = [];
+            correctanswers[0] = "Sacramento";
+            var txt;
+            var userInput = prompt(questions[0], "...");
+
+
             // let correctAnswer = askQuestion();
             // if(correctAnswer && !solvedQuestion){
             //     solvedQuestion = true;
+            if (userInput == correctanswers[0] && turn === "p1"){
+                txt = "P1 Correct!";
                 cell.active = true;
                 cell.owner = turn;
                 pointThisTurn=true;
                 changeCellBackgroundColor(cell.row, cell.col);
-                if (turn === "p1"){
-                    p1points++;
-                    //add here fourth line
-                    document.getElementById("p1").innerHTML = p1points;
-                }
-                else {
-                    p2points++;
-                    document.getElementById("p2").innerHTML = p2points;
-                }
+                p1points++;
+                document.getElementById("p1").innerHTML = p1points;
+            }
+            else if (userInput == correctanswers[0] && turn === "p2"){
+                txt = "P2 Correct!";
+                cell.active = true;
+                cell.owner = turn;
+                pointThisTurn=true;
+                changeCellBackgroundColor(cell.row, cell.col);
+                p2points++;
+                document.getElementById("p2").innerHTML = p2points;
+            }
+            // else{
+            //     cell.active = false;
+            //     cell.owner = "";
+            //     pointThisTurn=false;
+            //     txt = "Next Player Please Take Your Turn";
+            //
+            // }
+
+            else if(lineType===linehorizontal) {
+                cell.active = false;
+                cell.owner = "";
+                pointThisTurn=false;
+                txt = "Next Player Please Take Your Turn";
+                hLines[rowNum][colNum].active = false;
+            }
+            else{
+                cell.active = false;
+                cell.owner = "";
+                pointThisTurn= false;
+                txt = "Next Player Please Take Your Turn";
+                vLines[rowNum][colNum].active = false;
+            }
+            document.getElementById("demo").innerHTML = txt;
+
+
             // } else {
             //     deactivateLine(row, col);
             // }
@@ -222,39 +260,73 @@ function changeCellBackgroundColor(rowNum, colNum){
     }
 };
 
+// function askQuestion(){
+//     var questions = [];
+//     questions[0]="What is the capital of California?";
+//     var correctanswers = [];
+//     correctanswers[0] = "Sacramento";
+//     var txt;
+//     var userInput = prompt(questions[0], "...");
+//     if (userInput == correctanswers[0]) {
+//         txt = "Correct!";
+//     } else {
+//         txt = "Next Player Please Take Your Turn";
+//     }
+//     document.getElementById("demo").innerHTML = txt;
+//
+//
+// }
+// function askQuestion() {
+//     var questions = [];
+//     questions[0]="What is the capital of California?";
+//     var correctanswers = [];
+//     correctanswers[0] = "Sacramento";
+//     prompt(questions[0], "...");
+//         case "Martini":
+//             text = "Excellent choice. Martini is good for your soul.";
+//             break;
+//         case "...":
+//             text = "Daiquiri is my favorite too!";
+//             break;
+//         case "Cosmopolitan":
+//             text = "Really? Are you sure the Cosmopolitan is your favorite?";
+//             break;
+//         default:
+//             text = "I have never heard of that one..";
+//     }
 
-function askQuestion() {
-    var questions = [
-        {
-            question: "What is 10/2?",
-            answers: {
-                a: '3',
-                b: '5',
-                c: '115'
-            },
-            correctAnswer: 'b'
-        },
-        {
-            question: "What is 30/3?",
-            answers: {
-                a: '3',
-                b: '5',
-                c: '10'
-            },
-            correctAnswer: 'c'
-        }
-    ];
-    for(var i = 0; i< questions.length; i++){
-        var prompt = prompt("questions[i]", " ");
-        var userInput = ;
-    }
-    if(userInput===questions[i].correctAnswer){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
+// function askQuestion() {
+//     var questions = [
+//         {
+//             question: "What is 10/2?",
+//             answers: {
+//                 a: '3',
+//                 b: '5',
+//                 c: '115'
+//             },
+//             correctAnswer: 'b'
+//         },
+//         {
+//             question: "What is 30/3?",
+//             answers: {
+//                 a: '3',
+//                 b: '5',
+//                 c: '10'
+//             },
+//             correctAnswer: 'c'
+//         }
+//     ];
+//     for(var i = 0; i< questions.length; i++){
+//         var prompt = prompt("questions[i]", " ");
+//         var userInput = ;
+//     }
+//     if(userInput===questions[i].correctAnswer){
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
 
 
 
