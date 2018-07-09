@@ -11,8 +11,7 @@ pointThisTurn = false;
 var rowNum;
 var colNum;
 var lineType;
-let solvedQuestion = false;
-
+// let solvedQuestion = false;
 
 
 //set ups hLines and vLines variables by
@@ -174,27 +173,25 @@ function checkCells() {
     console.log(turn);
     cells.forEach(function (cell) {
         if (checkLines(cell) && !cell.active && !cell.owner){
-            askQuestion();
-            let correctAnswer = askQuestion();
-
-            if(correctAnswer && !solvedQuestion){
-                solvedQuestion = true;
+            // let correctAnswer = askQuestion();
+            // if(correctAnswer && !solvedQuestion){
+            //     solvedQuestion = true;
                 cell.active = true;
                 cell.owner = turn;
                 pointThisTurn=true;
                 changeCellBackgroundColor(cell.row, cell.col);
-                if (turn === "p1") {
+                if (turn === "p1"){
                     p1points++;
-                    //add here fourth line/mogal
+                    //add here fourth line
                     document.getElementById("p1").innerHTML = p1points;
                 }
                 else {
                     p2points++;
                     document.getElementById("p2").innerHTML = p2points;
                 }
-            } else {
-                deactivateLine(row, col);
-            }
+            // } else {
+            //     deactivateLine(row, col);
+            // }
     }
     });
 };
@@ -226,68 +223,38 @@ function changeCellBackgroundColor(rowNum, colNum){
 };
 
 
-
 function askQuestion() {
-    var questions = [];
-    questions[0]="What is the capital of California?";
-    var correctanswers = [];
-    correctanswers[0] = "Sacramento";
-        var text;
-        var favDrink = prompt("What's your favorite cocktail drink?", "Daiquiri");
-        switch(favDrink) {
-            case "Martini":
-                text = "Excellent choice. Martini is good for your soul.";
-                break;
-            case "Daiquiri":
-                text = "Daiquiri is my favorite too!";
-                break;
-            case "Cosmopolitan":
-                text = "Really? Are you sure the Cosmopolitan is your favorite?";
-                break;
-            default:
-                text = "I have never heard of that one..";
+    var questions = [
+        {
+            question: "What is 10/2?",
+            answers: {
+                a: '3',
+                b: '5',
+                c: '115'
+            },
+            correctAnswer: 'b'
+        },
+        {
+            question: "What is 30/3?",
+            answers: {
+                a: '3',
+                b: '5',
+                c: '10'
+            },
+            correctAnswer: 'c'
         }
-        document.getElementById("demo").innerHTML = text;
-
-    //     var favDrink = prompt(questions[0], "...");
-    //     switch(favDrink) {
-    //         case correctanswers[0]:
-    //             text = "Correct!";
-    //             break;
-    //         if(turn === "p1"){
-    //             default:
-    //             text = "Incorrect, Player 2 please take your turn";}
-    //     }
-    //     document.getElementById("demo").innerHTML = text;
-    // }
-
+    ];
+    for(var i = 0; i< questions.length; i++){
+        var prompt = prompt("questions[i]", " ");
+        var userInput = ;
+    }
+    if(userInput===questions[i].correctAnswer){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
-
-
-
-    //         correctAnswer: "c"
-    //     },
-    //     {
-    //         question: "What is the best site ever created?",
-    //         answers: {
-    //             a: "SitePoint",
-    //             b: "Simple Steps Code",
-    //             c: "Trick question; they're both the best"
-    //         },
-    //         correctAnswer: "c"
-    //     },
-    //     {
-    //         question: "Where is Waldo really?",
-    //         answers: {
-    //             a: "Antarctica",
-    //             b: "Exploring the Pacific Ocean",
-    //             c: "Sitting in a tree",
-    //             d: "Minding his own business, so stop asking"
-    //         },
-    //         correctAnswer: "d"
-    //     }
-    // ];
-
 
 
 
