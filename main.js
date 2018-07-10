@@ -161,14 +161,12 @@ function askQuestion(){
         correctAnswer[5] = "the";
         x = Math.floor(Math.random() * 6);
         document.write(questions[x]);
-
         // if(alreadyAsked.includes(x))
         // {
         //     x = Math.floor(Math.random()*6);
         // }
         // document.write(questions[x]);
         // alreadyAsked.push(x);
-    }
 };
 
 function checkIfAnswerIsCorrect() {
@@ -191,8 +189,7 @@ function checkCells(){
     console.log(turn);
     cells.forEach(function(cell) {
         if (checkLines(cell) && !cell.active && !cell.owner){
-            $('#myModal').modal('show');
-            return true;
+            displayQuestion();
             if(checkIfAnswerIsCorrect()){
                 cell.active= true;
                 cell.owner= turn;
@@ -211,6 +208,7 @@ function assignPoints() {
             p1points++;
             pointThisTurn = true;
             document.getElementById("p1").innerHTML = p1points;
+            changeCellBackgroundColor(cell.row, cell.col);
         }
         else {
             p2points++;
