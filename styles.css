@@ -289,10 +289,13 @@ position: fixed;
 p{
     font: bold 40px Verdana, sans-serif;
     color: #EC9F6F;
-    align: center;
+    text-align: center;
 }
 .playerx{
     font: bold 35px Verdana, sans-serif;
     color:yellow;
     align: center;
+}
+.deactivate{
+    background-color: darkgrey;
 }

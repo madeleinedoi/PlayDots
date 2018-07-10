@@ -15,8 +15,6 @@
 <div class="score-board">
     <div class="score">
         <p id="turnTeller1">Player 1 Go!</p>
-        <p id="demo"></p>
-
         <h4>Player 1</h4>
         <div class="score-boxp1">
             <p class="player-score" id = "p1">0</p>
@@ -31,6 +29,63 @@
 </div>
 <img src=https://png.pngtree.com/element_origin_min_pic/16/11/05/35024b4c23212849a29801a14c60b04e.jpg class="bg">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+
+
+
+
+
+<body>
+
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <script>
+                            askQuestion();
+                            $('#myModal').on('hidden.bs.modal', function() {
+                                $(this)
+                                    .find("input,textarea,select")
+                                    .val('')
+                            })
+                        </script>
+                    <body>
+                    <input type="text" id="input_id" value="">
+                    <input type="button" value="Submit Answer" onclick="checkCells()" />
+                    </body>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+
 
 
 
@@ -39,18 +94,18 @@
 <div class="playfield">
     <div id="hor1">
         <div class= "dothorizontal"></div>
-        <button div class ="linehorizontal row-0 col-0"></button>
-        <!--<div class= "linehorizontal row-0 col-0"></div>-->
+        <!--<button div class ="linehorizontal row-0 col-0" data-toggle="modal" data-target="#myModal"></button>-->
+        <div class= "linehorizontal row-0 col-0"></div>
         <div class= "dothorizontal"></div>
-        <button div class ="linehorizontal row-0 col-1"></button>
-        <div class= "dothorizontal"></div>
+        <!--<button div class ="linehorizontal row-0 col-1" data-toggle="modal" data-target="#myModal"></button>-->
         <div class= "linehorizontal row-0 col-1"></div>
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-0 col-2"></div>
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-0 col-3"></div>
         <div class= "dothorizontal"></div>
-
+        <div class= "linehorizontal row-0 col-4"></div>
+        <div class= "dothorizontal"></div>
     </div>
 
     <div id="vert1">
