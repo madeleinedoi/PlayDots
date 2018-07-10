@@ -299,3 +299,27 @@ p{
 .deactivate{
     background-color: darkgrey;
 }
+.btnbtn{
+    background-color: #EC9F6F;
+    cursor: pointer;
+    background: darkgrey;
+    color: black;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 25px;
+    width: 150px;
+    font: bold 15px Verdana, sans-serif;
+    text-shadow: none;
+}
+.submit{
+    background-color: #EC9F6F;
+    cursor: pointer;
+    background: darkgrey;
+    color: black;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 25px;
+    width: 150px;
+    font: bold 15px Verdana, sans-serif;
+    text-shadow: none;
+}

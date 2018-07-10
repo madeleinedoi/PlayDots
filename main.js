@@ -192,12 +192,10 @@ function checkCells(){
     cells.forEach(function(cell) {
         if (checkLines(cell) && !cell.active && !cell.owner){
             displayQuestion();
-
             if(checkIfAnswerIsCorrect()){
                 cell.active= true;
                 cell.owner= turn;
                 changeCellBackgroundColor(cell.row, cell.col);
-
             }
         }
     });
