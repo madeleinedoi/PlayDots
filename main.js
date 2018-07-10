@@ -9,10 +9,10 @@ var pointThisTurn = false;
 var rowNum;
 var colNum;
 var lineType;
-let solvedQuestion = false;
-var mostRecentlyClicked;
+var mostRecentlyClicked;//for deactivate
 var x;
-var correctAnswer;
+var correctAnswer = [];
+var currentCell;
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -144,59 +144,58 @@ function clickFunction(event) {
 };
 
 function askQuestion(){
-        var alreadyAsked = [];
-        var questions = [];
-        questions[0] = "What is 10/2?";
-        questions[1] = "What is 30/3?";
-        questions[2] = "What is 30/10?";
-        questions[3] = "What is 10/10";
-        questions[4] = "What is 100/10";
-        questions[5] = "What is the most used word";
-        correctAnswer = [];
-        correctAnswer[0] = "5";
-        correctAnswer[1] = "10";
-        correctAnswer[2] = "3";
-        correctAnswer[3] = "1";
-        correctAnswer[4] = "10";
-        correctAnswer[5] = "the";
-        x = Math.floor(Math.random() * 6);
-        document.write(questions[x]);
-        checkIfAnswerIsCorrect()
-        // if(alreadyAsked.includes(x))
-        // {
-        //     x = Math.floor(Math.random()*6);
-        // }
-        // document.write(questions[x]);
-        // alreadyAsked.push(x);
+    var alreadyAsked = [];
+    var questions = [];
+    questions[0] = "What is 10/2?";
+    questions[1] = "What is 30/3?";
+    questions[2] = "What is 30/10?";
+    questions[3] = "What is 10/10";
+    questions[4] = "What is 100/10";
+    questions[5] = "What is the most used word";
+    correctAnswer[0] = "5";
+    correctAnswer[1] = "10";
+    correctAnswer[2] = "3";
+    correctAnswer[3] = "1";
+    correctAnswer[4] = "10";
+    correctAnswer[5] = "the";
+    x = Math.floor(Math.random() * questions.length);
+    document.write(questions[x]);
+    // if(alreadyAsked.includes(x))
+    // {
+    //     x = Math.floor(Math.random()*4);
+    // }
+    // document.write(questions[x]);
+    // alreadyAsked.push(questions[x]);
+    //checkIfAnswerIsCorrect();
 };
 
 function checkIfAnswerIsCorrect() {
         var userInput = document.getElementById('input_id').value;
         if (userInput === correctAnswer[x]) {
-            // changeCellBackgroundColor(cell.row, cell.col);
-            $('#myModal').modal('hide');
             assignPoints();
-            return true;
+            currentCell.active = true;
+            currentCell.owner = turn;
+            changeCellBackgroundColor(currentCell.row, currentCell.col);
+            $('#myModal').modal('hide');
         }
-        // else{
-        //     deactivate();
-        //     cell.active = false;
-        //     cell.owner = turn;
-        //     pointThisTurn=false;
-        //     // $('#myModal').modal('hide');
-        // }
-};
+        else {
+            currentCell.active = false;
+            currentCell.owner = turn;
+            pointThisTurn = false;
+            deactivateLastClickedLine();
+            $('#myModal').modal('hide');
+        }
+}
 
-function checkCells(){
-    console.log(turn);
-    cells.forEach(function(cell) {
-        if (checkLines(cell) && !cell.active && !cell.owner){
+//same turn = no more questions asked
+//two boxes need to be filled
+//deactivate method
+
+function checkCells() {
+    cells.forEach(function (cell) {
+        if (checkLines(cell) && !cell.active && !cell.owner) {
             displayQuestion();
-            if(checkIfAnswerIsCorrect()){
-                cell.active= true;
-                cell.owner= turn;
-                changeCellBackgroundColor(cell.row, cell.col);
-            }
+            currentCell = cell;
         }
     });
 };
@@ -218,15 +217,14 @@ function assignPoints() {
         }
 };
 
-// function deactivate(){
-//     mostRecentlyClicked.classList.add("deactivate");
-//     mostRecentlyClicked.active =false;
-// }
+function deactivateLastClickedLine(){
+    mostRecentlyClicked.classList.add("deactivate");
+    mostRecentlyClicked.active = false;
+}
 
 function currentTurn(){
     if(!pointThisTurn){
         turn = turn === "p1" ? "p2" : "p1";
-        let solvedQuestion = false;
     }
   updateDisplayedPlayerTurn();
 };
