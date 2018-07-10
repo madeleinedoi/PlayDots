@@ -60,16 +60,16 @@
                 <div class="modal-body">
                     <p>
                         <script>
-                            askQuestion();
                             $('#myModal').on('hidden.bs.modal', function() {
                                 $(this)
                                     .find("input,textarea,select")
                                     .val('')
                             })
+                            askQuestion();
                         </script>
                     <body>
                     <input type="text" id="input_id" value="">
-                    <input type="button" value="Submit Answer" onclick="checkIfAnswerIsCorrect()" />
+                    <input type="button" value="Submit Answer" onclick="checkCells()" />
                     </body>
                     </p>
                 </div>

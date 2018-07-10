@@ -161,6 +161,7 @@ function askQuestion(){
         correctAnswer[5] = "the";
         x = Math.floor(Math.random() * 6);
         document.write(questions[x]);
+        checkIfAnswerIsCorrect()
         // if(alreadyAsked.includes(x))
         // {
         //     x = Math.floor(Math.random()*6);
@@ -175,6 +176,7 @@ function checkIfAnswerIsCorrect() {
             // changeCellBackgroundColor(cell.row, cell.col);
             $('#myModal').modal('hide');
             assignPoints();
+            return true;
         }
         // else{
         //     deactivate();
@@ -190,9 +192,11 @@ function checkCells(){
     cells.forEach(function(cell) {
         if (checkLines(cell) && !cell.active && !cell.owner){
             displayQuestion();
+
             if(checkIfAnswerIsCorrect()){
                 cell.active= true;
                 cell.owner= turn;
+                changeCellBackgroundColor(cell.row, cell.col);
 
             }
         }
@@ -208,7 +212,6 @@ function assignPoints() {
             p1points++;
             pointThisTurn = true;
             document.getElementById("p1").innerHTML = p1points;
-            changeCellBackgroundColor(cell.row, cell.col);
         }
         else {
             p2points++;
