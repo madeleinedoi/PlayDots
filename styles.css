@@ -33,6 +33,10 @@
     position:relative;
     display: inline-block;
 }
+not(.active) {
+    background-color: darkgrey
+;
+ }
 /*.activepo {*/
     /*background-color: lightskyblue;*/
 /*}*/
@@ -269,10 +273,10 @@ position: fixed;
     color: white;
     font-size: 75px;
 }
-.player h4 {
+.player h4 h5 {
     font-weight: bold;
     color: black;
-    font: bold 20px Verdana, sans-serif;
+    font: bold 36px Verdana, sans-serif;
 }
 .score-boxp1 {
     border: 6px solid black;

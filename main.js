@@ -2,10 +2,9 @@ var cells;
 var hLines;
 var vLines;
 var turn = "p1";
-var turnCount = 1;
 var p1points = 0;
 var p2points = 0;
-var pointThisTurn = false;
+var pointThisTurn =false;
 var rowNum;
 var colNum;
 var lineType;
@@ -13,6 +12,9 @@ var mostRecentlyClicked;//for deactivate
 var x;
 var correctAnswer = [];
 var currentCell;
+var currentClickedLineRow;
+var currentClickedLineCol;
+
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -120,7 +122,6 @@ function clickFunction(event) {
     mostRecentlyClicked = element;
     var className = element.classList;
     element.classList.add("active");
-    turnCount++;
     pointThisTurn = false;
     for (var c = 0; c < className.length; c++){
         if (className[c].startsWith("line")){
@@ -141,8 +142,37 @@ function clickFunction(event) {
     }
     checkCells();
     currentTurn();
-};
+    console.log(turn);
 
+
+};
+function undoclickFunction() {
+    mostRecentlyClicked.classList.remove("active");
+    pointThisTurn = false;
+    for (var c = 0; c < className.length; c++){
+        if (className[c].startsWith("line")){
+            lineType = className[c];
+        }
+        if (className[c].startsWith("row-")){
+            rowNum = className[c][className[c].length - 1];
+        }
+        if (className[c].startsWith("col-")){
+            colNum = className[c][className[c].length - 1];
+        }
+    }
+    if (lineType === "linehorizontal"){
+        hLines[rowNum][colNum].active = false;
+
+    } else {
+        vLines[rowNum][colNum].active = false;
+    }
+    checkCells();
+    currentTurn();
+
+
+
+
+};
 function askQuestion(){
     var alreadyAsked = [];
     var questions = [];
@@ -171,19 +201,48 @@ function askQuestion(){
 
 function checkIfAnswerIsCorrect() {
         var userInput = document.getElementById('input_id').value;
-        if (userInput === correctAnswer[x]) {
+        if (userInput === correctAnswer[x] && !pointThisTurn) {
             assignPoints();
             currentCell.active = true;
             currentCell.owner = turn;
             changeCellBackgroundColor(currentCell.row, currentCell.col);
             $('#myModal').modal('hide');
+            checkCells();
+
+
+
         }
+        else if(userInput === correctAnswer[x] && pointThisTurn){
+            assignPoints();
+            assignPoints();
+            currentCell.active = true;
+            currentCell.owner = turn;
+            changeCellBackgroundColor(currentCell.row, currentCell.col);
+            $('#myModal').modal('hide');
+            checkCells();
+            checkCells();
+
+        }
+        // else if(userInput !== correctAnswer[x] && pointThisTurn){
+        //     currentCell.active = false;
+        //     currentCell.owner = turn;
+        //     changeCellBackgroundColor(currentCell.row, currentCell.col);
+        //     $('#myModal').modal('hide');
+        //     checkCells();
+        //     checkCells();
+        //
+        // }
         else {
             currentCell.active = false;
             currentCell.owner = turn;
             pointThisTurn = false;
             deactivateLastClickedLine();
             $('#myModal').modal('hide');
+            // undoclickFunction();
+
+
+
+
         }
 }
 
@@ -193,15 +252,31 @@ function checkIfAnswerIsCorrect() {
 
 function checkCells() {
     cells.forEach(function (cell) {
-        if (checkLines(cell) && !cell.active && !cell.owner) {
+        if (checkLines(cell) && !cell.active && !cell.owner && !pointThisTurn) {
             displayQuestion();
             currentCell = cell;
+
         }
+        if(checkLines(cell) && !cell.active && !cell.owner && pointThisTurn){
+            displayQuestion();
+            currentCell = cell;
+            cell.active = true;
+            cell.owner = turn;
+             changeCellBackgroundColor(cell.row, cell.col);
+            // assignPoints();
+
+
+
+
+
+        }
+
     });
 };
 
 function displayQuestion() {
     $('#myModal').modal('show');
+    pointThisTurn= true;
 }
 
 function assignPoints() {
@@ -216,22 +291,35 @@ function assignPoints() {
             document.getElementById("p2").innerHTML = p2points;
         }
 };
+//object most recently clicked element item line type row num and col num in one object
+//line type vertical or horizontal know which array to go into
+//undo ckick function
 
 function deactivateLastClickedLine(){
-    mostRecentlyClicked.classList.add("deactivate");
+    mostRecentlyClicked.classList.remove("active");
     mostRecentlyClicked.active = false;
+
+
+
+
+
 }
 
 function currentTurn(){
-    if(!pointThisTurn){
+    if(pointThisTurn===false){
         turn = turn === "p1" ? "p2" : "p1";
     }
+    // else{
+    //     turn = turn ==="p1" ? "p1" : "p2";
+    // }
   updateDisplayedPlayerTurn();
 };
 
 function updateDisplayedPlayerTurn(){
     document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
 };
+
+
 
 function changeCellBackgroundColor(rowNum, colNum){
     var htmlCells= [];
