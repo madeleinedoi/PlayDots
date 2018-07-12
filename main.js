@@ -201,43 +201,43 @@ function askQuestion(){
 
 function checkIfAnswerIsCorrect() {
         var userInput = document.getElementById('input_id').value;
-        if (userInput === correctAnswer[x] && !pointThisTurn) {
+        if (userInput === correctAnswer[x]) {
             assignPoints();
             currentCell.active = true;
             currentCell.owner = turn;
             changeCellBackgroundColor(currentCell.row, currentCell.col);
             $('#myModal').modal('hide');
-            checkCells();
 
 
 
         }
-        else if(userInput === correctAnswer[x] && pointThisTurn){
-            assignPoints();
-            assignPoints();
-            currentCell.active = true;
-            currentCell.owner = turn;
-            changeCellBackgroundColor(currentCell.row, currentCell.col);
-            $('#myModal').modal('hide');
-            checkCells();
-            checkCells();
-
-        }
-        // else if(userInput !== correctAnswer[x] && pointThisTurn){
-        //     currentCell.active = false;
+        //
+        // else if(userInput === correctAnswer[x] && pointThisTurn){
+        //    assignPoints();
+        //     currentCell.active = true;
         //     currentCell.owner = turn;
         //     changeCellBackgroundColor(currentCell.row, currentCell.col);
         //     $('#myModal').modal('hide');
         //     checkCells();
-        //     checkCells();
+        //
+        // }
+        // else if(userInput !== correctAnswer[x] && pointThisTurn){
+        //     currentCell.active = false;
+        //     currentCell.owner = "";
+        //     deactivateLastClickedLine();
+        //     // currentCell.remove(changeCellBackgroundColor(currentCell.row, currentCell.col));
+        //     $('#myModal').modal('hide');
+        //
         //
         // }
         else {
             currentCell.active = false;
             currentCell.owner = turn;
-            pointThisTurn = false;
+            pointThisTurn = "";
             deactivateLastClickedLine();
+            // currentCell.remove(changeCellBackgroundColor(currentCell.row, currentCell.col));
             $('#myModal').modal('hide');
+
             // undoclickFunction();
 
 
@@ -256,16 +256,13 @@ function checkCells() {
             displayQuestion();
             currentCell = cell;
 
+
         }
         if(checkLines(cell) && !cell.active && !cell.owner && pointThisTurn){
-            displayQuestion();
             currentCell = cell;
             cell.active = true;
             cell.owner = turn;
-             changeCellBackgroundColor(cell.row, cell.col);
-            // assignPoints();
-
-
+            changeCellBackgroundColor(cell.row, cell.col);
 
 
 
@@ -298,12 +295,23 @@ function assignPoints() {
 function deactivateLastClickedLine(){
     mostRecentlyClicked.classList.remove("active");
     mostRecentlyClicked.active = false;
+    [currentCell.row][currentCell.col].remove(changeCellBackgroundColor());
+    currentCell.active = false;
+    if(turn === "p1"){
+        p1points--;
+        document.getElementById("p1").innerHTML = p1points;
 
-
-
-
+    }
+    else{
+        p2points--;
+        document.getElementById("p1").innerHTML = p2points;
+    }
 
 }
+
+// function deactivateCell(){
+//     currentCell.remove
+// }
 
 function currentTurn(){
     if(pointThisTurn===false){
@@ -326,12 +334,12 @@ function changeCellBackgroundColor(rowNum, colNum){
     htmlCells = document.getElementsByClassName("cell");
     console.info(htmlCells);
     for(var c = 0; c<htmlCells.length; c++){
-        if (htmlCells[c].classList.contains("row-" + rowNum) && htmlCells[c].classList.contains("col-" + colNum)){
+        if (htmlCells[c].classList.contains("row-" + rowNum) && htmlCells[c].classList.contains("col-" + colNum) && pointThisTurn) {
             htmlCells[c].classList.add(turn);
         }
+
     }
 };
-
 
 
 
