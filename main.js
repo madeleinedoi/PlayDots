@@ -13,6 +13,7 @@ var x;
 var correctAnswer = [];
 var currentCell;
 var element;
+var alreadyAsked;
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -183,9 +184,28 @@ function checkIfAnswerIsCorrect() {
             currentCell.active = true;
             currentCell.owner = turn;
             changeCellBackgroundColor(currentCell.row, currentCell.col);
+            alreadyAsked = true;
             $('#myModal').modal('hide');
             checkCells();
         }
+            if(alreadyAsked){
+                if(mostRecentlyClicked.lineType === "linehorizontal") {
+                    changeCellBackgroundColor(currentCell.row, currentCell.col);
+                    changeCellBackgroundColor(currentCell.row + 1, currentCell.col);
+                    changeCellBackgroundColor(currentCell.row - 1, currentCell.col);
+                }
+                    else{
+                        changeCellBackgroundColor(currentCell.row, currentCell.col);
+                        changeCellBackgroundColor(currentCell.row, currentCell.col+1);
+                        changeCellBackgroundColor(currentCell.row, currentCell.col-1);
+                    }
+                    assignPoints();
+                    alreadyAsked = !alreadyAsked;
+                    }
+            // changeCellBackgroundColor(currentCell.row, currentCell.col);
+            // alreadyAsked = true;
+            // $('#myModal').modal('hide');
+            // checkCells();
         else {
             currentCell.active = false;
             pointThisTurn=false;
@@ -206,8 +226,13 @@ function checkCells() {
 };
 
 function displayQuestion() {
-    $('#myModal').modal('show');
-    pointThisTurn = true;
+    if(!alreadyAsked){
+        $('#myModal').modal('show');
+        pointThisTurn = true;
+    }
+   else{
+        pointThisTurn = true;
+    }
 }
 
 function assignPoints() {
@@ -255,7 +280,6 @@ function changeCellBackgroundColor(rowNum, colNum) {
         }
     }
 }
-
 
 
 
