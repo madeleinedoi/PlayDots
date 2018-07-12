@@ -187,34 +187,39 @@ function checkIfAnswerIsCorrect() {
             alreadyAsked = true;
             $('#myModal').modal('hide');
             checkCells();
-        }
-            if(alreadyAsked){
-                if(mostRecentlyClicked.lineType === "linehorizontal") {
-                    changeCellBackgroundColor(currentCell.row, currentCell.col);
+            }
+        if(alreadyAsked) {
+            if (mostRecentlyClicked.lineType === "linehorizontal") {
+                changeCellBackgroundColor(currentCell.row, currentCell.col);
+                if (mostRecentlyClicked.col + 1 === active) {
+                    changeCellBackgroundColor(currentCell.row, currentCell.col + 1);
+                }
+                else {
+                    changeCellBackgroundColor(currentCell.row, currentCell.col - 1);
+                }
+                assignPoints();
+            }
+            else {
+                changeCellBackgroundColor(currentCell.row, currentCell.col);
+                if (mostRecentlyClicked.row + 1 === active) {
                     changeCellBackgroundColor(currentCell.row + 1, currentCell.col);
+                }
+                else {
                     changeCellBackgroundColor(currentCell.row - 1, currentCell.col);
                 }
-                    else{
-                        changeCellBackgroundColor(currentCell.row, currentCell.col);
-                        changeCellBackgroundColor(currentCell.row, currentCell.col+1);
-                        changeCellBackgroundColor(currentCell.row, currentCell.col-1);
-                    }
-                    assignPoints();
-                    alreadyAsked = !alreadyAsked;
-                    }
-            // changeCellBackgroundColor(currentCell.row, currentCell.col);
-            // alreadyAsked = true;
-            // $('#myModal').modal('hide');
-            // checkCells();
+                assignPoints();
+            }
+            alreadyAsked = false;
+            }
         else {
             currentCell.active = false;
             pointThisTurn=false;
             currentCell.owner = "";
-            // changeCellBackgroundColor(currentCell.row, currentCell.col);
             deactivateLastClickedLine();
             $('#myModal').modal('hide');
-        }
+    }
 }
+
 
 function checkCells() {
     cells.forEach(function (cell) {
