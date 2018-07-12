@@ -4,7 +4,7 @@ var vLines;
 var turn = "p1";
 var p1points = 0;
 var p2points = 0;
-var pointThisTurn =false;
+var pointThisTurn = false;
 var rowNum;
 var colNum;
 var lineType;
@@ -12,9 +12,7 @@ var mostRecentlyClicked;//for deactivate
 var x;
 var correctAnswer = [];
 var currentCell;
-var currentClickedLineRow;
-var currentClickedLineCol;
-
+var element;
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -118,61 +116,40 @@ function addListenerForVElements(){
 };
 
 function clickFunction(event) {
-    var element = event.target;
-    mostRecentlyClicked = element;
+    element = event.target;
+    mostRecentlyClicked = {
+        element,
+        lineType: " ",
+        row: " ",
+        col: " "
+    };
+    // mostRecentlyClicked = element;
     var className = element.classList;
     element.classList.add("active");
-    pointThisTurn = false;
+    pointThisTurn=false;
     for (var c = 0; c < className.length; c++){
         if (className[c].startsWith("line")){
             lineType = className[c];
+            mostRecentlyClicked.lineType = className[c];
         }
         if (className[c].startsWith("row-")){
             rowNum = className[c][className[c].length - 1];
+            mostRecentlyClicked.row = className[c][className[c].length - 1];
         }
         if (className[c].startsWith("col-")){
             colNum = className[c][className[c].length - 1];
+            mostRecentlyClicked.col = className[c][className[c].length - 1];
         }
     }
     if (lineType === "linehorizontal"){
         hLines[rowNum][colNum].active = true;
-
     } else {
         vLines[rowNum][colNum].active = true;
     }
     checkCells();
     currentTurn();
-    console.log(turn);
-
-
 };
-function undoclickFunction() {
-    mostRecentlyClicked.classList.remove("active");
-    pointThisTurn = false;
-    for (var c = 0; c < className.length; c++){
-        if (className[c].startsWith("line")){
-            lineType = className[c];
-        }
-        if (className[c].startsWith("row-")){
-            rowNum = className[c][className[c].length - 1];
-        }
-        if (className[c].startsWith("col-")){
-            colNum = className[c][className[c].length - 1];
-        }
-    }
-    if (lineType === "linehorizontal"){
-        hLines[rowNum][colNum].active = false;
 
-    } else {
-        vLines[rowNum][colNum].active = false;
-    }
-    checkCells();
-    currentTurn();
-
-
-
-
-};
 function askQuestion(){
     var alreadyAsked = [];
     var questions = [];
@@ -201,82 +178,36 @@ function askQuestion(){
 
 function checkIfAnswerIsCorrect() {
         var userInput = document.getElementById('input_id').value;
-        if (userInput === correctAnswer[x] && !pointThisTurn) {
+        if (userInput === correctAnswer[x]) {
             assignPoints();
             currentCell.active = true;
             currentCell.owner = turn;
             changeCellBackgroundColor(currentCell.row, currentCell.col);
             $('#myModal').modal('hide');
             checkCells();
-
-
-
         }
-        else if(userInput === correctAnswer[x] && pointThisTurn){
-            assignPoints();
-            assignPoints();
-            currentCell.active = true;
-            currentCell.owner = turn;
-            changeCellBackgroundColor(currentCell.row, currentCell.col);
-            $('#myModal').modal('hide');
-            checkCells();
-            checkCells();
-
-        }
-        // else if(userInput !== correctAnswer[x] && pointThisTurn){
-        //     currentCell.active = false;
-        //     currentCell.owner = turn;
-        //     changeCellBackgroundColor(currentCell.row, currentCell.col);
-        //     $('#myModal').modal('hide');
-        //     checkCells();
-        //     checkCells();
-        //
-        // }
         else {
             currentCell.active = false;
-            currentCell.owner = turn;
-            pointThisTurn = false;
+            pointThisTurn=false;
+            currentCell.owner = "";
+            // changeCellBackgroundColor(currentCell.row, currentCell.col);
             deactivateLastClickedLine();
             $('#myModal').modal('hide');
-            // undoclickFunction();
-
-
-
-
         }
 }
 
-//same turn = no more questions asked
-//two boxes need to be filled
-//deactivate method
-
 function checkCells() {
     cells.forEach(function (cell) {
-        if (checkLines(cell) && !cell.active && !cell.owner && !pointThisTurn) {
+        if (checkLines(cell) && !cell.active && !cell.owner){
             displayQuestion();
             currentCell = cell;
-
         }
-        if(checkLines(cell) && !cell.active && !cell.owner && pointThisTurn){
-            displayQuestion();
-            currentCell = cell;
-            cell.active = true;
-            cell.owner = turn;
-             changeCellBackgroundColor(cell.row, cell.col);
-            // assignPoints();
-
-
-
-
-
-        }
-
     });
 };
 
 function displayQuestion() {
     $('#myModal').modal('show');
-    pointThisTurn= true;
+    pointThisTurn = true;
 }
 
 function assignPoints() {
@@ -291,27 +222,22 @@ function assignPoints() {
             document.getElementById("p2").innerHTML = p2points;
         }
 };
-//object most recently clicked element item line type row num and col num in one object
-//line type vertical or horizontal know which array to go into
-//undo ckick function
 
 function deactivateLastClickedLine(){
-    mostRecentlyClicked.classList.remove("active");
-    mostRecentlyClicked.active = false;
-
-
-
-
-
+    if(mostRecentlyClicked.lineType === "linehorizontal"){
+        hLines[mostRecentlyClicked.row][mostRecentlyClicked.col].active = false;
+        element.classList.remove("active");
+    }
+    else{
+        vLines[mostRecentlyClicked.row][mostRecentlyClicked.col].active = false;
+        element.classList.remove("active");
+    }
 }
 
 function currentTurn(){
-    if(pointThisTurn===false){
+    if(pointThisTurn ===false){
         turn = turn === "p1" ? "p2" : "p1";
     }
-    // else{
-    //     turn = turn ==="p1" ? "p1" : "p2";
-    // }
   updateDisplayedPlayerTurn();
 };
 
@@ -319,19 +245,16 @@ function updateDisplayedPlayerTurn(){
     document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
 };
 
-
-
-function changeCellBackgroundColor(rowNum, colNum){
-    var htmlCells= [];
+function changeCellBackgroundColor(rowNum, colNum) {
+    var htmlCells = [];
     htmlCells = document.getElementsByClassName("cell");
     console.info(htmlCells);
-    for(var c = 0; c<htmlCells.length; c++){
-        if (htmlCells[c].classList.contains("row-" + rowNum) && htmlCells[c].classList.contains("col-" + colNum)){
+    for (var c = 0; c < htmlCells.length; c++) {
+        if (htmlCells[c].classList.contains("row-" + rowNum) && htmlCells[c].classList.contains("col-" + colNum)) {
             htmlCells[c].classList.add(turn);
         }
     }
-};
-
+}
 
 
 

@@ -33,10 +33,6 @@
     position:relative;
     display: inline-block;
 }
-not(.active) {
-    background-color: darkgrey
-;
- }
 /*.activepo {*/
     /*background-color: lightskyblue;*/
 /*}*/
