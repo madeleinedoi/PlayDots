@@ -192,32 +192,7 @@ function checkIfAnswerIsCorrect() {
         }
         cellsNeedToBeFilled = [];
     }
-    // if(alreadyAsked) {
-    //     if (mostRecentlyClicked.lineType === "linehorizontal") {
-    //         changeCellBackgroundColor(currentCell.row, currentCell.col);
-    //         if (mostRecentlyClicked.col + 1 === active) {
-    //             changeCellBackgroundColor(currentCell.row, currentCell.col + 1);
-    //         }
-    //         else {
-    //             changeCellBackgroundColor(currentCell.row, currentCell.col - 1);
-    //         }
-    //         checkCells();
-    //         assignPoints();
-    //     }
-    //     else {
-    //         changeCellBackgroundColor(currentCell.row, currentCell.col);
-    //         if (mostRecentlyClicked.row + 1 === active) {
-    //             changeCellBackgroundColor(currentCell.row + 1, currentCell.col);
-    //         }
-    //         else {
-    //             changeCellBackgroundColor(currentCell.row - 1, currentCell.col);
-    //         }
-    //         checkCells();
-    //         assignPoints();
-    //     }
-    //     checkCells();
-    //     alreadyAsked = false;
-    // }
+    
     else {
         currentCell.active = false;
         pointThisTurn=false;
