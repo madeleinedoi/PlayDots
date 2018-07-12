@@ -9,29 +9,29 @@ var rowNum;
 var colNum;
 var lineType;
 var mostRecentlyClicked;//for deactivate
-var currentPosition;
+var x;
 var correctAnswer = [];
 var currentCell;
 var element;
 var alreadyAsked;
 var cellsNeedToBeFilled= [];
 
-function setUpBoard() {
+function setUpBoard(){
     hLines=generateHorizontal(6,5);
     vLines=generateVertical(5,6);
     cells=generateCells(5,5);
     updateDisplayedPlayerTurn();
 };
 
-window.onload = function() {
+window.onload = function(){
     addListenerForHElements();
     addListenerForVElements();
 };
 
-function generateCells(numCol, numRow) {
+function generateCells(numCol, numRow){
     var cells = [];
-    for (var col = 0; col < numCol; col++) {
-        for (var row = 0; row < numRow; row++) {
+    for (var col = 0; col < numCol; col++){
+        for (var row = 0; row < numRow; row++){
             cells.push({
                 col: col,
                 row: row,
@@ -43,7 +43,7 @@ function generateCells(numCol, numRow) {
     return cells;
 };
 
-function generateHorizontal(numCol,numRow) {
+function generateHorizontal(numCol,numRow){
     var cells = [];
     for(var i =0; i<=numRow; i++){
         var row = [];
@@ -59,7 +59,7 @@ function generateHorizontal(numCol,numRow) {
     return cells;
 };
 
-function generateVertical(numCol,numRow) {
+function generateVertical(numCol,numRow){
     var cells = [];
     for(var i =0; i<numRow; i++){
         var row = [];
@@ -75,44 +75,44 @@ function generateVertical(numCol,numRow) {
     return cells;
 };
 
-function checkLines(cell) {
+function checkLines(cell){
     return (checkHorizontal(cell) && checkVertical(cell));
 };
 
-function checkHorizontal(cell) {
+function checkHorizontal(cell){
     var topline = false;
     var bottomline = false;
-    if (hLines[cell.row][cell.col].active) {
+    if (hLines[cell.row][cell.col].active){
         topline = true;
     }
-    if (hLines[cell.row+1][cell.col].active) {
+    if (hLines[cell.row+1][cell.col].active){
         bottomline = true;
     }
     return topline && bottomline;
 };
 
-function checkVertical(cell) {
+function checkVertical(cell){
     var rightline = false;
     var leftline = false;
-    if (vLines[cell.row][cell.col].active) {
+    if (vLines[cell.row][cell.col].active){
         rightline = true;
     }
-    if (vLines[cell.row][cell.col+1].active) {
+    if (vLines[cell.row][cell.col+1].active){
         leftline = true;
     }
     return leftline && rightline;
 };
 
-function addListenerForHElements() {
+function addListenerForHElements(){
     var hElements = document.getElementsByClassName('linehorizontal');
-    for(var i = 0; i < hElements.length; i++) {
+    for(var i = 0; i < hElements.length; i++){
         hElements[i].addEventListener("click", clickFunction);
     }
 };
 
-function addListenerForVElements() {
+function addListenerForVElements(){
     var vElements = document.getElementsByClassName('linevertical');
-    for(var i = 0; i < vElements.length; i++) {
+    for(var i = 0; i < vElements.length; i++){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
@@ -129,21 +129,21 @@ function clickFunction(event) {
     var className = element.classList;
     element.classList.add("active");
     pointThisTurn=false;
-    for (var c = 0; c < className.length; c++) {
-        if (className[c].startsWith("line")) {
+    for (var c = 0; c < className.length; c++){
+        if (className[c].startsWith("line")){
             lineType = className[c];
             mostRecentlyClicked.lineType = className[c];
         }
-        if (className[c].startsWith("row-")) {
+        if (className[c].startsWith("row-")){
             rowNum = className[c][className[c].length - 1];
             mostRecentlyClicked.row = className[c][className[c].length - 1];
         }
-        if (className[c].startsWith("col-")) {
+        if (className[c].startsWith("col-")){
             colNum = className[c][className[c].length - 1];
             mostRecentlyClicked.col = className[c][className[c].length - 1];
         }
     }
-    if (lineType === "linehorizontal") {
+    if (lineType === "linehorizontal"){
         hLines[rowNum][colNum].active = true;
     } else {
         vLines[rowNum][colNum].active = true;
@@ -152,7 +152,7 @@ function clickFunction(event) {
     currentTurn();
 };
 
-function askQuestion() {
+function askQuestion(){
     var alreadyAsked = [];
     var questions = [];
     questions[0] = "What is 10/2?";
@@ -167,20 +167,20 @@ function askQuestion() {
     correctAnswer[3] = "1";
     correctAnswer[4] = "10";
     correctAnswer[5] = "the";
-    currentPosition = Math.floor(Math.random() * questions.length);
-    document.write(questions[currentPosition]);
-    // if(alreadyAsked.includes(currentPosition))
+    x = Math.floor(Math.random() * questions.length);
+    document.write(questions[x]);
+    // if(alreadyAsked.includes(x))
     // {
-    //     currentPosition = Math.floor(Math.random()*4);
+    //     x = Math.floor(Math.random()*4);
     // }
-    // document.write(questions[currentQuestionAndAnswerPositionInArray]);
-    // alreadyAsked.push(questions[currentQuestionAndAnswerPositionInArray]);
+    // document.write(questions[x]);
+    // alreadyAsked.push(questions[x]);
     //checkIfAnswerIsCorrect();
 };
 
 function checkIfAnswerIsCorrect() {
     var userInput = document.getElementById('input_id').value;
-    if (userInput === correctAnswer[currentQuestionAndAnswerPositionInArray]) {
+    if (userInput === correctAnswer[x]) {
         for (var cell = 0; cell < cellsNeedToBeFilled.length; cell++) {
             assignPoints();
             cellsNeedToBeFilled[cell].active = true;
@@ -192,18 +192,20 @@ function checkIfAnswerIsCorrect() {
         }
         cellsNeedToBeFilled = [];
     }
+
     else {
         currentCell.active = false;
         pointThisTurn=false;
         currentCell.owner = "";
         deactivateLastClickedLine();
         $('#myModal').modal('hide');
+
     }
 }
 
 function checkCells() {
     cells.forEach(function (cell) {
-        if (checkLines(cell) && !cell.active && !cell.owner) {
+        if (checkLines(cell) && !cell.active && !cell.owner){
                 displayQuestion();
                 currentCell = cell;
                 cellsNeedToBeFilled.push(cell);
@@ -229,8 +231,8 @@ function assignPoints() {
     }
 };
 
-function deactivateLastClickedLine() {
-    if(mostRecentlyClicked.lineType === "linehorizontal") {
+function deactivateLastClickedLine(){
+    if(mostRecentlyClicked.lineType === "linehorizontal"){
         hLines[mostRecentlyClicked.row][mostRecentlyClicked.col].active = false;
         element.classList.remove("active");
     }
@@ -240,14 +242,15 @@ function deactivateLastClickedLine() {
     }
 }
 
-function currentTurn() {
-    if(pointThisTurn ===false) {
+
+function currentTurn(){
+    if(pointThisTurn ===false){
         turn = turn === "p1" ? "p2" : "p1";
     }
     updateDisplayedPlayerTurn();
 };
 
-function updateDisplayedPlayerTurn() {
+function updateDisplayedPlayerTurn(){
     document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
 };
 
@@ -260,6 +263,9 @@ function changeCellBackgroundColor(rowNum, colNum) {
         }
     }
 }
+
+
+
 
 
 
