@@ -228,23 +228,14 @@ function checkIfAnswerIsCorrect() {
     }
 }
 
-
 function checkCells() {
     cells.forEach(function (cell) {
         if (checkLines(cell) && !cell.active && !cell.owner){
                 displayQuestion();
                 currentCell = cell;
                 cellsNeedToBeFilled.push(cell);
-                // cellsNeedToBeFilled.add(cell);
-        //         alreadyAsked =true;
-        //         cell.active = true;
-        //         cell.owner = turn;
-        //         changeCellBackgroundColor(cell.row,cell.col);
         }
-
-
     });
-
 };
 
 function displayQuestion() {
@@ -291,7 +282,6 @@ function updateDisplayedPlayerTurn(){
 function changeCellBackgroundColor(rowNum, colNum) {
     var htmlCells = [];
     htmlCells = document.getElementsByClassName("cell");
-    console.info(htmlCells);
     for (var c = 0; c < htmlCells.length; c++) {
         if (htmlCells[c].classList.contains("row-" + rowNum) && htmlCells[c].classList.contains("col-" + colNum)) {
             htmlCells[c].classList.add(turn);
