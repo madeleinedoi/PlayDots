@@ -155,11 +155,11 @@ function clickFunction(event) {
 function askQuestion(){
     var alreadyAsked = [];  //array of already asked questions
     var questions = [];
-    questions[0] = "What is 10/2?";
-    questions[1] = "What is 30/3?";
-    questions[2] = "What is 30/10?";
-    questions[3] = "What is 10/10";
-    questions[4] = "What is 100/10";
+    questions[0] = "What is the most popular drink in the world that does not contain alcohol?";
+    questions[1] = "What is the most common blood type in humans? Type: ";
+    questions[2] = "How many people were part of the main cast of the hit tv show Friends?";
+    questions[3] = "Who was Mario's best friend in Super Mario Bros";
+    questions[4] = "What is the world’s fastest land animal?";
     questions[5] = "What is the most used word";
     questions[6]  = "What is the capital of California?";
     questions[7] = "Whats the biggest ocean?";
@@ -170,11 +170,22 @@ function askQuestion(){
     questions[12] = "What is one quarter of 1,000?";
     questions[13] = "Babe Ruth is associated with which sport?";
     questions[14] = "The title role of the 1990 movie “Pretty Woman” was played by which actress?";
-    correctAnswer[0] = "5";
-    correctAnswer[1] = "10";
-    correctAnswer[2] = "3";
-    correctAnswer[3] = "1";
-    correctAnswer[4] = "10";
+    questions[15] = "Does sound travel faster through steel or water?";
+    questions[16] = "What is sushi traditionally wrapped in?";
+    questions[17] = "How many colors are there in a rainbow?"
+    questions[18] = "What is the biggest city in the United States by population size?";
+    questions[19] = "What is the biggest island in the world?";
+    questions[20] = "Which city is known as the City of Love?";
+    questions[21] = "What is the only American state to begin with a P?";
+    questions[22] = "What is soccer called in Europe?";
+    questions[23] = "What is the capital of Spain?";
+    questions[24] = "If you _________ too hard, you might fracture a rib.";
+    questions[25] = "What do Italian's call pizza?";
+    correctAnswer[0] = "Coffee";
+    correctAnswer[1] = "O";
+    correctAnswer[2] = "6";
+    correctAnswer[3] = "Luigi";
+    correctAnswer[4] = "Cheetah";
     correctAnswer[5] = "The";
     correctAnswer[6] = "Sacramento";
     correctAnswer[7] = "Pacific";
@@ -185,6 +196,18 @@ function askQuestion(){
     correctAnswer[12] = "250";
     correctAnswer[13] = "Baseball";
     correctAnswer[14] = "Julia Roberts";
+    correctAnswer[15] = "Steel";
+    correctAnswer[16] = "Seaweed";
+    correctAnswer[17]="7";
+    correctAnswer[18]="New York City";
+    correctAnswer[19]="Greenland";
+    correctAnswer[20]="Paris";
+    correctAnswer[21]="Pennsylvania";
+    correctAnswer[22]="Football";
+    correctAnswer[23]="Madrid";
+    correctAnswer[24]="Sneezes";
+    correctAnswer[25]="Pie";
+
 
 
     x = Math.floor(Math.random() * questions.length);
@@ -219,7 +242,7 @@ function answerIncorrect(){
 
 function checkIfAnswerIsCorrect() {
     var userInput = document.getElementById('input_id').value;
-    if (userInput === correctAnswer[x]) {
+    if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
         answercorrect();
         askQuestion();
     }
