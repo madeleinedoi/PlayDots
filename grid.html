@@ -9,8 +9,6 @@
 <body style="background-color:lightgrey;">
 </head>
 
-
-
 <body>
 <div class="score-board">
     <div class="score">
@@ -40,12 +38,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-
-
-
-
-
-
 <body>
 
 <div class="container">
@@ -65,7 +57,9 @@
                                     .find("input,textarea,select")
                                     .val('')
                             });
-                            askQuestion();
+                            for(var i=0; i<25; i++) {
+                                askQuestion();
+                            }
                         </script>
                     <input type="text" id="input_id" value="">
                     <button type="button" onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
@@ -82,10 +76,6 @@
 </div>
 
 </body>
-
-
-
-
 
 
 

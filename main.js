@@ -168,14 +168,16 @@ function askQuestion(){
     correctAnswer[4] = "10";
     correctAnswer[5] = "the";
     x = Math.floor(Math.random() * questions.length);
+    if(alreadyAsked.includes(x))
+    {
+        x = Math.floor(Math.random()*questions.length);
+    }
+    alreadyAsked.push(questions[x]);
     document.write(questions[x]);
-    // if(alreadyAsked.includes(x))
-    // {
-    //     x = Math.floor(Math.random()*4);
-    // }
-    // document.write(questions[x]);
-    // alreadyAsked.push(questions[x]);
-    //checkIfAnswerIsCorrect();
+
+
+
+    checkIfAnswerIsCorrect();
 };
 
 function checkIfAnswerIsCorrect() {
@@ -187,10 +189,8 @@ function checkIfAnswerIsCorrect() {
             cellsNeedToBeFilled[cell].owner = turn;
             changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
             alreadyAsked = true;
-            $('#myModal').modal('hide');
-            checkCells();
         }
-        cellsNeedToBeFilled = [];
+
     }
 
     else {
@@ -198,24 +198,26 @@ function checkIfAnswerIsCorrect() {
         pointThisTurn=false;
         currentCell.owner = "";
         deactivateLastClickedLine();
-        $('#myModal').modal('hide');
+
 
     }
+    cellsNeedToBeFilled = [];
+    $('#myModal').modal('hide');
 }
 
 function checkCells() {
     cells.forEach(function (cell) {
         if (checkLines(cell) && !cell.active && !cell.owner){
-                displayQuestion();
-                currentCell = cell;
-                cellsNeedToBeFilled.push(cell);
+            displayQuestion();
+            currentCell = cell;
+            cellsNeedToBeFilled.push(cell);
         }
     });
 };
 
 function displayQuestion() {
-        $('#myModal').modal('show');
-        pointThisTurn = true;
+    $('#myModal').modal('show');
+    pointThisTurn = true;
 }
 
 function assignPoints() {

@@ -13,12 +13,7 @@
     left:5px;
     display: inline-block;
 }
-/*.linevertical:hover{*/
-    /*background-color:yellow;*/
-/*}*/
-/*.linevertical:active{*/
-    /*background-color:red;*/
-/*}*/
+
 .dothorizontal{
     background-color: darkgrey;
     width:12px;
@@ -33,18 +28,7 @@
     position:relative;
     display: inline-block;
 }
-/*.activepo {*/
-    /*background-color: lightskyblue;*/
-/*}*/
-/*.activept{*/
-    /*background-color: rebeccapurple;*/
-/*}*/
-/*.linehorizontal:hover{*/
-    /*background-color:yellow;*/
-/*}*/
-/*.linehorizontal:active{*/
-    /*background-color:red;*/
-/*}*/
+
 .rules{
     max-width: 800px;
     padding:0 50px 0 50px;
@@ -79,30 +63,7 @@
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
-/*tr th {*/
-/*width: 50px;*/
-/*height: 50px;*/
-/*border-bottom: 5px gray solid;*/
-/*}*/
-/*tr td {*/
-/*width:50px;*/
-/*height:50px;*/
-/*border-left:5px gray solid;*/
-/*border-bottom: 5px gray solid;*/
-/*}*/
-/*tr td:nth-last-child(1){*/
-/*width:50px;*/
-/*height:50px;*/
-/*border-right:5px gray solid;*/
-/*border-bottom: 5px gray solid;*/
-/*}*/
-/*table{*/
-/*margin-left: auto;*/
-/*margin-right: auto;*/
-/*}*/
-/*tr:nth-child(1) td{*/
-/*border-top:5px gray solid;*/
-/*}*/
+
 html, body {
     height: 100%;
     width: 100%;
@@ -165,13 +126,14 @@ canvas {
 }
 h1{
     color:-moz-cellhighlight;
+    font-size: 45px;
     font-family: Verdana, sans-serif;
     text-align: center;
     border-style: solid;
     border-width: 3px;
     border-left-width: 2px;
     border-right-width: 2px;
-    border-color: blanchedalmond;
+    border-color: #EC9F6F;
 }
 h2{
     text-align:center;
@@ -184,7 +146,7 @@ h3{
     text-align: center;
 }
 h4{
-    font-size: 25px;
+    font-size: 40px;
     color: #69CDC1;
     text-align:center;
     font-family: Verdana, sans-serif;
@@ -192,7 +154,7 @@ h4{
 h5{
     text-align:center;
     font-family: Verdana, sans-serif;
-    font-size: 25px;
+    font-size: 40px;
     color:#E876AA ;
 
 }
@@ -222,7 +184,7 @@ body {
 .btn {
     background-color: black;
     cursor: pointer;
-    background: blanchedalmond;
+    background: #EC9F6F;
     color: black;
     border-style: outset;
     border-color: #0066A2;
@@ -272,7 +234,7 @@ position: fixed;
 .player h4 h5 {
     font-weight: bold;
     color: black;
-    font: bold 36px Verdana, sans-serif;
+    font: bold 75px Verdana, sans-serif;
 }
 .score-boxp1 {
     border: 6px solid black;
