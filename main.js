@@ -161,12 +161,31 @@ function askQuestion(){
     questions[3] = "What is 10/10";
     questions[4] = "What is 100/10";
     questions[5] = "What is the most used word";
+    questions[6]  = "What is the capital of California?";
+    questions[7] = "Whats the biggest ocean?";
+    questions[8] = "What is the largest country by area?";
+    questions[9] = "What is the tallest mountain in the world?";
+    questions[10] = "In what year did the United States gain independence?";
+    questions[11] = "In cooking, margarine is used as a substitute for what ingredient?";
+    questions[12] = "What is one quarter of 1,000?";
+    questions[13] = "Babe Ruth is associated with which sport?";
+    questions[14] = "The title role of the 1990 movie “Pretty Woman” was played by which actress?";
     correctAnswer[0] = "5";
     correctAnswer[1] = "10";
     correctAnswer[2] = "3";
     correctAnswer[3] = "1";
     correctAnswer[4] = "10";
-    correctAnswer[5] = "the";
+    correctAnswer[5] = "The";
+    correctAnswer[6] = "Sacramento";
+    correctAnswer[7] = "Pacific";
+    correctAnswer[8] = "Russia";
+    correctAnswer[9] = "Mount Everest";
+    correctAnswer[10] = "1776";
+    correctAnswer[11]= "Butter";
+    correctAnswer[12] = "250";
+    correctAnswer[13] = "Baseball";
+    correctAnswer[14] = "Julia Roberts";
+
 
     x = Math.floor(Math.random() * questions.length);
     console.log("first x is " + x);
@@ -180,27 +199,35 @@ function askQuestion(){
     console.log("question: " + questions[x]);
     // document.write(questions[x]);
     document.getElementById('question').innerHTML = questions[x];
-    checkIfAnswerIsCorrect();
 };
+function answercorrect(){
+    for (var cell = 0; cell < cellsNeedToBeFilled.length; cell++) {
+        cellsNeedToBeFilled[cell].active = true;
+        cellsNeedToBeFilled[cell].owner = turn;
+        changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
+        alreadyAsked = true;
+        assignPoints();
+    }
+}
+function answerIncorrect(){
+    currentCell.active = false;
+    pointThisTurn=false;
+    currentCell.owner = "";
+    deactivateLastClickedLine();
+}
+
 
 function checkIfAnswerIsCorrect() {
     var userInput = document.getElementById('input_id').value;
     if (userInput === correctAnswer[x]) {
-        for (var cell = 0; cell < cellsNeedToBeFilled.length; cell++) {
-            cellsNeedToBeFilled[cell].active = true;
-            cellsNeedToBeFilled[cell].owner = turn;
-            changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
-            alreadyAsked = true;
-            assignPoints();
-        }
+        answercorrect();
+        askQuestion();
+    }
 
-    }
     else {
-        currentCell.active = false;
-        pointThisTurn=false;
-        currentCell.owner = "";
-        deactivateLastClickedLine();
+        answerIncorrect();
     }
+
     cellsNeedToBeFilled = [];
     $('#myModal').modal('hide');
 }
@@ -231,7 +258,7 @@ function assignPoints() {
         pointThisTurn = true;
         document.getElementById("p2").innerHTML = p2points;
     }
-    askQuestion();
+
 };
 
 function deactivateLastClickedLine(){
