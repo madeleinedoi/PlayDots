@@ -153,7 +153,7 @@ function clickFunction(event) {
 };
 
 function askQuestion(){
-    var alreadyAsked = [];
+    var alreadyAsked = [];  //array of already asked questions
     var questions = [];
     questions[0] = "What is 10/2?";
     questions[1] = "What is 30/3?";
@@ -167,16 +167,19 @@ function askQuestion(){
     correctAnswer[3] = "1";
     correctAnswer[4] = "10";
     correctAnswer[5] = "the";
+
     x = Math.floor(Math.random() * questions.length);
-    if(alreadyAsked.includes(x))
+    console.log("first x is " + x);
+
+    if(alreadyAsked.includes(questions[x]))
     {
         x = Math.floor(Math.random()*questions.length);
+        console.log("new x is " + x);
     }
     alreadyAsked.push(questions[x]);
-    document.write(questions[x]);
-
-
-
+    console.log("question: " + questions[x]);
+    // document.write(questions[x]);
+    document.getElementById('question').innerHTML = questions[x];
     checkIfAnswerIsCorrect();
 };
 
@@ -184,22 +187,19 @@ function checkIfAnswerIsCorrect() {
     var userInput = document.getElementById('input_id').value;
     if (userInput === correctAnswer[x]) {
         for (var cell = 0; cell < cellsNeedToBeFilled.length; cell++) {
-            assignPoints();
             cellsNeedToBeFilled[cell].active = true;
             cellsNeedToBeFilled[cell].owner = turn;
             changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
             alreadyAsked = true;
+            assignPoints();
         }
 
     }
-
     else {
         currentCell.active = false;
         pointThisTurn=false;
         currentCell.owner = "";
         deactivateLastClickedLine();
-
-
     }
     cellsNeedToBeFilled = [];
     $('#myModal').modal('hide');
@@ -231,6 +231,7 @@ function assignPoints() {
         pointThisTurn = true;
         document.getElementById("p2").innerHTML = p2points;
     }
+    askQuestion();
 };
 
 function deactivateLastClickedLine(){

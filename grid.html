@@ -51,15 +51,14 @@
                 </div>
                 <div class="modal-body">
                     <p>
+                    <p id="question"></p>
                         <script>
                             $('#myModal').on('hidden.bs.modal', function() {
                                 $(this)
-                                    .find("input,textarea,select")
-                                    .val('')
+                                    .find("input,textarea,select").val('');
+
                             });
-                            for(var i=0; i<25; i++) {
-                                askQuestion();
-                            }
+                            askQuestion();
                         </script>
                     <input type="text" id="input_id" value="">
                     <button type="button" onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
