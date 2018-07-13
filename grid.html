@@ -56,16 +56,16 @@
                             $('#myModal').on('hidden.bs.modal', function() {
                                 $(this)
                                     .find("input,textarea,select").val('');
-
                             });
                             askQuestion();
+                            $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
                         </script>
                     <input type="text" id="input_id" value="">
                     <button type="button" onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btnbtn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btnbtn" data-dismiss="modal" onclick = " deactivateLastClickedLine()">Close</button>
                 </div>
             </div>
 
@@ -81,10 +81,8 @@
 <div class="playfield">
     <div id="hor1">
         <div class= "dothorizontal"></div>
-        <!--<button div class ="linehorizontal row-0 col-0" data-toggle="modal" data-target="#myModal"></button>-->
         <div class= "linehorizontal row-0 col-0"></div>
         <div class= "dothorizontal"></div>
-        <!--<button div class ="linehorizontal row-0 col-1" data-toggle="modal" data-target="#myModal"></button>-->
         <div class= "linehorizontal row-0 col-1"></div>
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-0 col-2"></div>
@@ -110,7 +108,6 @@
     </div>
 
     <div id="hor2">
-        <!--<div class="playerx">Player 1</div>-->
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-1 col-0"></div>
         <div class= "dothorizontal"></div>
@@ -237,15 +234,6 @@
         <div class= "dothorizontal"></div>
     </div>
 </div>
-<!--</div>-->
-
-<!--<div id="vert1"-->
-<!--{-->
-<!--<div class="linevertical"></div>-->
-<!--<div class="dotvertical"></div>-->
-<!--<div class="linevertical"></div>-->
-<!--<div class= "dotvertical"></div>-->
-
 
 </body>
 </html>

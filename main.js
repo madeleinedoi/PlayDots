@@ -172,7 +172,7 @@ function askQuestion(){
     questions[14] = "The title role of the 1990 movie “Pretty Woman” was played by which actress?";
     questions[15] = "Does sound travel faster through steel or water?";
     questions[16] = "What is sushi traditionally wrapped in?";
-    questions[17] = "How many colors are there in a rainbow?"
+    questions[17] = "How many colors are there in a rainbow?";
     questions[18] = "What is the biggest city in the United States by population size?";
     questions[19] = "What is the biggest island in the world?";
     questions[20] = "Which city is known as the City of Love?";
@@ -203,27 +203,21 @@ function askQuestion(){
     correctAnswer[19]="Greenland";
     correctAnswer[20]="Paris";
     correctAnswer[21]="Pennsylvania";
-    correctAnswer[22]="Football";
+    correctAnswer[22]="Futbol";
     correctAnswer[23]="Madrid";
-    correctAnswer[24]="Sneezes";
+    correctAnswer[24]="Sneeze";
     correctAnswer[25]="Pie";
 
-
-
     x = Math.floor(Math.random() * questions.length);
-    console.log("first x is " + x);
-
     if(alreadyAsked.includes(questions[x]))
     {
         x = Math.floor(Math.random()*questions.length);
-        console.log("new x is " + x);
     }
     alreadyAsked.push(questions[x]);
-    console.log("question: " + questions[x]);
-    // document.write(questions[x]);
     document.getElementById('question').innerHTML = questions[x];
 };
-function answercorrect(){
+
+function answerCorrect(){
     for (var cell = 0; cell < cellsNeedToBeFilled.length; cell++) {
         cellsNeedToBeFilled[cell].active = true;
         cellsNeedToBeFilled[cell].owner = turn;
@@ -231,29 +225,27 @@ function answercorrect(){
         alreadyAsked = true;
         assignPoints();
     }
-}
+};
+
 function answerIncorrect(){
     currentCell.active = false;
     pointThisTurn=false;
     currentCell.owner = "";
     deactivateLastClickedLine();
-}
-
+};
 
 function checkIfAnswerIsCorrect() {
     var userInput = document.getElementById('input_id').value;
     if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
-        answercorrect();
+        answerCorrect();
         askQuestion();
     }
-
     else {
         answerIncorrect();
     }
-
     cellsNeedToBeFilled = [];
     $('#myModal').modal('hide');
-}
+};
 
 function checkCells() {
     cells.forEach(function (cell) {
@@ -268,7 +260,7 @@ function checkCells() {
 function displayQuestion() {
     $('#myModal').modal('show');
     pointThisTurn = true;
-}
+};
 
 function assignPoints() {
     if (turn === "p1") {
@@ -315,8 +307,7 @@ function changeCellBackgroundColor(rowNum, colNum) {
             htmlCells[c].classList.add(turn);
         }
     }
-}
-
+};
 
 
 
