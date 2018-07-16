@@ -13,8 +13,9 @@ var x;
 var correctAnswer = [];
 var currentCell;
 var element;
-var alreadyAsked;
 var cellsNeedToBeFilled= [];
+var alreadyAsked = [];
+
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -153,65 +154,66 @@ function clickFunction(event) {
 };
 
 function askQuestion(){
-    var alreadyAsked = [];  //array of already asked questions
     var questions = [];
     questions[0] = "What is the most popular drink in the world that does not contain alcohol?";
-    questions[1] = "What is the most common blood type in humans? Type: ";
-    questions[2] = "How many people were part of the main cast of the hit tv show Friends?";
-    questions[3] = "Who was Mario's best friend in Super Mario Bros";
-    questions[4] = "What is the world’s fastest land animal?";
-    questions[5] = "What is the most used word";
-    questions[6]  = "What is the capital of California?";
-    questions[7] = "Whats the biggest ocean?";
-    questions[8] = "What is the largest country by area?";
-    questions[9] = "What is the tallest mountain in the world?";
-    questions[10] = "In what year did the United States gain independence?";
-    questions[11] = "In cooking, margarine is used as a substitute for what ingredient?";
-    questions[12] = "What is one quarter of 1,000?";
-    questions[13] = "Babe Ruth is associated with which sport?";
-    questions[14] = "The title role of the 1990 movie “Pretty Woman” was played by which actress?";
-    questions[15] = "Does sound travel faster through steel or water?";
-    questions[16] = "What is sushi traditionally wrapped in?";
-    questions[17] = "How many colors are there in a rainbow?";
-    questions[18] = "What is the biggest city in the United States by population size?";
-    questions[19] = "What is the biggest island in the world?";
-    questions[20] = "Which city is known as the City of Love?";
-    questions[21] = "What is the only American state to begin with a P?";
-    questions[22] = "What is soccer called in Europe?";
-    questions[23] = "What is the capital of Spain?";
-    questions[24] = "If you _________ too hard, you might fracture a rib.";
-    questions[25] = "What do Italian's call pizza?";
     correctAnswer[0] = "Coffee";
+    questions[1] = "What is the most common blood type in humans? Type: ";
     correctAnswer[1] = "O";
+    questions[2] = "How many people were part of the main cast of the hit tv show Friends?";
     correctAnswer[2] = "6";
+    questions[3] = "Who was Mario's best friend in Super Mario Bros";
     correctAnswer[3] = "Luigi";
+    questions[4] = "What is the world’s fastest land animal?";
     correctAnswer[4] = "Cheetah";
+    questions[5] = "What is the most used word";
     correctAnswer[5] = "The";
+    questions[6]  = "What is the capital of California?";
     correctAnswer[6] = "Sacramento";
+    questions[7] = "Whats the biggest ocean?";
     correctAnswer[7] = "Pacific";
+    questions[8] = "What is the largest country by area?";
     correctAnswer[8] = "Russia";
+    questions[9] = "What is the tallest mountain in the world?";
     correctAnswer[9] = "Mount Everest";
+    questions[10] = "In what year did the United States gain independence?";
     correctAnswer[10] = "1776";
+    questions[11] = "In cooking, margarine is used as a substitute for what ingredient?";
     correctAnswer[11]= "Butter";
+    questions[12] = "What is one quarter of 1,000?";
     correctAnswer[12] = "250";
+    questions[13] = "Babe Ruth is associated with which sport?";
     correctAnswer[13] = "Baseball";
+    questions[14] = "The title role of the 1990 movie “Pretty Woman” was played by which actress?";
     correctAnswer[14] = "Julia Roberts";
+    questions[15] = "Does sound travel faster through steel or water?";
     correctAnswer[15] = "Steel";
+    questions[16] = "What is sushi traditionally wrapped in?";
     correctAnswer[16] = "Seaweed";
+    questions[17] = "How many colors are there in a rainbow?";
     correctAnswer[17]="7";
+    questions[18] = "What is the biggest city in the United States by population size?";
     correctAnswer[18]="New York City";
+    questions[19] = "What is the biggest island in the world?";
     correctAnswer[19]="Greenland";
+    questions[20] = "Which city is known as the City of Love?";
     correctAnswer[20]="Paris";
+    questions[21] = "What is the only American state to begin with a P?";
     correctAnswer[21]="Pennsylvania";
+    questions[22] = "What is soccer called in Europe?";
     correctAnswer[22]="Futbol";
+    questions[23] = "What is the capital of Spain?";
     correctAnswer[23]="Madrid";
+    questions[24] = "If you _________ too hard, you might fracture a rib.";
     correctAnswer[24]="Sneeze";
+    questions[25] = "What do Italian's call pizza?";
     correctAnswer[25]="Pie";
 
-    x = Math.floor(Math.random() * questions.length);
-    if(alreadyAsked.includes(questions[x]))
-    {
-        x = Math.floor(Math.random()*questions.length);
+    if(alreadyAsked.length === 25){
+        alreadyAsked = [];
+    }
+    x = Math.floor(Math.random()*questions.length);
+    if(alreadyAsked.includes(questions[x])) {
+       askQuestion();
     }
     alreadyAsked.push(questions[x]);
     document.getElementById('question').innerHTML = questions[x];
@@ -222,7 +224,7 @@ function answerCorrect(){
         cellsNeedToBeFilled[cell].active = true;
         cellsNeedToBeFilled[cell].owner = turn;
         changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
-        alreadyAsked = true;
+        // alreadyAsked = true;
         assignPoints();
     }
 };
@@ -287,7 +289,6 @@ function deactivateLastClickedLine(){
     }
 }
 
-
 function currentTurn(){
     if(pointThisTurn ===false){
         turn = turn === "p1" ? "p2" : "p1";
@@ -297,6 +298,7 @@ function currentTurn(){
 
 function updateDisplayedPlayerTurn(){
     document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
+    return true;
 };
 
 function changeCellBackgroundColor(rowNum, colNum) {
