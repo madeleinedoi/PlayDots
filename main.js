@@ -13,8 +13,9 @@ var x;
 var correctAnswer = [];
 var currentCell;
 var element;
-var cellsNeedToBeFilled= [];
+var cellsNeedToBeFilled = [];
 var alreadyAsked = [];
+var cellCount;
 
 
 function setUpBoard(){
@@ -224,8 +225,8 @@ function answerCorrect(){
         cellsNeedToBeFilled[cell].active = true;
         cellsNeedToBeFilled[cell].owner = turn;
         changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
-        // alreadyAsked = true;
         assignPoints();
+
     }
 };
 
@@ -241,12 +242,14 @@ function checkIfAnswerIsCorrect() {
     if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
         answerCorrect();
         askQuestion();
+        cellCount++;
     }
     else {
         answerIncorrect();
     }
     cellsNeedToBeFilled = [];
     $('#myModal').modal('hide');
+    checkIfGameOver();
 };
 
 function checkCells() {
@@ -275,7 +278,6 @@ function assignPoints() {
         pointThisTurn = true;
         document.getElementById("p2").innerHTML = p2points;
     }
-
 };
 
 function deactivateLastClickedLine(){
@@ -311,7 +313,11 @@ function changeCellBackgroundColor(rowNum, colNum) {
     }
 };
 
-
+function checkIfGameOver(){
+    if(p1points + p2points === 25){
+        $('#myModal').modal('show');
+    }
+}
 
 
 
