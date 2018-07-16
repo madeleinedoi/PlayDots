@@ -314,8 +314,11 @@ function changeCellBackgroundColor(rowNum, colNum) {
 };
 
 function checkIfGameOver(){
-    if(p1points + p2points === 25){
-        $('#myModal').modal('show');
+    if((p1points + p2points === 25) && (p1points > p2points)){
+        $('#p1modal').modal('show');
+    }
+    if((p1points + p2points === 25) && (p2points > p1points)){
+        $('#p2modal').modal('show');
     }
 }
 
