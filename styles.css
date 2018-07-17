@@ -129,11 +129,11 @@ h1{
     font-size: 45px;
     font-family: Verdana, sans-serif;
     text-align: center;
-    border-style: solid;
-    border-width: 3px;
-    border-left-width: 2px;
-    border-right-width: 2px;
-    border-color: #EC9F6F;
+    /*border-style: solid;*/
+    /*border-width: 3px;*/
+    /*border-left-width: 2px;*/
+    /*border-right-width: 2px;*/
+    /*border-color: #EC9F6F;*/
 }
 h2{
     text-align:center;
@@ -142,8 +142,9 @@ h2{
 }
 h3{
     font-family: Verdana, sans-serif;
-    color:white;
+    color:black;
     text-align: center;
+    font-size: 25px;
 }
 p1{
     color: #69CDC1;
@@ -154,13 +155,18 @@ p2{
     text-align:center;
     font: bold 30px Verdana, sans-serif;
     color:#E876AA ;
-
 }
-
 * {
     box-sizing: border-box;
 }
-
+.container5{
+    margin: 0 auto;
+    width: 950px;
+    margin-left: 525px;
+    margin-top: 300px;
+    position: absolute;
+    z-index: 1000;
+}
 body {
     margin: 0;
     font-family: Verdana, sans-serif;
@@ -187,9 +193,9 @@ body {
     color: black;
     border-style: outset;
     border-color: #0066A2;
-    height: 25px;
-    width: 150px;
-    font: bold 15px Verdana, sans-serif;
+    height: 45px;
+    width: 250px;
+    font: bold 20px Verdana, sans-serif;
     text-shadow: none;
 }
 #backgroundImage {
@@ -251,6 +257,8 @@ p{
     font: bold 40px Verdana, sans-serif;
     color: #EC9F6F;
     text-align: center;
+    top: 50%;
+    left:50%;
 }
 .playerx{
     font: bold 35px Verdana, sans-serif;
