@@ -2,7 +2,7 @@ var cells;
 var hLines;
 var vLines;
 var turn = "p1";
-var p1points = 23;
+var p1points = 0;
 var p2points = 0;
 var pointThisTurn = false;
 var rowNum;
@@ -233,6 +233,7 @@ function answerCorrect(){
 function answerIncorrect(){
     currentCell.active = false;
     pointThisTurn=false;
+    currentTurn();
     currentCell.owner = "";
     deactivateLastClickedLine();
 };
@@ -292,7 +293,7 @@ function deactivateLastClickedLine(){
 }
 
 function currentTurn(){
-    if(pointThisTurn ===false){
+    if(pointThisTurn === false){
         turn = turn === "p1" ? "p2" : "p1";
     }
     updateDisplayedPlayerTurn();
