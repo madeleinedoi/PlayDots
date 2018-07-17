@@ -6,20 +6,28 @@
 
     <title>Play Dots</title>
 
+
+
 <body style="background-color:lightgrey;">
 </head>
 
 <body>
+
 <div class="score-board">
     <div class="score">
         <p id="turnTeller1">Player 1 Go!</p>
-        <h4>Player 1</h4>
+        <br>
+        <br>
+        <br>
+        <h4><font size="3">Player 1</font</h4>
+        <br>
+        <br>
         <div class="score-boxp1">
             <p class="player-score" id = "p1">0</p>
         </div>
     </div>
     <div class="score">
-        <h5>Player 2</h5>
+        <h5><font size="3">Player 2</font></h5>
         <div class="score-boxp2">
             <p class="player-score" id = "p2">0</p>
         </div>
@@ -53,6 +61,7 @@
                     <p>
                     <p id="question"></p>
                         <script>
+
                             $('#myModal').on('hidden.bs.modal', function() {
                                 $(this)
                                     .find("input,textarea,select").val('');
