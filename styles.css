@@ -119,6 +119,21 @@ canvas {
     margin-top: 185px;
     position: absolute;
     z-index: 1000;
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 4.5s;
+}
+
+$animationDelay: 1;
+@for $i from 1 through 15 {
+    .projects div:nth-of-type(#{$i}) {
+        animation-delay: #{0.3+($i)/30}s;
+    }
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 .active {
     background-color: black;
@@ -149,12 +164,40 @@ p1{
     color: #69CDC1;
     text-align:center;
     font: bold 30px Verdana, sans-serif;
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 4.5s;
 }
 p2{
     text-align:center;
     font: bold 30px Verdana, sans-serif;
     color:#E876AA ;
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 4.5s;
 }
+p3 {
+    color: #69CDC1;
+    text-align: center;
+    font: bold 30px Verdana, sans-serif;
+}
+p4{
+    text-align:center;
+    font: bold 30px Verdana, sans-serif;
+    color:#E876AA ;
+}
+p6{
+    font: bold 40px Verdana, sans-serif;
+    color: #EC9F6F;
+    text-align: center;
+    top: 50%;
+    left:50%;
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 4s.5s;
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -246,19 +289,40 @@ body {
     background-color: #69CDC1;
     height: 200px;
     width: 200px;
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 4.5s;
 }
 .score-boxp2{
     border: 6px solid black;
     background-color: #E876AA;
     height: 200px;
     width: 200px;
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 4.5s;
 }
+.score-boxp3 {
+    border: 6px solid black;
+    background-color: #69CDC1;
+    height: 200px;
+    width: 200px;}
+.score-boxp4{
+    border: 6px solid black;
+    background-color: #E876AA;
+    height: 200px;
+    width: 200px;
+}
+
 p{
     font: bold 40px Verdana, sans-serif;
     color: #EC9F6F;
     text-align: center;
     top: 50%;
     left:50%;
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 1.5s;
 }
 .playerx{
     font: bold 35px Verdana, sans-serif;
