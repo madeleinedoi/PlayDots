@@ -17,7 +17,8 @@ var cellsNeedToBeFilled = [];
 var alreadyAsked = [];
 var cellCount;
 var confettiPlayers = [];
-var soundCount=0;
+// var soundCount=0;
+
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
     vLines=generateVertical(5,6);
@@ -278,8 +279,7 @@ function assignPoints() {
         p2points++;
         document.getElementById("p2").innerHTML = p2points;
     }
-    // pointThisTurn = true;
-
+    pointThisTurn = true;
 };
 
 function deactivateLastClickedLine(){
