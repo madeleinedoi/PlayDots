@@ -126,7 +126,7 @@ canvas {
 }
 h1{
     color:-moz-cellhighlight;
-    font-size: 45px;
+    font-size: 55px;
     font-family: Verdana, sans-serif;
     text-align: center;
     /*border-style: solid;*/
@@ -137,12 +137,12 @@ h1{
 }
 h2{
     text-align:center;
-    color:black;
+    color:white;
     font-family: Verdana, sans-serif;
 }
 h3{
     font-family: Verdana, sans-serif;
-    color:black;
+    color:white;
     text-align: center;
     font-size: 25px;
 }
@@ -180,17 +180,17 @@ body {
 .container img {vertical-align: middle;}
 .container .content {
     position: absolute;
-    bottom: 400px;
+    bottom: 350px;
     background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
     color: #f1f1f1;
-    width: 100%;
-    padding: 20px;
+    margin-left: 270px;
+    padding-left: 35px;
 }
 .btn {
     background-color: black;
     cursor: pointer;
     background: #EC9F6F;
-    color: black;
+    color: white;
     border-style: outset;
     border-color: #0066A2;
     height: 45px;
