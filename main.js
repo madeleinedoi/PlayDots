@@ -2,7 +2,7 @@ var cells;
 var hLines;
 var vLines;
 var turn = "p1";
-var p1points = 0;
+var p1points = 23;
 var p2points = 0;
 var pointThisTurn = false;
 var rowNum;
@@ -16,7 +16,7 @@ var element;
 var cellsNeedToBeFilled = [];
 var alreadyAsked = [];
 var cellCount;
-
+var confettiPlayers = [];
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -314,18 +314,55 @@ function changeCellBackgroundColor(rowNum, colNum) {
     }
 };
 
+function makeItConfetti() {
+    var confetti = document.querySelectorAll('.confetti');
+
+    if (!confetti[0].animate) {
+        return false;
+    }
+
+    for (var i = 0, len = confetti.length; i < len; ++i) {
+        var snowball = confetti[i];
+        snowball.innerHTML = '<div class="rotate"><div class="askew"></div></div>';
+        var scale = Math.random() * .8 + .2;
+        var player = snowball.animate([
+            { transform: 'translate3d(' + (i/len*100) + 'vw,0,0) scale(' + scale + ')', opacity: scale },
+            { transform: 'translate3d(' + (i/len*100 + 10) + 'vw,100vh,0) scale(' + scale + ')', opacity: 1 }
+        ], {
+            duration: Math.random() * 3000 + 3000,
+            iterations: Infinity,
+            delay: -(Math.random() * 5000)
+        });
+
+
+        confettiPlayers.push(player);
+    }
+}
+
 function checkIfGameOver(){
     if((p1points + p2points === 25) && (p1points > p2points)){
         $('#p1modal').modal('show');
+        makeItConfetti();
     }
     if((p1points + p2points === 25) && (p2points > p1points)){
         $('#p2modal').modal('show');
+        makeItConfetti();
     }
 }
 
 function refreshPage(){
     window.location.reload();
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
