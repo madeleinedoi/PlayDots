@@ -186,7 +186,11 @@ p4{
     font: bold 30px Verdana, sans-serif;
     color:#E876AA ;
 }
-
+p5{
+    font: bold 40px Verdana, sans-serif;
+    top: 50%;
+    left:50%;
+}
 p6{
     font: bold 40px Verdana, sans-serif;
     color: #EC9F6F;
