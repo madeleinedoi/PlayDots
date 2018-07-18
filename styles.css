@@ -124,13 +124,6 @@ canvas {
     animation-duration: 4.5s;
 }
 
-$animationDelay: 1;
-@for $i from 1 through 15 {
-    .projects div:nth-of-type(#{$i}) {
-        animation-delay: #{0.3+($i)/30}s;
-    }
-}
-
 @keyframes fade-in {
     0% { opacity: 0; }
     100% { opacity: 1; }
@@ -143,11 +136,6 @@ h1{
     font-size: 55px;
     font-family: Verdana, sans-serif;
     text-align: center;
-    /*border-style: solid;*/
-    /*border-width: 3px;*/
-    /*border-left-width: 2px;*/
-    /*border-right-width: 2px;*/
-    /*border-color: #EC9F6F;*/
 }
 h2{
     text-align:center;
@@ -201,7 +189,6 @@ p6{
     animation-fill-mode: both;
     animation-duration: 4.5s;
 }
-
 
 * {
     box-sizing: border-box;
@@ -372,7 +359,7 @@ p{
 }
 .confetti .rotate {
     animation: driftyRotate 1s infinite both ease-in-out;
-    perspective: 1000;
+    /*perspective: 1000;*/
 }
 .confetti .askew {
     background: currentColor;
@@ -472,3 +459,4 @@ p{
         transform: rotateX(100deg);
     }
 }
+

@@ -80,8 +80,18 @@
                                 checkIfAnswerIsCorrect();
                             }
                         };
+                        $(document).ready(function() {
+                            var obj = document.createElement("audio");
+                            obj.src="https://kahimyang.com/resources/sound/click.mp3";
+                            obj.volume=0.10;
+                            obj.autoPlay=false;
+                            obj.preLoad=true;
+                            $(".playSound").click(function() {
+                                obj.play();
+                            });
+                        });
                     </script>
-                    <button type="button" onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
+                    <button type="button" class="playSound"onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
                     </p>
                 </div>
                 <div class="modal-footer">
