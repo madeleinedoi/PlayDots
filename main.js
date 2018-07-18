@@ -278,7 +278,7 @@ function assignPoints() {
         p2points++;
         document.getElementById("p2").innerHTML = p2points;
     }
-    pointThisTurn = true;
+    // pointThisTurn = true;
 
 };
 

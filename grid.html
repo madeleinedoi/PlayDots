@@ -86,7 +86,7 @@
                                     obj.preLoad=true;
                                     obj.play();
                                 }
-                               else{
+                                else{
                                     var obj = document.createElement("audio");
                                     obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
                                     obj.volume=0.10;
@@ -96,12 +96,11 @@
                                 }
                             }
                         };
+
+                    </script>
+                    <script>
                         $(document).ready(function() {
-                            var obj = document.createElement("audio");
-                            $(".playSound").click(function() {
-                                obj.play();
-                            });
-                            if(pointThisTurn){
+                            if(!pointThisTurn){
                                 var obj = document.createElement("audio");
                                 obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
                                 obj.volume=0.10;
@@ -117,6 +116,9 @@
                                 obj.preLoad=true;
                                 obj.play();
                             }
+                            $(".playSound").click(function() {
+                                obj.play();
+                            });
                         });
                     </script>
                     <button type="button" class="playSound"onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
