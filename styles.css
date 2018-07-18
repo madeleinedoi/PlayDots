@@ -298,7 +298,7 @@ p{
     display: inline-block;
     position: absolute;
     top: -1rem;
-    left: -75%;
+    left: -100%;
     z-index: 150;
 }
 .confetti .rotate {
