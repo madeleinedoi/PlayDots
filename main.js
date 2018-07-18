@@ -17,7 +17,7 @@ var cellsNeedToBeFilled = [];
 var alreadyAsked = [];
 var cellCount;
 var confettiPlayers = [];
-
+var soundCount=0;
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
     vLines=generateVertical(5,6);
@@ -152,6 +152,7 @@ function clickFunction(event) {
     }
     checkCells();
     currentTurn();
+    soundCount++;
 };
 
 function askQuestion(){
@@ -271,14 +272,14 @@ function displayQuestion() {
 function assignPoints() {
     if (turn === "p1") {
         p1points++;
-        pointThisTurn = true;
         document.getElementById("p1").innerHTML = p1points;
     }
     else {
         p2points++;
-        pointThisTurn = true;
         document.getElementById("p2").innerHTML = p2points;
     }
+    pointThisTurn = true;
+
 };
 
 function deactivateLastClickedLine(){

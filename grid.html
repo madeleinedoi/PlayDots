@@ -78,17 +78,45 @@
                         document.getElementById('input_id').onkeydown = function(e){
                             if(e.keyCode == 13){
                                 checkIfAnswerIsCorrect();
+                                if(pointThisTurn){
+                                    var obj = document.createElement("audio");
+                                    obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
+                                    obj.volume=0.10;
+                                    obj.autoPlay=false;
+                                    obj.preLoad=true;
+                                    obj.play();
+                                }
+                               else{
+                                    var obj = document.createElement("audio");
+                                    obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
+                                    obj.volume=0.10;
+                                    obj.autoPlay=false;
+                                    obj.preLoad=true;
+                                    obj.play();
+                                }
                             }
                         };
                         $(document).ready(function() {
                             var obj = document.createElement("audio");
-                            obj.src="https://kahimyang.com/resources/sound/click.mp3";
-                            obj.volume=0.10;
-                            obj.autoPlay=false;
-                            obj.preLoad=true;
                             $(".playSound").click(function() {
                                 obj.play();
                             });
+                            if(pointThisTurn){
+                                var obj = document.createElement("audio");
+                                obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
+                                obj.volume=0.10;
+                                obj.autoPlay=false;
+                                obj.preLoad=true;
+                                obj.play();
+                            }
+                            else{
+                                var obj = document.createElement("audio");
+                                obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
+                                obj.volume=0.10;
+                                obj.autoPlay=false;
+                                obj.preLoad=true;
+                                obj.play();
+                            }
                         });
                     </script>
                     <button type="button" class="playSound"onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
