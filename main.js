@@ -125,6 +125,8 @@ function onTimer() {
     i--;
     if (i < 0) {
         $('#myModal').modal('hide');
+        answerIncorrect();
+
     }
     else {
         setTimeout(onTimer, 1000);
