@@ -2,7 +2,7 @@ var cells;
 var hLines;
 var vLines;
 var turn = "p1";
-var p1points = 23;
+var p1points = 0;
 var p2points = 0;
 var pointThisTurn = false;
 var rowNum;
@@ -119,16 +119,25 @@ function addListenerForVElements(){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
-i = 10;
+counter = 20;
+counterFlag = false;
 function onTimer() {
-    document.getElementById('mycounter').innerHTML = i;
-    i--;
-    if (i < 0) {
+    document.getElementById('mycounter').innerHTML = counter;
+    counter--;
+    // if(i>0 && answerIncorrect()){
+    //     i=10;
+    // }
+    // else if(i>0){
+    //     i=10;
+    // }
+   if (counter < 0) {
         $('#myModal').modal('hide');
+        counterFlag = false;
+        counter = 20;
         answerIncorrect();
-
     }
-    else {
+    
+    else if (counterFlag) {
         setTimeout(onTimer, 1000);
     }
 }
@@ -267,6 +276,8 @@ function checkIfAnswerIsCorrect() {
     cellsNeedToBeFilled = [];
     $('#myModal').modal('hide');
     checkIfGameOver();
+    counter = 20;
+    counterFlag = false;
 };
 
 function checkCells() {
@@ -275,7 +286,7 @@ function checkCells() {
             displayQuestion();
             currentCell = cell;
             cellsNeedToBeFilled.push(cell);
-            onTimer();
+            // onTimer();
         }
     });
 };
@@ -283,6 +294,9 @@ function checkCells() {
 function displayQuestion() {
     $('#myModal').modal('show');
     pointThisTurn = true;
+    //render the dom
+    counterFlag = true;
+    onTimer();
 };
 
 function assignPoints() {
