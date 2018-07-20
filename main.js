@@ -119,6 +119,18 @@ function addListenerForVElements(){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
+i = 10;
+function onTimer() {
+    document.getElementById('mycounter').innerHTML = i;
+    i--;
+    if (i < 0) {
+        $('#myModal').modal('hide');
+    }
+    else {
+        setTimeout(onTimer, 1000);
+    }
+}
+
 
 function clickFunction(event) {
     element = event.target;
@@ -261,6 +273,7 @@ function checkCells() {
             displayQuestion();
             currentCell = cell;
             cellsNeedToBeFilled.push(cell);
+            onTimer();
         }
     });
 };
