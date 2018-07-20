@@ -6,7 +6,7 @@
 }
 .linevertical {
     background-color: darkgrey;
-    height:100px;
+    height:104px;
     width:10px;
     position:relative;
     left:5px;
@@ -23,7 +23,7 @@
 .linehorizontal{
     background-color:darkgrey;
     height:10px;
-    width:100px;
+    width:108px;
     position:relative;
     display: inline-block;
 }
@@ -96,7 +96,9 @@ canvas {
     height: 100px;
     padding: 0px;
     margin: 0px;
-    position: relative;
+    /*position: relative;*/
+    margin-left: 8px;
+    margin-top: 4px;
 }
 .cell.p2{
     background-color: #E876AA;
@@ -104,19 +106,21 @@ canvas {
     height: 100px;
     padding: 0px;
     margin: 0px;
-    position: relative;
+    /*position: relative;*/
+    margin-left: 8px;
+    margin-top: 4px;
 }
 
 .cell{
     display:inline-block;
-    width:100px;
+    width:108px;
 
 }
 .playfield {
     margin: 0 auto;
     width: 750px;
     margin-left: 670px;
-    margin-top: 185px;
+    margin-top: 180px;
     position: absolute;
     z-index: 1000;
     animation-name: fade-in;
@@ -339,14 +343,6 @@ p{
 * {
     box-sizing: border-box;
 }
-/*body {*/
-    /*overflow: hidden;*/
-    /*height: 100vh;*/
-    /*width: 200%;*/
-    /*user-select: none;*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-/*}*/
 
 .confetti {
     width: 300rem;
@@ -364,8 +360,8 @@ p{
 .confetti .askew {
     background: currentColor;
     transform: skewY(10deg);
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     animation: drifty 1s infinite alternate both ease-in-out;
     /*perspective:1000;*/
 }
