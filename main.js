@@ -977,7 +977,7 @@ function refreshPage(){
 
 values = [];
 
-
+var cntr= values.length;
 function addRecordQuestions() {
  
     var inp = document.getElementById('inputtext');
