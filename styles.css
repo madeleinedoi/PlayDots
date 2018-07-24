@@ -237,10 +237,23 @@ body {
     color: white;
     border-style: outset;
     border-color: #0066A2;
-    height: 45px;
+    height: 55px;
     width: 250px;
     font: bold 20px Verdana, sans-serif;
     text-shadow: none;
+}
+.btn1{
+    background-color: black;
+    cursor: pointer;
+    background: #EC9F6F;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 55px;
+    width: 250px;
+    font: bold 20px Verdana, sans-serif;
+    text-shadow: none;
+}
 }
 #backgroundImage {
     background-image: url("http://yo2mo.com/wp-content/uploads/2016/05/chalkboard-background-blank.jpg");
@@ -470,12 +483,40 @@ p{
     animation-duration: 4.5s;
 }
 
-borderbox {
+borderbox1 {
     background-color: lightgrey;
-    width: 5px;
-    border: 5px solid green;
-    padding: 5px;
-    margin: 5px;
-    height:10px;
+    border: 25px solid #E6B6DB  ;
+    padding: 25px;
+    margin: 0 auto;
+    width: 400px;
+    height: 900px;
+    margin-left: 550px;
+    margin-top: 50px;
+    position: absolute;
+    z-index: 1000;
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 4.5s;
 }
+
+borderbox2 {
+    background-color: lightgrey;
+    border: 25px solid #E6B6DB  ;
+    padding: 25px;
+    margin: 0 auto;
+    width: 400px;
+    height: 900px;
+    margin-left: 1000px;
+    margin-top: 50px;
+    position: absolute;
+    z-index: 1000;
+    animation-name: fade-in;
+    animation-fill-mode: both;
+    animation-duration: 4.5s;
+}
+input{
+    margin: 10px;
+}
+
+
 

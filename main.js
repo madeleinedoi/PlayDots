@@ -1,3 +1,4 @@
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";
 var cells;
 var hLines;
 var vLines;
@@ -15,8 +16,12 @@ var currentCell;
 var element;
 var cellsNeedToBeFilled = [];
 var alreadyAsked = [];
+var alreadyAskedUserQuestions= [];
+var alreadyAskedUserAnswers= [];
 var cellCount;
 var confettiPlayers = [];
+var userQ;
+var userA;
 // var soundCount=0;
 
 function setUpBoard(){
@@ -119,7 +124,7 @@ function addListenerForVElements(){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
-counter = 21;
+counter = 20;
 counterFlag = false;
 function onTimer() {
     document.getElementById('mycounter').innerHTML = counter;
@@ -442,6 +447,54 @@ function checkIfGameOver(){
 function refreshPage(){
     window.location.reload();
 }
+
+function goButtonQuestions(){
+    let questionInputValues=[];
+    let inputs = $('#myform : input');
+    inputs.each(function () {
+        questionInputValues.push($(this).val());
+    });
+    return false;
+}
+
+function goButtonAnswers(){
+    let answerInputValues=[];
+    let inputs = $('#myform : input');
+    inputs.each(function () {
+        answerInputValues.push($(this).val());
+    });
+    return false;
+}
+
+// function userQuestions() {
+//     for (var i = 0; i < questionInputValues.length, i++) {
+//         if (alreadyAskedUserQuestions.length === questionInputValues.length) {
+//             alreadyAskedUserQuestions = [];
+//         }
+//         userQ = Math.floor(Math.random() * questionInputValues.length);
+//         if (alreadyAskedUserQuestions.includes(questionInputValues[userQ])) {
+//             userQuestions();
+//         }
+//         alreadyAskedUserQuestions.push(questionInputValues[x]);
+//         // document.getElementById('question').innerHTML = questionInputValues[userQ];
+//     }
+//
+//     // for(var i=0; i<answerInputValues.length, i++){
+//     //     if(alreadyAskedUserAnswers.length === answerInputValues.length){
+//     //         alreadyAskedUserAnswers = [];
+//     //     }
+//     //     if(alreadyAskedUserAnswers.includes(answerInputValues[userQ])) {
+//     //         userQuestions();
+//     //     }
+//     //     alreadyAskedUserQuestions.push(questionInputValues[x]);
+//     //     document.getElementById('question').innerHTML = answerInputValues[userQ];
+//     // }
+// };
+
+
+
+
+
 
 
 
