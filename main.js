@@ -119,7 +119,7 @@ function addListenerForVElements(){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
-counter = 20;
+counter = 21;
 counterFlag = false;
 function onTimer() {
     document.getElementById('mycounter').innerHTML = counter;
@@ -136,7 +136,7 @@ function onTimer() {
         counter = 20;
         answerIncorrect();
     }
-    
+
     else if (counterFlag) {
         setTimeout(onTimer, 1000);
     }
@@ -189,8 +189,8 @@ function askQuestion(){
     correctAnswer[2] = "6";
     questions[3] = "Who was Mario's best friend in Super Mario Bros";
     correctAnswer[3] = "Luigi";
-    questions[4] = "What is the world’s fastest land animal?";
-    correctAnswer[4] = "Cheetah";
+    questions[4] = "Which US state has the highest number of colleges and universities?";
+    correctAnswer[4] = "California";
     questions[5] = "What is the most used word";
     correctAnswer[5] = "The";
     questions[6]  = "What is the capital of California?";
@@ -209,8 +209,8 @@ function askQuestion(){
     correctAnswer[12] = "250";
     questions[13] = "Babe Ruth is associated with which sport?";
     correctAnswer[13] = "Baseball";
-    questions[14] = "The title role of the 1990 movie “Pretty Woman” was played by which actress?";
-    correctAnswer[14] = "Julia Roberts";
+    questions[14] = "Spinach is high in which mineral?";
+    correctAnswer[14] = "Iron";
     questions[15] = "Does sound travel faster through steel or water?";
     correctAnswer[15] = "Steel";
     questions[16] = "What is sushi traditionally wrapped in?";
@@ -233,8 +233,63 @@ function askQuestion(){
     correctAnswer[24]="Sneeze";
     questions[25] = "What do Italian's call pizza?";
     correctAnswer[25]="Pie";
+    questions[26] = "Which planet is the closest to Earth?";
+    correctAnswer[26]="Venus";
+    questions[27] = "Which is the tallest mammal?";
+    correctAnswer[27]="Giraffe";
+    questions[28] = "What color is the circle on the Japanese national flag?";
+    correctAnswer[28]="Red";
+    questions[29] = "The title role of the 1990 movie “Pretty Woman” was played by which actress?";
+    correctAnswer[29]="Julia Roberts";
+    questions[30] = "How many sides does an octagon have?";
+    correctAnswer[30]="8";
+    questions[31] = "Who topped the Billboard charts with the single \"Love Yourself\" in February, 2016?";
+    correctAnswer[31]="Justin Bieber";
+    questions[32] = "What is the name of the Dr Seuss character who steals Christmas?";
+    correctAnswer[32]="Grinch";
+    questions[33] = "What is the name of the pirate in Peter Pan?";
+    correctAnswer[33]="Captain Hook";
+    questions[34] = "Which is the fastest land animal?";
+    correctAnswer[34]="Cheetah";
+    questions[35] = "What color are emeralds?";
+    correctAnswer[35]="Green";
+    questions[36] = "If you suffer from arachnophobia, which animal are you scared of?";
+    correctAnswer[36]="Spiders";
+    questions[37] = "Which movie features the song Ding Dong The Witch Is Dead?";
+    correctAnswer[37]="Wizard of Oz";
+    questions[38] = "Who was US president during World War I?";
+    correctAnswer[38]="Woodrow Wilson";
+    questions[39] = "What is the largest bone in the human body?";
+    correctAnswer[39]="femur";
+    questions[40] = "What is a female deer called?";
+    correctAnswer[40]="Doe";
+    questions[41] = "Ursula belonged to which Disney movie?";
+    correctAnswer[41]="Little Mermaid";
+    questions[42] = "What is the national sport of Canada?";
+    correctAnswer[42]="Hockey";
+    questions[43] = "What is rowing called in the United States?";
+    correctAnswer[43]="Crew";
+    questions[44] = "Soccer's international championship is known as?";
+    correctAnswer[44]="World Cup";
+    questions[45] = "What is the formula for water?";
+    correctAnswer[45]="H2O";
+    questions[46] = "Name the largest continent";
+    correctAnswer[46]="Asia";
+    questions[47] = "Name the largest country by population";
+    correctAnswer[47]="China";
+    questions[48] = "Who was the first president of the United States?";
+    correctAnswer[48]="George Washington";
+    questions[49] = "Who sings the song \"Poker Face\"?";
+    correctAnswer[49]="Lady Gaga";
+    questions[50] = "Where did the olympic games orginate?";
+    correctAnswer[50]="Greece";
 
-    if(alreadyAsked.length === 25){
+
+
+
+
+
+    if(alreadyAsked.length === 50){
         alreadyAsked = [];
     }
     x = Math.floor(Math.random()*questions.length);
@@ -272,11 +327,12 @@ function checkIfAnswerIsCorrect() {
     }
     else {
         answerIncorrect();
+        askQuestion();
     }
     cellsNeedToBeFilled = [];
     $('#myModal').modal('hide');
     checkIfGameOver();
-    counter = 20;
+    counter = 21;
     counterFlag = false;
 };
 
