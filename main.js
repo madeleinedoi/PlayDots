@@ -953,27 +953,6 @@ function checkIfGameOver(){
 function refreshPage(){
     window.location.reload();
 }
-//
-// function goButtonQuestions(){
-//     let questionInputValues=[];
-//     let inputs = $('#myform : input');
-//     inputs.each(function () {
-//         questionInputValues.push($(this).val());
-//     });
-//     return false;
-// }
-//
-// function goButtonAnswers(){
-//     let answerInputValues=[];
-//     let inputs = $('#myform : input');
-//     inputs.each(function () {
-//         answerInputValues.push($(this).val());
-//     });
-//     return false;
-// }
-
-
-
 
 values = [];
 
@@ -1132,6 +1111,8 @@ function addRecordQuestions() {
         }
         if(values.length === 25){
             document.getElementById("done").innerHTML = "Complete";
+            $('#questionsmodal').modal('show');
+            break;
         }
         }
 
@@ -1296,11 +1277,14 @@ function addRecordAnswers() {
         }
         if(answers.length === 25){
             document.getElementById("done2").innerHTML = "Complete";
+            alert("Complete");
+            break;
         }
     }
 
     inp.value = "";
 }
+
 
 
 
