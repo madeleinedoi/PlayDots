@@ -47,6 +47,8 @@
 
 <borderbox1>
     <p3>Questions</p3>
+    <br/>
+    <p7>**Must fill in 25 questions**</p7>
     <table>
         <tr>
             <td>Enter the Input</td>
@@ -54,7 +56,14 @@
         </tr>
         <tr>
             <td></td>
-            <td><button type="button" id="add" onclick="addRecordQuestions();">Add </button>
+            <script>
+            document.getElementById('inputtext').onkeydown = function(e) {
+                if (e.keyCode == 13) {
+                    addRecordQuestions();
+                }
+            }
+            </script>
+            <td><button type="button" id="add" onclick="addRecordQuestions();">Add</button>
             </td>
         </tr>
     </table>

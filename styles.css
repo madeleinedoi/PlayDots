@@ -198,7 +198,12 @@ p6{
     animation-fill-mode: both;
     animation-duration: 4.5s;
 }
-
+p7{
+    font: bold 20px Verdana, sans-serif;
+    color: #EC9F6F;
+    text-align: center;
+    top: 50%;
+    left:50%;
 * {
     box-sizing: border-box;
 }

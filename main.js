@@ -1052,12 +1052,6 @@ function addRecordQuestions() {
         else{
             document.getElementById('values12').innerHTML = "12." + values[11];
         }
-        if(values[11] === undefined) {
-            break;
-        }
-        else{
-            document.getElementById('values12').innerHTML = "12." + values[11];
-        }
         if(values[12] === undefined) {
             break;
         }
