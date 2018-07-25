@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f66c568-7769-49ce-8aa1-80897bfd3155" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/userinputgrid.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userInput.html" beforeDir="false" afterPath="$PROJECT_DIR$/userInput.html" afterDir="false" />
@@ -19,11 +21,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2">
+              <caret line="947" column="20" lean-forward="true" selection-start-line="947" selection-start-column="20" selection-end-line="947" selection-end-column="20" />
+              <folding>
+                <element signature="e#29067#33621#0" />
+                <element signature="e#33668#38241#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userinputgrid.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/userinputgrid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54332">
+              <caret line="2266" selection-start-line="2266" selection-end-line="2266" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#25719#25754#0" expanded="true" />
+                <element signature="e#76824#76859#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grid.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="758">
+              <caret line="2091" column="19" lean-forward="true" selection-start-line="2091" selection-start-column="19" selection-end-line="2091" selection-end-column="101" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#25721#25756#0" expanded="true" />
+                <element signature="e#76826#76861#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="366" selection-start-line="366" selection-end-line="366" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="153" selection-start-line="47" selection-start-column="153" selection-end-line="47" selection-end-column="153" />
+            <state relative-caret-position="571">
+              <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -35,45 +87,10 @@
       <file leaf-file-name="userInput.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userInput.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="155" column="23" selection-start-line="155" selection-start-column="23" selection-end-line="155" selection-end-column="23" />
+            <state relative-caret-position="420">
+              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="525" column="20" selection-start-line="525" selection-start-column="20" selection-end-line="525" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grid.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="106" column="55" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#25721#25756#0" expanded="true" />
-                <element signature="e#76826#76861#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="829">
-              <caret line="1308" lean-forward="true" selection-start-line="1308" selection-end-line="1308" />
-              <folding>
-                <marker date="1532539578720" expanded="true" signature="4951:5075" ph="..." />
               </folding>
             </state>
           </provider>
@@ -165,15 +182,16 @@
         <option value="$PROJECT_DIR$/trial.js" />
         <option value="$PROJECT_DIR$/questions.html" />
         <option value="$PROJECT_DIR$/input.html" />
-        <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/gridInput.html" />
         <option value="$PROJECT_DIR$/userinput.js" />
         <option value="$PROJECT_DIR$/htmluserinput.html" />
         <option value="$PROJECT_DIR$/javascriptuserinput.js" />
         <option value="$PROJECT_DIR$/grid.html" />
+        <option value="$PROJECT_DIR$/main.html" />
+        <option value="$PROJECT_DIR$/userinputgrid.html" />
+        <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/userInput.html" />
-        <option value="$PROJECT_DIR$/styles.css" />
       </list>
     </option>
   </component>
@@ -199,8 +217,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="PlayDotsg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlayDotsg" type="462c0819:PsiDirectoryNode" />
+              <item name="PlayDots" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlayDots" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -616,18 +634,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367234000" />
+    <option name="totallyTimeSpent" value="370657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12778783" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1279762" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" weight="0.3296593" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32820514" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32865733" />
       <window_info anchor="bottom" id="Run" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="17" />
@@ -653,23 +670,23 @@
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="3" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12899336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="TypeScript" order="0" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3296593" />
+      <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3296593" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3296593" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -692,7 +709,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Dots.html" />
     <entry file="file://$PROJECT_DIR$/newest.js" />
     <entry file="file://$PROJECT_DIR$/njwkqhboiw" />
     <entry file="file://$PROJECT_DIR$/shaiugv;efoiklws" />
@@ -796,20 +812,10 @@
     <entry file="file://$PROJECT_DIR$/gridInput.html" />
     <entry file="file://$PROJECT_DIR$/htmluserinput.html" />
     <entry file="file://$PROJECT_DIR$/javascriptuserinput.js" />
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="829">
-          <caret line="1308" lean-forward="true" selection-start-line="1308" selection-end-line="1308" />
-          <folding>
-            <marker date="1532539578720" expanded="true" signature="4951:5075" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="106" column="55" selection-start-line="106" selection-start-column="55" selection-end-line="106" selection-end-column="55" />
+        <state relative-caret-position="758">
+          <caret line="2091" column="19" lean-forward="true" selection-start-line="2091" selection-start-column="19" selection-end-line="2091" selection-end-column="101" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#25721#25756#0" expanded="true" />
@@ -820,8 +826,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="153" selection-start-line="47" selection-start-column="153" selection-end-line="47" selection-end-column="153" />
+        <state relative-caret-position="571">
+          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -831,15 +837,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="525" column="20" selection-start-line="525" selection-start-column="20" selection-end-line="525" selection-end-column="20" />
+        <state relative-caret-position="443">
+          <caret line="366" selection-start-line="366" selection-end-line="366" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userinputgrid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54332">
+          <caret line="2266" selection-start-line="2266" selection-end-line="2266" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#25719#25754#0" expanded="true" />
+            <element signature="e#76824#76859#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="947" column="20" lean-forward="true" selection-start-line="947" selection-start-column="20" selection-end-line="947" selection-end-column="20" />
+          <folding>
+            <element signature="e#29067#33621#0" />
+            <element signature="e#33668#38241#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/userInput.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="155" column="23" selection-start-line="155" selection-start-column="23" selection-end-line="155" selection-end-column="23" />
+        <state relative-caret-position="420">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

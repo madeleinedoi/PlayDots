@@ -1111,15 +1111,11 @@ function addRecordQuestions() {
         }
         if(values.length === 25){
             document.getElementById("done").innerHTML = "Complete";
-            $('#questionsmodal').modal('show');
-            break;
         }
         }
 
     inp.value = "";
 }
-
-
 
 answers = [];
 
@@ -1277,12 +1273,17 @@ function addRecordAnswers() {
         }
         if(answers.length === 25){
             document.getElementById("done2").innerHTML = "Complete";
-            alert("Complete");
             break;
         }
     }
-
+    // startTrivia();
     inp.value = "";
+}
+
+function startTrivia() {
+    if (values.length >= 25 && answers.length >= 25) {
+        window.location.replace('userinputgrid.html');
+    }
 }
 
 
