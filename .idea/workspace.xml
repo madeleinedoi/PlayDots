@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4f66c568-7769-49ce-8aa1-80897bfd3155" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/grid.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userinputgrid.html" beforeDir="false" afterPath="$PROJECT_DIR$/userinputgrid.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,22 +19,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="802" column="28" lean-forward="true" selection-start-line="802" selection-start-column="28" selection-end-line="802" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grid.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3767">
-              <caret line="546" column="31" lean-forward="true" selection-start-line="546" selection-start-column="31" selection-end-line="546" selection-end-column="31" />
+            <state relative-caret-position="315">
+              <caret line="343" column="25" lean-forward="true" selection-start-line="343" selection-start-column="25" selection-end-line="343" selection-end-column="25" />
               <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#11222#11344#0" />
+                <element signature="e#12005#12124#0" />
+                <element signature="e#12163#12281#0" />
+                <element signature="e#12335#12646#0" />
+                <element signature="e#12675#13478#0" />
+                <element signature="e#13506#13816#0" />
+                <element signature="e#13840#13873#0" />
+                <element signature="e#13919#18406#0" />
+                <element signature="e#18451#23014#0" />
+                <element signature="e#18587#22970#0" />
+                <element signature="e#23039#23158#0" />
+                <element signature="e#23188#23547#0" />
               </folding>
             </state>
           </provider>
@@ -52,7 +54,7 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
+            <state relative-caret-position="634">
               <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -62,10 +64,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="grid.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grid.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="127" column="33" selection-start-line="127" selection-start-column="33" selection-end-line="127" selection-end-column="33" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="userInput.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userInput.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2096">
+            <state relative-caret-position="1501">
               <caret line="118" column="17" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -74,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userinputgrid.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userinputgrid.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userinputgrid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1171">
-              <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
+            <state relative-caret-position="508">
+              <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -178,9 +192,9 @@
         <option value="$PROJECT_DIR$/javascriptuserinput.js" />
         <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/userinputjs.js" />
-        <option value="$PROJECT_DIR$/grid.html" />
         <option value="$PROJECT_DIR$/userInput.html" />
         <option value="$PROJECT_DIR$/styles.css" />
+        <option value="$PROJECT_DIR$/grid.html" />
         <option value="$PROJECT_DIR$/userinputgrid.html" />
         <option value="$PROJECT_DIR$/main.js" />
       </list>
@@ -277,13 +291,6 @@
       <workItem from="1531436810008" duration="2727000" />
       <workItem from="1531505857261" duration="5226000" />
       <workItem from="1531771877580" duration="2683000" />
-    </task>
-    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
-      <created>1530218637993</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1530218637993</updated>
     </task>
     <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
       <created>1530218791629</created>
@@ -621,11 +628,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532537852715</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="efds">
+      <created>1532555993911</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1532555993911</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="374936000" />
+    <option name="totallyTimeSpent" value="376069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -803,9 +817,46 @@
     <entry file="file://$PROJECT_DIR$/htmluserinput.html" />
     <entry file="file://$PROJECT_DIR$/javascriptuserinput.js" />
     <entry file="file://$PROJECT_DIR$/userinputjs.js" />
+    <entry file="file://$PROJECT_DIR$/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="261" column="1" selection-start-line="261" selection-start-column="1" selection-end-line="261" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="127" column="33" selection-start-line="127" selection-start-column="33" selection-end-line="127" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userInput.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1501">
+          <caret line="118" column="17" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userinputgrid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
+        <state relative-caret-position="634">
           <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -814,46 +865,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3767">
-          <caret line="546" column="31" lean-forward="true" selection-start-line="546" selection-start-column="31" selection-end-line="546" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="261" column="1" selection-start-line="261" selection-start-column="1" selection-end-line="261" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userInput.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2096">
-          <caret line="118" column="17" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="802" column="28" lean-forward="true" selection-start-line="802" selection-start-column="28" selection-end-line="802" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userinputgrid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1171">
-          <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
+        <state relative-caret-position="315">
+          <caret line="343" column="25" lean-forward="true" selection-start-line="343" selection-start-column="25" selection-end-line="343" selection-end-column="25" />
           <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#11222#11344#0" />
+            <element signature="e#12005#12124#0" />
+            <element signature="e#12163#12281#0" />
+            <element signature="e#12335#12646#0" />
+            <element signature="e#12675#13478#0" />
+            <element signature="e#13506#13816#0" />
+            <element signature="e#13840#13873#0" />
+            <element signature="e#13919#18406#0" />
+            <element signature="e#18451#23014#0" />
+            <element signature="e#18587#22970#0" />
+            <element signature="e#23039#23158#0" />
+            <element signature="e#23188#23547#0" />
           </folding>
         </state>
       </provider>
