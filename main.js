@@ -979,41 +979,169 @@ values = [];
 
 var cntr= values.length;
 function addRecordQuestions() {
- 
+
     var inp = document.getElementById('inputtext');
 
     values.push(inp.value);
     for (var cell = 0; cell < values.length; cell++) {
         console.log(values[cell]);
         document.getElementById('values1').innerHTML =  "1." + values[0];
-        document.getElementById('values2').innerHTML =  "2." + values[1];
-        document.getElementById('values3').innerHTML =  "3." + values[2];
-        document.getElementById('values4').innerHTML =  "4." + values[3];
-        document.getElementById('values5').innerHTML =  "5." + values[4];
-        document.getElementById('values6').innerHTML =  "6." + values[5];
-        document.getElementById('values7').innerHTML =  "7." + values[6];
-        document.getElementById('values8').innerHTML =  "8." + values[7];
-        document.getElementById('values9').innerHTML =  "9." + values[8];
-        document.getElementById('values10').innerHTML =  "10." + values[9];
-        document.getElementById('values11').innerHTML =  "11." + values[10];
-        document.getElementById('values12').innerHTML =  "12." + values[11];
-        document.getElementById('values13').innerHTML =  "13." + values[12];
-        document.getElementById('values14').innerHTML =  "14." + values[13];
-        document.getElementById('values15').innerHTML =  "15." + values[14];
-        document.getElementById('values16').innerHTML =  "16." + values[15];
-        document.getElementById('values17').innerHTML =  "17." + values[16];
-        document.getElementById('values18').innerHTML =  "18." + values[17];
-        document.getElementById('values19').innerHTML =  "19." + values[18];
-        document.getElementById('values20').innerHTML =  "20." + values[19];
-        document.getElementById('values21').innerHTML =  "21." + values[20];
-        document.getElementById('values22').innerHTML =  "22." + values[21];
-        document.getElementById('values23').innerHTML =  "23." + values[22];
-        document.getElementById('values24').innerHTML =  "24." + values[23];
-        document.getElementById('values25').innerHTML =  "25." + values[24];
-       
-    }
+        if(values[1] === undefined){
+            break;
+        }
+        else {
+            document.getElementById('values2').innerHTML = "2." + values[1];
+        }
+        if(values[2] === undefined) {
+            break;
+        }
+        else {
+            document.getElementById('values3').innerHTML = "3." + values[2];
+        }
+        if(values[3] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values4').innerHTML = "4." + values[3];
+        }
+        if(values[4] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values5').innerHTML = "5." + values[4];
+        }
+        if(values[5] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values6').innerHTML = "6." + values[5];
+        }
+        if(values[6] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values7').innerHTML = "7." + values[6];
+        }
+        if(values[7] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values8').innerHTML = "8." + values[7];
+        }
+        if(values[8] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values9').innerHTML = "9." + values[8];
+        }
+        if(values[9] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values10').innerHTML = "10." + values[9];
+        }
+        if(values[10] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('value11').innerHTML = "11." + values[10];
+        }
+        if(values[11] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values12').innerHTML = "12." + values[11];
+        }
+        if(values[11] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values12').innerHTML = "12." + values[11];
+        }
+        if(values[12] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values13').innerHTML = "13." + values[12];
+        }
+        if(values[13] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values14').innerHTML = "14." + values[13];
+        }
+        if(values[14] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values15').innerHTML = "15." + values[14];
+        }
+        if(values[15] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values16').innerHTML = "16." + values[15];
+        }
+        if(values[16] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values17').innerHTML = "17." + values[16];
+        }
+        if(values[17] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values18').innerHTML = "18." + values[17];
+        }
+        if(values[18] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values19').innerHTML = "19." + values[18];
+        }
+        if(values[19] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values20').innerHTML = "20." + values[19];
+        }
+        if(values[20] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values21').innerHTML = "21." + values[20];
+        }
+        if(values[21] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values22').innerHTML = "22." + values[21];
+        }
+        if(values[22] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values23').innerHTML = "23." + values[22];
+        }
+        if(values[23] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values24').innerHTML = "24." + values[23];
+        }
+        if(values[24] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('values25').innerHTML = "25." + values[24];
+        }
+        }
+
     inp.value = "";
 }
+
+answers = [];
 
 answers = [];
 
