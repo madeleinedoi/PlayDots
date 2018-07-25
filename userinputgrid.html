@@ -74,9 +74,9 @@
                         askQuestionTrivia();
                         $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
                     </script>
-                    <input type="text" id="input_id" value="">
+                    <input type="text" id="inputgrid" value="">
                     <script>
-                        document.getElementById('input_id').onkeydown = function(e){
+                        document.getElementById('inputgrid').onkeydown = function(e){
                             if(e.keyCode == 13){
                                 checkIfAnswerIsCorrectTrivia();
                                 if(pointThisTurn){

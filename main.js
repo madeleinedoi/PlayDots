@@ -289,12 +289,6 @@ function askQuestion(){
     correctAnswer[49]="Lady Gaga";
     questions[50] = "Where did the olympic games orginate?";
     correctAnswer[50]="Greece";
-
-
-
-
-
-
     if(alreadyAsked.length === 50){
         alreadyAsked = [];
     }
@@ -312,7 +306,6 @@ function answerCorrect(){
         cellsNeedToBeFilled[cell].owner = turn;
         changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
         assignPoints();
-
     }
 };
 
@@ -606,7 +599,10 @@ function addRecordQuestions() {
         if(values.length === 25){
             document.getElementById("done").innerHTML = "Complete";
         }
-        }
+
+        localStorage.setItem("values", JSON.stringify(values));
+
+    }
 
     inp.value = "";
 }
@@ -769,6 +765,9 @@ function addRecordAnswers() {
             document.getElementById("done2").innerHTML = "Complete";
             break;
         }
+
+        localStorage.setItem("answers", JSON.stringify(answers));
+
     }
     // startTrivia();
     inp.value = "";
@@ -782,22 +781,24 @@ function startTrivia() {
 
 function askQuestionTrivia(){
 console.log(values);
+    var storedValues = JSON.parse(localStorage.getItem("values"));
     if(alreadyAskedTrivia.length === 50){
         alreadyAsked = [];
     }
-    x = Math.floor(Math.random()*values.length);
-    if(alreadyAsked.includes(values[x])) {
+    x = Math.floor(Math.random()*storedValues.length);
+    if(alreadyAsked.includes(storedValues[x])) {
         askQuestionTrivia();
     }
-    alreadyAsked.push(values[x]);
-    document.getElementById('questiontrivia').innerHTML = values[x];
-    console.log( values[x]);
+    alreadyAsked.push(storedValues[x]);
+    document.getElementById('questiontrivia').innerHTML = storedValues[x];
+    console.log(storedValues[x]);
 
 }
 
 function checkIfAnswerIsCorrectTrivia(){
-    var userInput = document.getElementById('input_id').value;
-    if (userInput.toLowerCase() === answers[x].toLowerCase()) {
+    var storedAnswers = JSON.parse(localStorage.getItem("answers"));
+    var userInput = document.getElementById('inputgrid').value;
+    if (userInput.toLowerCase() === storedAnswers[x].toLowerCase()) {
         answerCorrect();
         askQuestionTrivia();
         cellCount++;
@@ -812,9 +813,6 @@ function checkIfAnswerIsCorrectTrivia(){
     counter = 21;
     counterFlag = false;
 }
-
-
-
 
 
 
