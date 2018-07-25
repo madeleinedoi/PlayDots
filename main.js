@@ -1138,36 +1138,172 @@ function addRecordQuestions() {
     inp.value = "";
 }
 
-answers = [];
+
 
 answers = [];
 
 function addRecordAnswers() {
-    var con = document.getElementById('input');
 
-    answers.push(con.value);
-    for (var f = 0; f < answers.length; f++) {
-        console.log(answers[cell]);
+    var inp = document.getElementById('input');
+
+
+    answers.push(inp.value);
+    for (var cell = 0; cell < answers.length; cell++) {
+        document.getElementById('answers1').innerHTML =  "1." + answers[0];
+        if(answers[1] === undefined){
+            break;
+        }
+        else {
+            document.getElementById('answers2').innerHTML = "2." + answers[1];
+        }
+        if(answers[2] === undefined) {
+            break;
+        }
+        else {
+            document.getElementById('answers3').innerHTML = "3." + answers[2];
+        }
+        if(answers[3] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers4').innerHTML = "4." + answers[3];
+        }
+        if(answers[4] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers5').innerHTML = "5." + answers[4];
+        }
+        if(answers[5] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers6').innerHTML = "6." + answers[5];
+        }
+        if(answers[6] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers7').innerHTML = "7." + answers[6];
+        }
+        if(answers[7] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers8').innerHTML = "8." + answers[7];
+        }
+        if(answers[8] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers9').innerHTML = "9." + answers[8];
+        }
+        if(answers[9] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers10').innerHTML = "10." + answers[9];
+        }
+        if(answers[10] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers11').innerHTML = "11." + answers[10];
+        }
+        if(answers[11] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers12').innerHTML = "12." + answers[11];
+        }
+        if(answers[12] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers13').innerHTML = "13." + answers[12];
+        }
+        if(answers[13] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers14').innerHTML = "14." + answers[13];
+        }
+        if(answers[14] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers15').innerHTML = "15." + answers[14];
+        }
+        if(answers[15] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers16').innerHTML = "16." + answers[15];
+        }
+        if(answers[16] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers17').innerHTML = "17." + answers[16];
+        }
+        if(answers[17] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers18').innerHTML = "18." + answers[17];
+        }
+        if(answers[18] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers19').innerHTML = "19." + answers[18];
+        }
+        if(answers[19] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers20').innerHTML = "20." + answers[19];
+        }
+        if(answers[20] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers21').innerHTML = "21." + answers[20];
+        }
+        if(answers[21] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers22').innerHTML = "22." + answers[21];
+        }
+        if(answers[22] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers23').innerHTML = "23." + answers[22];
+        }
+        if(answers[23] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers24').innerHTML = "24." + answers[23];
+        }
+        if(answers[24] === undefined) {
+            break;
+        }
+        else{
+            document.getElementById('answers25').innerHTML = "25." + answers[24];
+        }
+        if(answers.length === 25){
+            document.getElementById("done2").innerHTML = "Complete";
+        }
     }
-    con.answers= "";
+
+    inp.value = "";
 }
 
 
 
-
-// function userQuestions() {
-//     if (alreadyAskedUserQuestions.length === values.length) {
-//         alreadyAskedUserQuestions = [];
-//     }
-//     userQ = Math.floor(Math.random() * values.length);
-//     if (alreadyAskedUserQuestions.includes(values[userQ])) {
-//         // userQuestions();
-//     }
-//     alreadyAskedUserQuestions.push(values[userQ]);
-//     // document.getElementById('question').innerHTML = questionInputValues[userQ];
-//
-//
-// };
 
 
 

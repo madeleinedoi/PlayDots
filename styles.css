@@ -503,6 +503,7 @@ p{
     animation-name: fade-in;
     animation-fill-mode: both;
     animation-duration: 4.5s;
+    overflow: scroll;
 }
 .input{
     font: 13px Verdana, sans-serif;
@@ -522,6 +523,7 @@ p{
     animation-name: fade-in;
     animation-fill-mode: both;
     animation-duration: 4.5s;
+    overflow: scroll;
 }
 
 
