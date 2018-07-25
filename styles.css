@@ -364,6 +364,20 @@ p{
     font: bold 15px Verdana, sans-serif;
     text-shadow: none;
 }
+.btnbtn4{
+    background-color: #EC9F6F;
+    cursor: pointer;
+    color: black;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 30px;
+    width: 250px;
+    font: bold 15px Verdana, sans-serif;
+    text-shadow: none;
+    top: 8px;
+    margin-left: -10px;
+
+}
 
 * {
     box-sizing: border-box;
