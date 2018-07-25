@@ -1,5 +1,4 @@
 
-
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";
 var cells;
 var hLines;
@@ -829,6 +828,4 @@ function checkIfAnswerIsCorrectTrivia() {
 setUpBoard();
 //checkCells();
 //checkLines(cells[1]);
-
-
 
