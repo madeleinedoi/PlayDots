@@ -451,7 +451,6 @@ function refreshPage(){
 
 values = [];
 
-var cntr= values.length;
 function addRecordQuestions() {
 
     var inp = document.getElementById('inputtext');
@@ -792,7 +791,7 @@ console.log(values);
     }
     alreadyAsked.push(values[x]);
     document.getElementById('questiontrivia').innerHTML = values[x];
-    console.log( document.getElementById('questiontrivia').innerHTML = values[x]);
+    console.log( values[x]);
 
 }
 
