@@ -489,14 +489,14 @@ p{
     animation-duration: 4.5s;
 }
 
-borderbox1 {
+.borderbox1 {
     background-color: lightgrey;
     border: 25px solid #EC9F6F  ;
     padding: 25px;
     margin: 0 auto;
-    width: 400px;
+    width: 650px;
     height: 900px;
-    margin-left: 550px;
+    margin-left: 320px;
     margin-top: 50px;
     position: absolute;
     z-index: 1000;
@@ -504,13 +504,16 @@ borderbox1 {
     animation-fill-mode: both;
     animation-duration: 4.5s;
 }
-
-borderbox2 {
+.input{
+    font: 13px Verdana, sans-serif;
+    margin: 0px;
+}
+.borderbox2 {
     background-color: lightgrey;
     border: 25px solid #EC9F6F  ;
     padding: 25px;
     margin: 0 auto;
-    width: 400px;
+    width: 650px;
     height: 900px;
     margin-left: 1000px;
     margin-top: 50px;
@@ -520,9 +523,7 @@ borderbox2 {
     animation-fill-mode: both;
     animation-duration: 4.5s;
 }
-input{
-    margin: 10px;
-}
+
 
 .done{
     color: #69CDC1;
