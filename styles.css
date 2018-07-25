@@ -174,10 +174,10 @@ p2{
     animation-duration: 4.5s;
 }
 p3 {
-    color: #69CDC1;
-    text-align: center;
-    font: bold 30px Verdana, sans-serif;
-}
+     color: #69CDC1;
+     text-align: center;
+     font: bold 30px Verdana, sans-serif;
+ }
 p4{
     text-align:center;
     font: bold 30px Verdana, sans-serif;
@@ -198,12 +198,13 @@ p6{
     animation-fill-mode: both;
     animation-duration: 4.5s;
 }
-p7{
-    font: bold 20px Verdana, sans-serif;
-    color: #EC9F6F;
+p7 {
+    font: bold 15px Verdana, sans-serif;
+    color: black;
     text-align: center;
     top: 50%;
-    left:50%;
+    left: 50%;
+}
 * {
     box-sizing: border-box;
 }
@@ -490,7 +491,7 @@ p{
 
 borderbox1 {
     background-color: lightgrey;
-    border: 25px solid #E6B6DB  ;
+    border: 25px solid #EC9F6F  ;
     padding: 25px;
     margin: 0 auto;
     width: 400px;
@@ -506,7 +507,7 @@ borderbox1 {
 
 borderbox2 {
     background-color: lightgrey;
-    border: 25px solid #E6B6DB  ;
+    border: 25px solid #EC9F6F  ;
     padding: 25px;
     margin: 0 auto;
     width: 400px;
@@ -523,5 +524,14 @@ input{
     margin: 10px;
 }
 
-
+.done{
+    color: #69CDC1;
+    text-align: center;
+    font: bold 30px Verdana, sans-serif;
+}
+.done2{
+    color:  #E876AA;
+    text-align: center;
+    font: bold 30px Verdana, sans-serif;
+}
 

@@ -1044,7 +1044,7 @@ function addRecordQuestions() {
             break;
         }
         else{
-            document.getElementById('value11').innerHTML = "11." + values[10];
+            document.getElementById('values11').innerHTML = "11." + values[10];
         }
         if(values[11] === undefined) {
             break;
@@ -1129,6 +1129,9 @@ function addRecordQuestions() {
         }
         else{
             document.getElementById('values25').innerHTML = "25." + values[24];
+        }
+        if(values.length === 25){
+            document.getElementById("done").innerHTML = "Complete";
         }
         }
 
