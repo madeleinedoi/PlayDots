@@ -143,7 +143,7 @@ function onTimer() {
         counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
-        cellsNeedToBeFilledTrivia=[];
+        // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 1000);
     }
 
@@ -167,7 +167,7 @@ function onTimerTwo() {
         counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
-        cellsNeedToBeFilledTrivia=[];
+        // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 100000);
     }
 
@@ -387,7 +387,7 @@ function checkCells() {
             displayQuestion();
             currentCell = cell;
             cellsNeedToBeFilled.push(cell);
-            cellsNeedToBeFilledTrivia.push(cell);
+            // cellsNeedToBeFilledTrivia.push(cell);
             twoManyCountDown();
             // onTimer();
         }
@@ -864,14 +864,15 @@ function checkIfAnswerIsCorrectTrivia(){
     // var storedAnswers = JSON.parse(localStorage.getItem("answers"));
     var userInput = document.getElementById("inputgrid").value;
     if (userInput.toLowerCase() === answers[xTrivia].toLowerCase()) {
-        answerCorrectTrivia();
+        answerCorrect();
         $('#myModal').modal('hide');
     }
     else {
-        answerIncorrectTrivia();
+        answerIncorrect();
         $('#myModal').modal('hide');
     }
-    cellsNeedToBeFilledTrivia = [];
+    // cellsNeedToBeFilledTrivia = [];
+    cellsNeedToBeFilled=[];
     checkIfGameOver();
     counter = 30;
     counterFlag = false;
