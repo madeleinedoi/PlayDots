@@ -520,8 +520,12 @@ p{
     overflow-y: scroll;
 }
 .input{
-    font: 13px Verdana, sans-serif;
+    font: 17px Verdana, sans-serif;
     margin: 0px;
+}
+td{
+    font: 17px Verdana, sans-serif;
+
 }
 .borderbox2 {
     background-color: lightgrey;

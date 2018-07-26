@@ -23,7 +23,9 @@
     <p7>**Must fill in 25 questions**</p7>
     <table>
         <tr>
+
             <td>Enter the Input</td>
+
             <td><input type="text" id="inputtext"/>  <button type="button" id="add" onclick="addRecordQuestions();">Add</button>
             </td>
         </tr>
@@ -40,6 +42,7 @@
         </tr>
     </table>
     <div class = "input">
+        <br/>
         <div id='values1'></div>
         <div id='values2'></div>
         <div id='values3'></div>
@@ -149,7 +152,9 @@
 
 <div class="score-board">
     <div class="score">
+        <div id = "t" style="display:none;">
         <p6 id="turnTeller1">Player 1 Go!</p6>
+        </div>
         <br>
         <br>
         <br>
@@ -215,7 +220,7 @@
                     <script>
                         document.getElementById('inputgrid').onkeydown = function(e){
                             if(e.keyCode == 13){
-                                checkIfAnswerIsCorrect();
+                               whichCheckAnswers();
                                 if(pointThisTurn){
                                     var obj = document.createElement("audio");
                                     obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";

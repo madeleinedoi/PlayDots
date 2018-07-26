@@ -313,6 +313,7 @@ function answerIncorrect(){
     currentTurn();
     currentCell.owner = "";
     deactivateLastClickedLine();
+    askQuestion();
 };
 
 function checkIfAnswerIsCorrect() {
@@ -773,21 +774,16 @@ function addRecordAnswers() {
 function startTrivia() {
     if (values.length >= 25 && answers.length >= 25) {
         trivia = true;
+        document.getElementById("box").style.display = "none";
+        document.getElementById("grid").style.display = "block";
+        document.getElementById("startbutton").style.display = "none";
+        document.getElementById("t").style.display="block";
     }
-    document.getElementById("box").style.display = "none";
-    document.getElementById("grid").style.display = "block";
-    document.getElementById("startbutton").style.display = "none";
+    // else{
+    //     document.getElementById("modal")
+    // }
 }
 
-
-// function whichAskQuestion(){
-//     if(trivia){
-//         askQuestionTrivia();
-//     }
-//     else{
-//         askQuestion();
-//     }
-// }
 
 function whichCheckAnswers(){
     if(trivia === true){
