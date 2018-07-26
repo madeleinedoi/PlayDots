@@ -23,6 +23,7 @@ var cellCount;
 var confettiPlayers = [];
 var xTrivia;
 var trivia = false;
+var countTimer=0;
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -124,7 +125,7 @@ function addListenerForVElements(){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
-var counter = 20;
+var counter = 30;
 var counterFlag = false;
 function onTimer() {
     document.getElementById('mycounter').innerHTML = counter;
@@ -138,7 +139,7 @@ function onTimer() {
     if (counter < 0) {
         $('#myModal').modal('hide');
         counterFlag = false;
-        counter = 20;
+        counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
         setTimeout(onTimer, 1000);
@@ -149,6 +150,28 @@ function onTimer() {
     }
 }
 
+function onTimerTwo() {
+    document.getElementById('mycounter').innerHTML = counter;
+    counter--;
+    // if(i>0 && answerIncorrect()){
+    //     i=10;
+    // }
+    // else if(i>0){
+    //     i=10;
+    // }
+    if (counter < 0) {
+        $('#myModal').modal('hide');
+        counterFlag = false;
+        counter = 30;
+        answerIncorrect();
+        cellsNeedToBeFilled=[];
+        setTimeout(onTimer, 100000);
+    }
+
+    else if (counterFlag) {
+        setTimeout(onTimer, 100000);
+    }
+}
 
 function clickFunction(event) {
     element = event.target;
@@ -319,6 +342,7 @@ function answerIncorrect(){
 };
 
 function checkIfAnswerIsCorrect() {
+
     var userInput = document.getElementById('input_id').value;
     if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
         answerCorrect();
@@ -342,17 +366,29 @@ function checkCells() {
             displayQuestion();
             currentCell = cell;
             cellsNeedToBeFilled.push(cell);
+            twoManyCountDown();
             // onTimer();
         }
     });
 };
+function twoManyCountDown(){
+    countTimer = cellsNeedToBeFilled.length;
+    if(countTimer>=2){
+        counter=30
+        onTimerTwo();
+    }
+    else{
+        counter=30
+        onTimer();
 
+    }
+}
 function displayQuestion() {
     $('#myModal').modal('show');
     pointThisTurn = true;
     //render the dom
     counterFlag = true;
-    onTimer();
+
 };
 
 function assignPoints() {
@@ -774,7 +810,7 @@ function addRecordAnswers() {
 
 
 function startTrivia() {
-    if (values.length >= 26 && answers.length >= 26) {
+    if (values.length >= 25 && answers.length >= 25) {
         trivia = true;
         document.getElementById("box").style.display = "none";
         document.getElementById("grid").style.display = "block";
@@ -824,7 +860,7 @@ function checkIfAnswerIsCorrectTrivia(){
     }
     cellsNeedToBeFilled = [];
     checkIfGameOver();
-    counter = 20;
+    counter = 30;
     counterFlag = false;
 }
 
