@@ -780,14 +780,14 @@ function startTrivia() {
 }
 
 
-function whichAskQuestion(){
-    if(trivia === true){
-        askQuestionTrivia();
-    }
-    else{
-        askQuestion();
-    }
-}
+// function whichAskQuestion(){
+//     if(trivia){
+//         askQuestionTrivia();
+//     }
+//     else{
+//         askQuestion();
+//     }
+// }
 
 function whichCheckAnswers(){
     if(trivia === true){
@@ -800,7 +800,7 @@ function whichCheckAnswers(){
 function askQuestionTrivia(){
     // var storedValues = JSON.parse(localStorage.getItem("values"));
     if(alreadyAskedTrivia.length === 25){
-        alreadyAsked = [];
+        alreadyAskedTrivia = [];
     }
     x = Math.floor(Math.random()*values.length);
     if(alreadyAsked.includes(values[x])) {
@@ -812,7 +812,7 @@ function askQuestionTrivia(){
 
 function checkIfAnswerIsCorrectTrivia(){
     // var storedAnswers = JSON.parse(localStorage.getItem("answers"));
-    var userInput = document.getElementById("input_id").value;
+    var userInput = document.getElementById("inputgrid").value;
     if (userInput.toLowerCase() === answers[x].toLowerCase()) {
         answerCorrect();
         askQuestionTrivia();
