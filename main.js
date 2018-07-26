@@ -15,6 +15,7 @@ var correctAnswer = [];
 var currentCell;
 var element;
 var cellsNeedToBeFilled = [];
+var cellsNeedToBeFilledTrivia =[];
 var alreadyAsked = [];
 var alreadyAskedTrivia=[];
 var alreadyAskedUserQuestions= [];
@@ -142,6 +143,7 @@ function onTimer() {
         counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
+        cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 1000);
     }
 
@@ -165,6 +167,7 @@ function onTimerTwo() {
         counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
+        cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 100000);
     }
 
@@ -340,6 +343,24 @@ function answerIncorrect(){
     deactivateLastClickedLine();
     askQuestion();
 };
+function answerCorrectTrivia(){
+    for (var cell = 0; cell < cellsNeedToBeFilledTrivia.length; cell++) {
+        cellsNeedToBeFilled[cell].active = true;
+        cellsNeedToBeFilled[cell].owner = turn;
+        changeCellBackgroundColor(cellsNeedToBeFilledTrivia[cell].row,  cellsNeedToBeFilledTrivia[cell].col);
+        assignPoints();
+    }
+};
+
+function answerIncorrectTrivia(){
+    currentCell.active = false;
+    pointThisTurn=false;
+    currentTurn();
+    currentCell.owner = "";
+    deactivateLastClickedLine();
+    askQuestionTrivia();
+};
+
 
 function checkIfAnswerIsCorrect() {
 
@@ -347,16 +368,16 @@ function checkIfAnswerIsCorrect() {
     if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
         answerCorrect();
         askQuestion();
-        cellCount++;
+
     }
     else {
         answerIncorrect();
         askQuestion();
     }
-    cellsNeedToBeFilled = [];
+    cellsNeedToBeFilled=[];
     $('#myModal').modal('hide');
     checkIfGameOver();
-    counter = 21;
+    counter = 30;
     counterFlag = false;
 };
 
@@ -366,6 +387,7 @@ function checkCells() {
             displayQuestion();
             currentCell = cell;
             cellsNeedToBeFilled.push(cell);
+            cellsNeedToBeFilledTrivia.push(cell);
             twoManyCountDown();
             // onTimer();
         }
@@ -848,17 +870,14 @@ function checkIfAnswerIsCorrectTrivia(){
     // var storedAnswers = JSON.parse(localStorage.getItem("answers"));
     var userInput = document.getElementById("inputgrid").value;
     if (userInput.toLowerCase() === answers[xTrivia].toLowerCase()) {
-        answerCorrect();
-        askQuestionTrivia();
+        answerCorrectTrivia();
         $('#myModal').modal('hide');
-        cellCount++;
     }
     else {
-        answerIncorrect();
-        askQuestionTrivia();
+        answerIncorrectTrivia();
         $('#myModal').modal('hide');
     }
-    cellsNeedToBeFilled = [];
+    cellsNeedToBeFilledTrivia = [];
     checkIfGameOver();
     counter = 30;
     counterFlag = false;
@@ -867,6 +886,280 @@ function checkIfAnswerIsCorrectTrivia(){
 
 
 
+function addListenerForHElementsTrivia(){
+    var hElements = document.getElementsByClassName('linehorizontal');
+    for(var i = 0; i < hElements.length; i++){
+        hElements[i].addEventListener("click", clickFunctionTrivia);
+    }
+};
+
+function addListenerForVElementsTrivia(){
+    var vElements = document.getElementsByClassName('linevertical');
+    for(var i = 0; i < vElements.length; i++){
+        vElements[i].addEventListener("click", clickFunction);
+    }
+};
+var counter = 30;
+var counterFlag = false;
+function onTimer() {
+    document.getElementById('mycounter').innerHTML = counter;
+    counter--;
+    // if(i>0 && answerIncorrect()){
+    //     i=10;
+    // }
+    // else if(i>0){
+    //     i=10;
+    // }
+    if (counter < 0) {
+        $('#myModal').modal('hide');
+        counterFlag = false;
+        counter = 30;
+        answerIncorrect();
+        cellsNeedToBeFilled=[];
+        cellsNeedToBeFilledTrivia=[];
+        setTimeout(onTimer, 1000);
+    }
+
+    else if (counterFlag) {
+        setTimeout(onTimer, 1000);
+    }
+}
+
+function onTimerTwo() {
+    document.getElementById('mycounter').innerHTML = counter;
+    counter--;
+    // if(i>0 && answerIncorrect()){
+    //     i=10;
+    // }
+    // else if(i>0){
+    //     i=10;
+    // }
+    if (counter < 0) {
+        $('#myModal').modal('hide');
+        counterFlag = false;
+        counter = 30;
+        answerIncorrect();
+        cellsNeedToBeFilled=[];
+        cellsNeedToBeFilledTrivia=[];
+        setTimeout(onTimer, 100000);
+    }
+
+    else if (counterFlag) {
+        setTimeout(onTimer, 100000);
+    }
+}
+
+function clickFunction(event) {
+    element = event.target;
+    mostRecentlyClicked = {
+        element,
+        lineType: " ",
+        row: " ",
+        col: " "
+    };
+    // mostRecentlyClicked = element;
+    var className = element.classList;
+    element.classList.add("active");
+    pointThisTurn=false;
+    for (var c = 0; c < className.length; c++){
+        if (className[c].startsWith("line")){
+            lineType = className[c];
+            mostRecentlyClicked.lineType = className[c];
+        }
+        if (className[c].startsWith("row-")){
+            rowNum = className[c][className[c].length - 1];
+            mostRecentlyClicked.row = className[c][className[c].length - 1];
+        }
+        if (className[c].startsWith("col-")){
+            colNum = className[c][className[c].length - 1];
+            mostRecentlyClicked.col = className[c][className[c].length - 1];
+        }
+    }
+    if (lineType === "linehorizontal"){
+        hLines[rowNum][colNum].active = true;
+    } else {
+        vLines[rowNum][colNum].active = true;
+    }
+    checkCells();
+    currentTurn();
+};
+
+
+
+function answerCorrect(){
+    for (var cell = 0; cell < cellsNeedToBeFilled.length; cell++) {
+        cellsNeedToBeFilled[cell].active = true;
+        cellsNeedToBeFilled[cell].owner = turn;
+        changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
+        assignPoints();
+    }
+};
+
+function answerIncorrect(){
+    currentCell.active = false;
+    pointThisTurn=false;
+    currentTurn();
+    currentCell.owner = "";
+    deactivateLastClickedLine();
+    askQuestion();
+};
+function answerCorrectTrivia(){
+    for (var cell = 0; cell < cellsNeedToBeFilledTrivia.length; cell++) {
+        cellsNeedToBeFilled[cell].active = true;
+        cellsNeedToBeFilled[cell].owner = turn;
+        changeCellBackgroundColor(cellsNeedToBeFilledTrivia[cell].row,  cellsNeedToBeFilledTrivia[cell].col);
+        assignPoints();
+    }
+};
+
+function answerIncorrectTrivia(){
+    currentCell.active = false;
+    pointThisTurn=false;
+    currentTurn();
+    currentCell.owner = "";
+    deactivateLastClickedLine();
+    askQuestionTrivia();
+};
+
+
+function checkIfAnswerIsCorrect() {
+
+    var userInput = document.getElementById('input_id').value;
+    if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
+        answerCorrect();
+        askQuestion();
+
+    }
+    else {
+        answerIncorrect();
+        askQuestion();
+    }
+    cellsNeedToBeFilled=[];
+    $('#myModal').modal('hide');
+    checkIfGameOver();
+    counter = 30;
+    counterFlag = false;
+};
+
+function checkCells() {
+    cells.forEach(function (cell) {
+        if (checkLines(cell) && !cell.active && !cell.owner){
+            displayQuestion();
+            currentCell = cell;
+            cellsNeedToBeFilled.push(cell);
+            cellsNeedToBeFilledTrivia.push(cell);
+            twoManyCountDown();
+            // onTimer();
+        }
+    });
+};
+function twoManyCountDown(){
+    countTimer = cellsNeedToBeFilled.length;
+    if(countTimer>=2){
+        counter=30
+        onTimerTwo();
+    }
+    else{
+        counter=30
+        onTimer();
+
+    }
+}
+function displayQuestion() {
+    $('#myModal').modal('show');
+    pointThisTurn = true;
+    //render the dom
+    counterFlag = true;
+
+};
+
+function assignPoints() {
+    if (turn === "p1") {
+        p1points++;
+        document.getElementById("p1").innerHTML = p1points;
+    }
+    else {
+        p2points++;
+        document.getElementById("p2").innerHTML = p2points;
+    }
+    pointThisTurn = true;
+};
+
+function deactivateLastClickedLine(){
+    if(mostRecentlyClicked.lineType === "linehorizontal"){
+        hLines[mostRecentlyClicked.row][mostRecentlyClicked.col].active = false;
+        element.classList.remove("active");
+    }
+    else{
+        vLines[mostRecentlyClicked.row][mostRecentlyClicked.col].active = false;
+        element.classList.remove("active");
+    }
+}
+
+function currentTurn(){
+    if(pointThisTurn === false){
+        turn = turn === "p1" ? "p2" : "p1";
+    }
+    updateDisplayedPlayerTurn();
+};
+
+function updateDisplayedPlayerTurn(){
+    document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
+    return true;
+};
+
+function changeCellBackgroundColor(rowNum, colNum) {
+    var htmlCells = [];
+    htmlCells = document.getElementsByClassName("cell");
+    for (var c = 0; c < htmlCells.length; c++) {
+        if (htmlCells[c].classList.contains("row-" + rowNum) && htmlCells[c].classList.contains("col-" + colNum)) {
+            htmlCells[c].classList.add(turn);
+        }
+    }
+};
+
+function makeItConfetti() {
+    var confetti = document.querySelectorAll('.confetti');
+
+    if (!confetti[0].animate) {
+        return false;
+    }
+
+    for (var i = 0, len = confetti.length; i < len; ++i) {
+        var snowball = confetti[i];
+        snowball.innerHTML = '<div class="rotate"><div class="askew"></div></div>';
+        var scale = Math.random() * .8 + .2;
+        var player = snowball.animate([
+            { transform: 'translate3d(' + (i/len*100) + 'vw,0,0) scale(' + scale + ')', opacity: scale },
+            { transform: 'translate3d(' + (i/len*100 + 10) + 'vw,100vh,0) scale(' + scale + ')', opacity: 1 }
+        ], {
+            duration: Math.random() * 3000 + 3000,
+            iterations: Infinity,
+            delay: -(Math.random() * 5000)
+        });
+
+
+        confettiPlayers.push(player);
+    }
+}
+
+function checkIfGameOver(){
+    if((p1points + p2points === 25) && (p1points > p2points)){
+        $('#p1modal').modal('show');
+        makeItConfetti();
+        return true;
+    }
+    if((p1points + p2points === 25) && (p2points > p1points)){
+        $('#p2modal').modal('show');
+        makeItConfetti();
+        return true;
+    }
+
+}
+
+function refreshPage(){
+    window.location.reload();
+}
 
 
 

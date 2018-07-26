@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4f66c568-7769-49ce-8aa1-80897bfd3155" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/grid.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userInput.html" beforeDir="false" afterPath="$PROJECT_DIR$/userInput.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,8 +33,8 @@
       <file leaf-file-name="userInput.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userInput.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="892">
-              <caret line="309" column="98" selection-start-line="309" selection-start-column="98" selection-end-line="309" selection-end-column="98" />
+            <state relative-caret-position="25">
+              <caret line="237" column="35" selection-start-line="237" selection-start-column="35" selection-end-line="237" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -70,8 +68,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="758">
-              <caret line="171" column="29" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="29" />
+            <state relative-caret-position="405">
+              <caret line="388" column="26" selection-start-line="388" selection-start-column="26" selection-end-line="388" selection-end-column="26" />
               <folding>
                 <element signature="e#13937#18489#0" />
                 <element signature="e#18534#23145#0" />
@@ -94,10 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.p</find>
-      <find>Verdana, sans-serif;</find>
-      <find>white</find>
-      <find>conten</find>
       <find>contAINER</find>
       <find>confetti</find>
       <find>confetti-land</find>
@@ -124,6 +118,10 @@
       <find>p5</find>
       <find>tr</find>
       <find>td</find>
+      <find>cellCount</find>
+      <find>cellsNeed</find>
+      <find>askQues</find>
+      <find>askQuestionTrivia</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -174,8 +172,8 @@
         <option value="$PROJECT_DIR$/userinputgrid.html" />
         <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/styles.css" />
-        <option value="$PROJECT_DIR$/userInput.html" />
         <option value="$PROJECT_DIR$/grid.html" />
+        <option value="$PROJECT_DIR$/userInput.html" />
         <option value="$PROJECT_DIR$/main.js" />
       </list>
     </option>
@@ -271,13 +269,6 @@
       <workItem from="1531436810008" duration="2727000" />
       <workItem from="1531505857261" duration="5226000" />
       <workItem from="1531771877580" duration="2683000" />
-    </task>
-    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
-      <created>1530221839729</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1530221839729</updated>
     </task>
     <task id="LOCAL-00012" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
       <created>1530222363905</created>
@@ -615,11 +606,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532635981752</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="combined code">
+      <created>1532642684189</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1532642684189</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391491000" />
+    <option name="totallyTimeSpent" value="393581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -799,33 +797,10 @@
     <entry file="file://$PROJECT_DIR$/javascriptuserinput.js" />
     <entry file="file://$PROJECT_DIR$/userinputjs.js" />
     <entry file="file://$PROJECT_DIR$/userinputgrid.html" />
-    <entry file="file://$PROJECT_DIR$/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6">
           <caret line="368" column="17" lean-forward="true" selection-start-line="368" selection-start-column="17" selection-end-line="368" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userInput.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="892">
-          <caret line="309" column="98" selection-start-line="309" selection-start-column="98" selection-end-line="309" selection-end-column="98" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#html#0;n#body#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,10 +814,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/userInput.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="237" column="35" selection-start-line="237" selection-start-column="35" selection-end-line="237" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#html#0;n#body#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="171" column="29" selection-start-line="171" selection-start-column="29" selection-end-line="171" selection-end-column="29" />
+        <state relative-caret-position="405">
+          <caret line="388" column="26" selection-start-line="388" selection-start-column="26" selection-end-line="388" selection-end-column="26" />
           <folding>
             <element signature="e#13937#18489#0" />
             <element signature="e#18534#23145#0" />
