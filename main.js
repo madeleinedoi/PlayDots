@@ -1,5 +1,3 @@
-
-
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";
 var cells;
 var hLines;
@@ -306,7 +304,6 @@ function answerCorrect(){
         cellsNeedToBeFilled[cell].owner = turn;
         changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
         assignPoints();
-
     }
 };
 
@@ -769,7 +766,6 @@ function addRecordAnswers() {
 
         localStorage.setItem("answers", JSON.stringify(answers));
     }
-    // startTrivia();
     inp.value = "";
 }
 
@@ -777,13 +773,13 @@ function startTrivia() {
     if (values.length >= 25 && answers.length >= 25) {
         window.location.replace('grid.html');
         trivia = "t";
-        localStorage.setItem("trivia", JSON.stringify(trivia));
+        localStorage.setItem("trivia", "true");
     }
 }
 
 function whichAskQuestion(){
-    var storedTrivia = JSON.parse(localStorage.getItem("trivia"));
-    if(storedTrivia ==="t"){
+    var storedTrivia = localStorage.getItem("trivia");
+    if(storedTrivia === "true"){
         askQuestionTrivia();
     }
     else{
@@ -791,6 +787,15 @@ function whichAskQuestion(){
     }
 }
 
+function whichCheckAnswers(){
+    var storedTrivia = localStorage.getItem("trivia");
+    if(storedTrivia === "true"){
+        checkIfAnswerIsCorrectTrivia();
+    }
+    else{
+        checkIfAnswerIsCorrect();
+    }
+}
 function askQuestionTrivia(){
     var storedValues = JSON.parse(localStorage.getItem("values"));
     if(alreadyAskedTrivia.length === 25){
@@ -801,14 +806,12 @@ function askQuestionTrivia(){
        askQuestionTrivia();
     }
     alreadyAsked.push(storedValues[x]);
-    document.getElementById('question').innerHTML = storedValues[x];
+    document.getElementById("question").innerHTML = storedValues[x];
 }
 
 function checkIfAnswerIsCorrectTrivia(){
     var storedAnswers = JSON.parse(localStorage.getItem("answers"));
     var userInput = document.getElementById("input_id").value;
-    console.log(userInput);
-    console.log(storedAnswers[x]);
     if (userInput.toLowerCase() === storedAnswers[x].toLowerCase()) {
         answerCorrect();
         askQuestionTrivia();
