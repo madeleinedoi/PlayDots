@@ -35,6 +35,8 @@ function setUpBoard(){
 window.onload = function(){
     addListenerForHElements();
     addListenerForVElements();
+    addListenerForHElementsTrivia()
+    addListenerForVElementsTrivia()
 };
 
 function generateCells(numCol, numRow){
@@ -288,6 +290,12 @@ function askQuestion(){
     correctAnswer[49]="Lady Gaga";
     questions[50] = "Where did the olympic games orginate?";
     correctAnswer[50]="Greece";
+
+
+
+
+
+
     if(alreadyAsked.length === 50){
         alreadyAsked = [];
     }
@@ -305,6 +313,7 @@ function answerCorrect(){
         cellsNeedToBeFilled[cell].owner = turn;
         changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
         assignPoints();
+
     }
 };
 
@@ -348,6 +357,7 @@ function checkCells() {
 function displayQuestion() {
     $('#myModal').modal('show');
     pointThisTurn = true;
+    //render the dom
     counterFlag = true;
     onTimer();
 };
@@ -597,11 +607,8 @@ function addRecordQuestions() {
         if(values.length === 25){
             document.getElementById("done").innerHTML = "Complete";
         }
-
-        localStorage.setItem("values", JSON.stringify(values));
-
     }
-
+    localStorage.setItem("values", JSON.stringify(values));
     inp.value = "";
 }
 
@@ -763,10 +770,8 @@ function addRecordAnswers() {
             document.getElementById("done2").innerHTML = "Complete";
             break;
         }
-
-        localStorage.setItem("answers", JSON.stringify(answers));
-
     }
+    localStorage.setItem("answers", JSON.stringify(answers));
     // startTrivia();
     inp.value = "";
 }
@@ -778,6 +783,7 @@ function startTrivia() {
 }
 
 function askQuestionTrivia(){
+    console.log(values);
     var storedValues = JSON.parse(localStorage.getItem("values"));
     if(alreadyAskedTrivia.length === 50){
         alreadyAsked = [];
@@ -788,27 +794,30 @@ function askQuestionTrivia(){
     }
     alreadyAsked.push(storedValues[x]);
     document.getElementById('questiontrivia').innerHTML = storedValues[x];
+
+
 }
 
-function checkIfAnswerIsCorrectTrivia() {
+function checkIfAnswerIsCorrectTrivia(){
     var storedAnswers = JSON.parse(localStorage.getItem("answers"));
-    var userInput = document.getElementById('inputgrid').value;
-    if (userInput.toLowerCase() === storedAnswers[x].toLowerCase()) {
+    var userInput2 = document.getElementById('inputgrid').value;
+    if (userInput2.toLowerCase() === storedAnswers[x].toLowerCase()) {
         answerCorrect();
         askQuestionTrivia();
         cellCount++;
-        $('#myModal').modal('hide');
-    }
-    if(userInput.toLowerCase() !== storedAnswers[x].toLowerCase()){
-        answerIncorrect();
-        askQuestionTrivia();
-        $('#myModal').modal('hide');
-    }
-    cellsNeedToBeFilled = [];
-    checkIfGameOver();
-    counter = 21;
-    counterFlag = false;
+    // }
+    // else {
+    //     answerIncorrect();
+    //     askQuestionTrivia();
+    // }
+    // cellsNeedToBeFilled = [];
+    // $('#myModal').modal('hide');
+    // checkIfGameOver();
+    // counter = 21;
+    // counterFlag = false;
 }
+
+
 
 
 
@@ -828,4 +837,5 @@ function checkIfAnswerIsCorrectTrivia() {
 setUpBoard();
 //checkCells();
 //checkLines(cells[1]);
+
 

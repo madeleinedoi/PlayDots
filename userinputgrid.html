@@ -74,7 +74,7 @@
                         askQuestionTrivia();
                         $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
                     </script>
-                    <input type="text" id="inputgrid" value="">
+                    <input type="text" id="input_id" value="">
                     <script>
                         document.getElementById('inputgrid').onkeydown = function(e){
                             if(e.keyCode == 13){
@@ -87,17 +87,17 @@
                                     obj.preLoad=true;
                                     obj.play();
                                 }
-                                else{
+                                if(checkIfGameOver() === true){
                                     var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
+                                    obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
                                     obj.volume=0.10;
                                     obj.autoPlay=false;
                                     obj.preLoad=true;
                                     obj.play();
                                 }
-                                if(checkIfGameOver() === true){
+                                else{
                                     var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
+                                    obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
                                     obj.volume=0.10;
                                     obj.autoPlay=false;
                                     obj.preLoad=true;
@@ -117,17 +117,17 @@
                                     obj.preLoad=true;
                                     obj.play();
                                 }
-                                else{
+                                if(checkIfGameOver() === true){
                                     var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
+                                    obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
                                     obj.volume=0.10;
                                     obj.autoPlay=false;
                                     obj.preLoad=true;
                                     obj.play();
                                 }
-                                if(checkIfGameOver() === true){
+                                else{
                                     var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
+                                    obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
                                     obj.volume=0.10;
                                     obj.autoPlay=false;
                                     obj.preLoad=true;
