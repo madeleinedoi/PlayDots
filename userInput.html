@@ -233,7 +233,7 @@
                 <div class="modal-body">
                     <p>
                     <div id="mycounter"></div>
-                    <p id="question"></p>
+                    <p id="questionTrivia"></p>
                     <script>
                         $('#myModal').on('hidden.bs.modal', function() {
                             $(this)
@@ -246,7 +246,7 @@
                     <script>
                         document.getElementById('inputgrid').onkeydown = function(e){
                             if(e.keyCode == 13){
-                               whichCheckAnswers();
+                               checkIfAnswerIsCorrectTrivia();
                                 if(pointThisTurn){
                                     var obj = document.createElement("audio");
                                     obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
@@ -273,6 +273,7 @@
                                 }
 
                             }
+                            $('#myModal').modal('hide');
                         };
                     </script>
                     <script>
@@ -307,7 +308,7 @@
                         });
 
                     </script>
-                    <button type="button" class="playSound"onclick="whichCheckAnswers()">Submit Answer</button>
+                    <button type="button" class="playSound"onclick="checkIfAnswerIsCorrectTrivia()">Submit Answer</button>
                     </p>
                 </div>
                 <div class="modal-footer">

@@ -21,7 +21,7 @@ var alreadyAskedUserQuestions= [];
 var alreadyAskedUserAnswers= [];
 var cellCount;
 var confettiPlayers = [];
-var userQ;
+var xTrivia;
 var trivia = false;
 
 function setUpBoard(){
@@ -140,6 +140,8 @@ function onTimer() {
         counterFlag = false;
         counter = 20;
         answerIncorrect();
+        cellsNeedToBeFilled=[];
+        setTimeout(onTimer, 1000);
     }
 
     else if (counterFlag) {
@@ -772,7 +774,7 @@ function addRecordAnswers() {
 
 
 function startTrivia() {
-    if (values.length >= 25 && answers.length >= 25) {
+    if (values.length >= 26 && answers.length >= 26) {
         trivia = true;
         document.getElementById("box").style.display = "none";
         document.getElementById("grid").style.display = "block";
@@ -798,30 +800,31 @@ function askQuestionTrivia(){
     if(alreadyAskedTrivia.length === 25){
         alreadyAskedTrivia = [];
     }
-    x = Math.floor(Math.random()*values.length);
-    if(alreadyAsked.includes(values[x])) {
+    xTrivia = Math.floor(Math.random()*values.length);
+    if(alreadyAsked.includes(values[xTrivia])) {
        askQuestionTrivia();
     }
-    alreadyAsked.push(values[x]);
-    document.getElementById("question").innerHTML = values[x];
+    alreadyAsked.push(values[xTrivia]);
+    document.getElementById("questionTrivia").innerHTML = values[xTrivia];
 }
 
 function checkIfAnswerIsCorrectTrivia(){
     // var storedAnswers = JSON.parse(localStorage.getItem("answers"));
     var userInput = document.getElementById("inputgrid").value;
-    if (userInput.toLowerCase() === answers[x].toLowerCase()) {
+    if (userInput.toLowerCase() === answers[xTrivia].toLowerCase()) {
         answerCorrect();
         askQuestionTrivia();
+        $('#myModal').modal('hide');
         cellCount++;
     }
     else {
         answerIncorrect();
         askQuestionTrivia();
+        $('#myModal').modal('hide');
     }
     cellsNeedToBeFilled = [];
-    $('#myModal').modal('hide');
     checkIfGameOver();
-    counter = 21;
+    counter = 20;
     counterFlag = false;
 }
 
