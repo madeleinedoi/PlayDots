@@ -837,6 +837,7 @@ function startTrivia() {
         document.getElementById("grid").style.display = "block";
         document.getElementById("startbutton").style.display = "none";
         document.getElementById("t").style.display="block";
+        askQuestionTrivia();
     }
     else{
         $('#modalwrong').modal('show');
