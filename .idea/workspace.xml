@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4f66c568-7769-49ce-8aa1-80897bfd3155" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/grid.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userinputgrid.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,13 +17,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="815" column="53" selection-start-line="815" selection-start-column="53" selection-end-line="815" selection-end-column="53" />
+            <state relative-caret-position="257">
+              <caret line="795" column="39" selection-start-line="795" selection-start-column="39" selection-end-line="795" selection-end-column="39" />
               <folding>
-                <element signature="e#4479#9978#0" />
+                <element signature="e#572#708#0" />
+                <element signature="e#737#802#0" />
+                <element signature="e#843#1141#0" />
+                <element signature="e#1186#1477#0" />
+                <element signature="e#1520#1811#0" />
+                <element signature="e#1839#1901#0" />
+                <element signature="e#1934#2177#0" />
+                <element signature="e#2208#2451#0" />
+                <element signature="e#10940#11192#0" />
+                <element signature="e#11222#11344#0" />
+                <element signature="e#11371#11608#0" />
+                <element signature="e#11647#11981#0" />
+                <element signature="e#12005#12124#0" />
+                <element signature="e#12163#12281#0" />
                 <element signature="e#12335#12646#0" />
                 <element signature="e#12675#13478#0" />
                 <element signature="e#13506#13816#0" />
@@ -69,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
+            <state relative-caret-position="788">
               <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -273,13 +284,6 @@
       <workItem from="1531436810008" duration="2727000" />
       <workItem from="1531505857261" duration="5226000" />
       <workItem from="1531771877580" duration="2683000" />
-    </task>
-    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
-      <created>1530218791629</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1530218791629</updated>
     </task>
     <task id="LOCAL-00008" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
       <created>1530218946128</created>
@@ -617,11 +621,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532555993911</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="combined code">
+      <created>1532619964736</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1532619964738</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380430000" />
+    <option name="totallyTimeSpent" value="381021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -688,7 +699,8 @@
     <MESSAGE value="new" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html" />
     <MESSAGE value="efds" />
-    <option name="LAST_COMMIT_MESSAGE" value="efds" />
+    <MESSAGE value="combined code" />
+    <option name="LAST_COMMIT_MESSAGE" value="combined code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -836,28 +848,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="815" column="53" selection-start-line="815" selection-start-column="53" selection-end-line="815" selection-end-column="53" />
+        <state relative-caret-position="257">
+          <caret line="795" column="39" selection-start-line="795" selection-start-column="39" selection-end-line="795" selection-end-column="39" />
           <folding>
-            <element signature="e#4479#9978#0" />
+            <element signature="e#572#708#0" />
+            <element signature="e#737#802#0" />
+            <element signature="e#843#1141#0" />
+            <element signature="e#1186#1477#0" />
+            <element signature="e#1520#1811#0" />
+            <element signature="e#1839#1901#0" />
+            <element signature="e#1934#2177#0" />
+            <element signature="e#2208#2451#0" />
+            <element signature="e#10940#11192#0" />
+            <element signature="e#11222#11344#0" />
+            <element signature="e#11371#11608#0" />
+            <element signature="e#11647#11981#0" />
+            <element signature="e#12005#12124#0" />
+            <element signature="e#12163#12281#0" />
             <element signature="e#12335#12646#0" />
             <element signature="e#12675#13478#0" />
             <element signature="e#13506#13816#0" />
             <element signature="e#13919#18468#0" />
             <element signature="e#18513#23144#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

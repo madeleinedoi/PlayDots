@@ -126,8 +126,8 @@ function addListenerForVElements(){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
-counter = 20;
-counterFlag = false;
+var counter = 20;
+var counterFlag = false;
 function onTimer() {
     document.getElementById('mycounter').innerHTML = counter;
     counter--;
@@ -289,12 +289,6 @@ function askQuestion(){
     correctAnswer[49]="Lady Gaga";
     questions[50] = "Where did the olympic games orginate?";
     correctAnswer[50]="Greece";
-
-
-
-
-
-
     if(alreadyAsked.length === 50){
         alreadyAsked = [];
     }
@@ -799,16 +793,15 @@ function whichAskQuestion(){
 
 function askQuestionTrivia(){
     var storedValues = JSON.parse(localStorage.getItem("values"));
-    if(alreadyAskedTrivia.length === 50){
+    if(alreadyAskedTrivia.length === 25){
         alreadyAsked = [];
     }
     x = Math.floor(Math.random()*storedValues.length);
     if(alreadyAsked.includes(storedValues[x])) {
-        x = Math.floor(Math.random()*storedValues.length);
+       askQuestionTrivia();
     }
     alreadyAsked.push(storedValues[x]);
     document.getElementById('question').innerHTML = storedValues[x];
-
 }
 
 function checkIfAnswerIsCorrectTrivia(){
