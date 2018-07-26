@@ -26,7 +26,8 @@
 
             <td>Enter the Input</td>
 
-            <td><input type="text" id="inputtext"/>  <button type="button" id="add" onclick="addRecordQuestions();">Add</button>
+            <td>
+                <input type="text" id="inputtext"/> <button type="button" id="add" onclick="addRecordQuestions();">Add</button>
             </td>
         </tr>
         <tr>
@@ -176,8 +177,33 @@
             <p class="player-score" id = "p2">0</p>
         </div>
     </div>
+
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="modalwrong" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    </div>
+                    <div class="modal-body">
+                        <p>You may not begin playing until all fields are filled.</p>
+                        </br>
+                         <button type="button" class="btnbtn" data-dismiss="modal" >Close</button>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
     <div id ="startbutton">
-    <button type="button" class="btnbtn4" onClick="startTrivia()">Click Here to Begin</button>
+    <button type="button" class="btnbtnf" onClick="startTrivia()">Click Here to Begin</button>
     </div>
 </div>
 

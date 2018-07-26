@@ -157,6 +157,7 @@ h3{
     text-align: center;
     font-size: 25px;
 }
+
 p1{
     color: #69CDC1;
     text-align:center;
@@ -362,11 +363,13 @@ p{
     width: 150px;
     font: bold 15px Verdana, sans-serif;
     text-shadow: none;
+    margin-left: 35%;
 }
-.btnbtn4{
+
+.btnbtnf{
     background-color: #EC9F6F;
     cursor: pointer;
-    color: black;
+    color: white;
     border-style: outset;
     border-color: #0066A2;
     height: 30px;
