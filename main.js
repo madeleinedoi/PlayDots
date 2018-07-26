@@ -22,7 +22,7 @@ var alreadyAskedUserAnswers= [];
 var cellCount;
 var confettiPlayers = [];
 var userQ;
-var trivia = "";
+var trivia = false;
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -598,7 +598,7 @@ function addRecordQuestions() {
             document.getElementById("done").innerHTML = "Complete";
         }
 
-        localStorage.setItem("values", JSON.stringify(values));
+        // localStorage.setItem("values", JSON.stringify(values));
 
     }
 
@@ -764,22 +764,24 @@ function addRecordAnswers() {
             break;
         }
 
-        localStorage.setItem("answers", JSON.stringify(answers));
+        // localStorage.setItem("answers", JSON.stringify(answers));
     }
     inp.value = "";
 }
 
+
 function startTrivia() {
     if (values.length >= 25 && answers.length >= 25) {
-        window.location.replace('grid.html');
-        trivia = "t";
-        localStorage.setItem("trivia", "true");
+        trivia = true;
     }
+    document.getElementById("box").style.display = "none";
+    document.getElementById("grid").style.display = "block";
+    document.getElementById("startbutton").style.display = "none";
 }
 
+
 function whichAskQuestion(){
-    var storedTrivia = localStorage.getItem("trivia");
-    if(storedTrivia === "true"){
+    if(trivia === true){
         askQuestionTrivia();
     }
     else{
@@ -788,8 +790,7 @@ function whichAskQuestion(){
 }
 
 function whichCheckAnswers(){
-    var storedTrivia = localStorage.getItem("trivia");
-    if(storedTrivia === "true"){
+    if(trivia === true){
         checkIfAnswerIsCorrectTrivia();
     }
     else{
@@ -797,22 +798,22 @@ function whichCheckAnswers(){
     }
 }
 function askQuestionTrivia(){
-    var storedValues = JSON.parse(localStorage.getItem("values"));
+    // var storedValues = JSON.parse(localStorage.getItem("values"));
     if(alreadyAskedTrivia.length === 25){
         alreadyAsked = [];
     }
-    x = Math.floor(Math.random()*storedValues.length);
-    if(alreadyAsked.includes(storedValues[x])) {
+    x = Math.floor(Math.random()*values.length);
+    if(alreadyAsked.includes(values[x])) {
        askQuestionTrivia();
     }
-    alreadyAsked.push(storedValues[x]);
-    document.getElementById("question").innerHTML = storedValues[x];
+    alreadyAsked.push(values[x]);
+    document.getElementById("question").innerHTML = values[x];
 }
 
 function checkIfAnswerIsCorrectTrivia(){
-    var storedAnswers = JSON.parse(localStorage.getItem("answers"));
+    // var storedAnswers = JSON.parse(localStorage.getItem("answers"));
     var userInput = document.getElementById("input_id").value;
-    if (userInput.toLowerCase() === storedAnswers[x].toLowerCase()) {
+    if (userInput.toLowerCase() === answers[x].toLowerCase()) {
         answerCorrect();
         askQuestionTrivia();
         cellCount++;
