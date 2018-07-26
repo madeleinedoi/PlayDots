@@ -1,4 +1,5 @@
 
+
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";
 var cells;
 var hLines;
@@ -23,7 +24,7 @@ var alreadyAskedUserAnswers= [];
 var cellCount;
 var confettiPlayers = [];
 var userQ;
-// var soundCount=0;
+var trivia = "";
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -35,8 +36,6 @@ function setUpBoard(){
 window.onload = function(){
     addListenerForHElements();
     addListenerForVElements();
-    addListenerForHElementsTrivia()
-    addListenerForVElementsTrivia()
 };
 
 function generateCells(numCol, numRow){
@@ -127,8 +126,8 @@ function addListenerForVElements(){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
-counter = 20;
-counterFlag = false;
+var counter = 20;
+var counterFlag = false;
 function onTimer() {
     document.getElementById('mycounter').innerHTML = counter;
     counter--;
@@ -290,12 +289,6 @@ function askQuestion(){
     correctAnswer[49]="Lady Gaga";
     questions[50] = "Where did the olympic games orginate?";
     correctAnswer[50]="Greece";
-
-
-
-
-
-
     if(alreadyAsked.length === 50){
         alreadyAsked = [];
     }
@@ -607,8 +600,11 @@ function addRecordQuestions() {
         if(values.length === 25){
             document.getElementById("done").innerHTML = "Complete";
         }
+
+        localStorage.setItem("values", JSON.stringify(values));
+
     }
-    localStorage.setItem("values", JSON.stringify(values));
+
     inp.value = "";
 }
 
@@ -770,54 +766,64 @@ function addRecordAnswers() {
             document.getElementById("done2").innerHTML = "Complete";
             break;
         }
+
+        localStorage.setItem("answers", JSON.stringify(answers));
     }
-    localStorage.setItem("answers", JSON.stringify(answers));
     // startTrivia();
     inp.value = "";
 }
 
 function startTrivia() {
     if (values.length >= 25 && answers.length >= 25) {
-        window.location.replace('userinputgrid.html');
+        window.location.replace('grid.html');
+        trivia = "t";
+        localStorage.setItem("trivia", JSON.stringify(trivia));
+    }
+}
+
+function whichAskQuestion(){
+    var storedTrivia = JSON.parse(localStorage.getItem("trivia"));
+    if(storedTrivia ==="t"){
+        askQuestionTrivia();
+    }
+    else{
+        askQuestion();
     }
 }
 
 function askQuestionTrivia(){
-    console.log(values);
     var storedValues = JSON.parse(localStorage.getItem("values"));
-    if(alreadyAskedTrivia.length === 50){
+    if(alreadyAskedTrivia.length === 25){
         alreadyAsked = [];
     }
     x = Math.floor(Math.random()*storedValues.length);
     if(alreadyAsked.includes(storedValues[x])) {
-        askQuestionTrivia();
+       askQuestionTrivia();
     }
     alreadyAsked.push(storedValues[x]);
-    document.getElementById('questiontrivia').innerHTML = storedValues[x];
-
-
+    document.getElementById('question').innerHTML = storedValues[x];
 }
 
 function checkIfAnswerIsCorrectTrivia(){
     var storedAnswers = JSON.parse(localStorage.getItem("answers"));
-    var userInput2 = document.getElementById('inputgrid').value;
-    if (userInput2.toLowerCase() === storedAnswers[x].toLowerCase()) {
+    var userInput = document.getElementById("input_id").value;
+    console.log(userInput);
+    console.log(storedAnswers[x]);
+    if (userInput.toLowerCase() === storedAnswers[x].toLowerCase()) {
         answerCorrect();
         askQuestionTrivia();
         cellCount++;
-    // }
-    // else {
-    //     answerIncorrect();
-    //     askQuestionTrivia();
-    // }
-    // cellsNeedToBeFilled = [];
-    // $('#myModal').modal('hide');
-    // checkIfGameOver();
-    // counter = 21;
-    // counterFlag = false;
+    }
+    else {
+        answerIncorrect();
+        askQuestionTrivia();
+    }
+    cellsNeedToBeFilled = [];
+    $('#myModal').modal('hide');
+    checkIfGameOver();
+    counter = 21;
+    counterFlag = false;
 }
-
-
 
 
 
@@ -837,5 +843,4 @@ function checkIfAnswerIsCorrectTrivia(){
 setUpBoard();
 //checkCells();
 //checkLines(cells[1]);
-
 
