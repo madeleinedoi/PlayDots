@@ -366,7 +366,30 @@ p{
     margin-left: 35%;
 }
 
-.btnbtnf{
+.btnaddquestions{
+    background-color: #69CDC1;
+    cursor: pointer;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 30px;
+    width: 55px;
+    font: bold 15px Verdana, sans-serif;
+    text-shadow: none;
+}
+.btnaddanswers{
+    background-color:#E876AA;
+    cursor: pointer;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 30px;
+    width: 55px;
+    font: bold 15px Verdana, sans-serif;
+    text-shadow: none;
+}
+
+.btnbtntriviapage{
     background-color: #EC9F6F;
     cursor: pointer;
     color: white;
