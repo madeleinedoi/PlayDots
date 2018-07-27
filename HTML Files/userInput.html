@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src="main.js"></script>
-    <link rel="stylesheet" type="text/css" href="./styles.css"  />
+    <script type="text/javascript" src="../Javascript%20Files/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../CSS%20Files/styles.css"  />
 
 </head>
 
@@ -140,8 +140,8 @@
 <html lang="en">
 
 <head>
-    <script type="text/javascript" src="main.js"></script>
-    <link rel="stylesheet" type="text/css" href="./styles.css"  />
+    <script type="text/javascript" src="../Javascript%20Files/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../CSS%20Files/styles.css"  />
 
     <title>Play Dots</title>
 <body style="background-color:lightgrey;">
@@ -222,7 +222,7 @@
 <div class="container">
     <!-- Modal -->
 
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="triviaModal" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -234,7 +234,7 @@
                     <div id="mycounter"></div>
                     <p id="questionTrivia"></p>
                     <script>
-                        $('#myModal').on('hidden.bs.modal', function() {
+                        $('#triviaModal').on('hidden.bs.modal', function() {
                             $(this)
                                 .find("input,textarea,select").val('');
                         });

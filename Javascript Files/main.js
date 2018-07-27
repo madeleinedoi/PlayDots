@@ -15,7 +15,6 @@ var correctAnswer = [];
 var currentCell;
 var element;
 var cellsNeedToBeFilled = [];
-var cellsNeedToBeFilledTrivia =[];
 var alreadyAsked = [];
 var alreadyAskedTrivia=[];
 var alreadyAskedUserQuestions= [];
@@ -126,6 +125,19 @@ function addListenerForVElements(){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
+function startTrivia() {
+    if (values.length >= 25 && answers.length >= 25) {
+        trivia = true;
+        document.getElementById("box").style.display = "none";
+        document.getElementById("grid").style.display = "block";
+        document.getElementById("startbutton").style.display = "none";
+        document.getElementById("t").style.display="block";
+        askQuestionTrivia();
+    }
+    else{
+        $('#modalwrong').modal('show');
+    }
+}
 var counter = 30;
 var counterFlag = false;
 function onTimer() {
@@ -138,13 +150,17 @@ function onTimer() {
     //     i=10;
     // }
     if (counter < 0) {
-        $('#myModal').modal('hide');
         counterFlag = false;
         counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
-        // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 1000);
+        if(trivia){
+            $('#triviaModal').modal('hide');
+        }
+        else{
+            $('#myModal').modal('hide');
+        }
     }
 
     else if (counterFlag) {
@@ -162,12 +178,16 @@ function onTimerTwo() {
     //     i=10;
     // }
     if (counter < 0) {
-        $('#myModal').modal('hide');
+        if(trivia){
+            $('#triviaModal').modal('hide');
+        }
+        else{
+            $('#myModal').modal('hide');
+        }
         counterFlag = false;
         counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
-        // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 100000);
     }
 
@@ -216,7 +236,7 @@ function askQuestion(){
     questions[0] = "What is the most popular drink in the world that does not contain alcohol?";
     correctAnswer[0] = "Coffee";
     questions[1] = "What is the most common blood type in humans? Type: ";
-    correctAnswer[1] = "O";
+    correctAnswer[1] = "O+";
     questions[2] = "How many people were part of the main cast of the hit tv show Friends?";
     correctAnswer[2] = "6";
     questions[3] = "Who was Mario's best friend in Super Mario Bros";
@@ -341,43 +361,29 @@ function answerIncorrect(){
     currentTurn();
     currentCell.owner = "";
     deactivateLastClickedLine();
-    askQuestion();
+    // askQuestion();
 };
-function answerCorrectTrivia(){
-    for (var cell = 0; cell < cellsNeedToBeFilledTrivia.length; cell++) {
-        cellsNeedToBeFilled[cell].active = true;
-        cellsNeedToBeFilled[cell].owner = turn;
-        changeCellBackgroundColor(cellsNeedToBeFilledTrivia[cell].row,  cellsNeedToBeFilledTrivia[cell].col);
-        assignPoints();
-    }
-};
-
-function answerIncorrectTrivia(){
-    currentCell.active = false;
-    pointThisTurn=false;
-    currentTurn();
-    currentCell.owner = "";
-    deactivateLastClickedLine();
-    askQuestionTrivia();
-};
-
 
 function checkIfAnswerIsCorrect() {
-
     var userInput = document.getElementById('input_id').value;
     if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
         answerCorrect();
         askQuestion();
-
+        cellCount++;
     }
     else {
         answerIncorrect();
         askQuestion();
     }
-    cellsNeedToBeFilled=[];
-    $('#myModal').modal('hide');
+    cellsNeedToBeFilled = [];
+    if(trivia){
+        $('#triviaModal').modal('hide');
+    }
+    else{
+        $('#myModal').modal('hide');
+    }
     checkIfGameOver();
-    counter = 30;
+    counter = 21;
     counterFlag = false;
 };
 
@@ -387,7 +393,6 @@ function checkCells() {
             displayQuestion();
             currentCell = cell;
             cellsNeedToBeFilled.push(cell);
-            // cellsNeedToBeFilledTrivia.push(cell);
             twoManyCountDown();
             // onTimer();
         }
@@ -396,17 +401,22 @@ function checkCells() {
 function twoManyCountDown(){
     countTimer = cellsNeedToBeFilled.length;
     if(countTimer>=2){
-        counter=30
+        counter=30;
         onTimerTwo();
     }
     else{
-        counter=30
+        counter=30;
         onTimer();
 
     }
 }
 function displayQuestion() {
-    $('#myModal').modal('show');
+    if(trivia){
+        $('#triviaModal').modal('show');
+    }
+    else{
+        $('#myModal').modal('show');
+    }
     pointThisTurn = true;
     //render the dom
     counterFlag = true;
@@ -509,6 +519,7 @@ function addRecordQuestions() {
 
     values.push(inp.value);
     for (var cell = 0; cell < values.length; cell++) {
+        console.log(values[cell]);
         document.getElementById('values1').innerHTML =  "1." + values[0];
         if(values[1] === undefined){
             break;
@@ -830,25 +841,19 @@ function addRecordAnswers() {
 }
 
 
-function startTrivia() {
-    if (values.length >= 25 && answers.length >= 25) {
-        trivia = true;
-        document.getElementById("box").style.display = "none";
-        document.getElementById("grid").style.display = "block";
-        document.getElementById("startbutton").style.display = "none";
-        document.getElementById("t").style.display="block";
-        askQuestionTrivia();
+
+
+
+function whichCheckAnswers(){
+    if(trivia === true){
+        checkIfAnswerIsCorrectTrivia();
     }
     else{
-        $('#modalwrong').modal('show');
+        checkIfAnswerIsCorrect();
     }
 }
-
-
 function askQuestionTrivia(){
-    for(var i =0; i<values.length; i++){
-        console.log(values[i]);
-    }
+    // var storedValues = JSON.parse(localStorage.getItem("values"));
     if(alreadyAskedTrivia.length === 25){
         alreadyAskedTrivia = [];
     }
@@ -861,18 +866,23 @@ function askQuestionTrivia(){
 }
 
 function checkIfAnswerIsCorrectTrivia(){
-    // var storedAnswers = JSON.parse(localStorage.getItem("answers"));
     var userInput = document.getElementById("inputgrid").value;
     if (userInput.toLowerCase() === answers[xTrivia].toLowerCase()) {
         answerCorrect();
-        $('#myModal').modal('hide');
+        askQuestionTrivia();
+        cellCount++;
     }
     else {
         answerIncorrect();
+        askQuestionTrivia();
+    }
+    cellsNeedToBeFilled = [];
+    if(trivia){
+        $('#triviaModal').modal('hide');
+    }
+    else{
         $('#myModal').modal('hide');
     }
-    // cellsNeedToBeFilledTrivia = [];
-    cellsNeedToBeFilled=[];
     checkIfGameOver();
     counter = 30;
     counterFlag = false;
