@@ -56,7 +56,9 @@
                     </div>
                     <div class="modal-body">
                         <p>
+                        <hr>
                         <div id="mycounter"></div>
+                        <hr>
                         <p id="question"></p>
                         <script>
                             $('#myModal').on('hidden.bs.modal', function() {
@@ -66,7 +68,7 @@
                             askQuestion();
                             $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
                         </script>
-                        <div id = "teaser-input">
+                        <div id = "teaserinput">
                         <input type="text" style="height:50px; color: darkgray; width: 500px; font: bold 30px Verdana, sans-serif ;text-align:center;" id="input_id" value="">
                         </div>
                         <script>
@@ -133,7 +135,7 @@
                             });
 
                         </script>
-                        <div id="teaser-input">
+                        <div id="teaserinput">
 
                         <button type="button" class= "playSound submitbtn" onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
                         </div>
