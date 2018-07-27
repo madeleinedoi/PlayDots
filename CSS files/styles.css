@@ -151,21 +151,18 @@ h2{
     color:white;
     font-family: Verdana, sans-serif;
 }
-h3{
+p8{
     font-family: Verdana, sans-serif;
-    color:white;
-    text-align: center;
+    color:#EC9F6F;
     font-size: 25px;
 }
-h8{
-    color:#EC9F6F;
-    font: bold 30px Verdana, sans-serif;
-}
+
 
 #mycounter {
-    color:black;
-    text-align: center;
+    color:darkgray;
+    text-align: right;
     font: bold 25px Verdana, sans-serif;
+    display:inline-block;
 }
 
 
