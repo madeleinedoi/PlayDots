@@ -864,10 +864,12 @@ function checkIfAnswerIsCorrectTrivia(){
     var userInput = document.getElementById("inputgrid").value;
     if (userInput.toLowerCase() === answers[xTrivia].toLowerCase()) {
         answerCorrect();
+        askQuestionTrivia();
         $('#myModal').modal('hide');
     }
     else {
         answerIncorrect();
+        askQuestionTrivia();
         $('#myModal').modal('hide');
     }
     // cellsNeedToBeFilledTrivia = [];
