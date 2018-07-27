@@ -157,9 +157,13 @@ h3{
     text-align: center;
     font-size: 25px;
 }
+h8{
+    color:#EC9F6F;
+    font: bold 30px Verdana, sans-serif;
+}
 
 #mycounter {
-    color:#f4bf42;
+    color:black;
     text-align: center;
     font: bold 25px Verdana, sans-serif;
 }
