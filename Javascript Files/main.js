@@ -3,7 +3,7 @@ var cells;
 var hLines;
 var vLines;
 var turn = "p1";
-var p1points = 0;
+var p1points = 23;
 var p2points = 0;
 var pointThisTurn = false;
 var rowNum;
@@ -271,7 +271,7 @@ function askQuestion(){
     correctAnswer[27]="Giraffe";
     questions[28] = "What color is the circle on the Japanese national flag?";
     correctAnswer[28]="Red";
-    questions[29] = "The title role of the 1990 movie  \" Pretty Woman \"was played by which actress?";
+    questions[29] = "The title role of the 1990 movie \"Pretty Woman\" was played by which actress?";
     correctAnswer[29]="Julia Roberts";
     questions[30] = "How many sides does an octagon have?";
     correctAnswer[30]="8";

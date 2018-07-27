@@ -224,7 +224,7 @@ body {
 }
 .container {
     position: relative;
-    max-width:100%;
+    max-width:100px;
     margin: 0 auto;
 
 }
@@ -553,6 +553,20 @@ td{
     font: 17px Verdana, sans-serif;
 
 }
+.submitbtn{
+    background-color: #EC9F6F;
+    cursor: pointer;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 250px;
+    font: bold 20px Verdana, sans-serif;
+    text-shadow: none;
+    top: 8px;
+    margin-left: -50x;
+}
+
 .borderbox2 {
     background-color: lightgrey;
     border: 25px solid #EC9F6F  ;
@@ -580,4 +594,10 @@ td{
     color:  #E876AA;
     text-align: center;
     font: bold 30px Verdana, sans-serif;
+}
+
+#teaser-input{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }

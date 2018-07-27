@@ -66,7 +66,9 @@
                             askQuestion();
                             $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
                         </script>
-                        <input type="text" id="input_id" value="">
+                        <div id = "teaser-input">
+                        <input type="text" style="height:50px; width: 500px; font: 20px Verdana, sans-serif" id="input_id" value="">
+                        </div>
                         <script>
                             document.getElementById('input_id').onkeydown = function(e){
                                 if(e.keyCode == 13){
@@ -131,8 +133,9 @@
                             });
 
                         </script>
-
-                        <button type="button" class="playSound"onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
+                        <div id="teaser-input">
+                        <button type="button" class= "playSound submitbtn" onclick="checkIfAnswerIsCorrect()">Submit Answer</button>
+                        </div>
                         </p>
                     </div>
                     <div class="modal-footer">

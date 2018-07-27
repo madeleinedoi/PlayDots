@@ -218,7 +218,8 @@
                         $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
                         askQuestionTrivia();
                     </script>
-                    <input type="text" id="inputgrid" value="">
+                    <div id = "teaser-input">
+                        <input type="text" style="height:50px; width: 500px; font: 20px Verdana, sans-serif" id="inputgrid" value="">
                     <script>
                         document.getElementById('inputgrid').onkeydown = function(e){
                             if(e.keyCode == 13){
@@ -283,7 +284,8 @@
                         });
 
                     </script>
-                    <button type="button" class="playSound"onclick="checkIfAnswerIsCorrectTrivia()">Submit Answer</button>
+                    <div id = "teaser-input">
+                    <button type="button" class="playSound submitbtn" onclick="checkIfAnswerIsCorrectTrivia()">Submit Answer</button></div>
                     </p>
                 </div>
                 <div class="modal-footer">
