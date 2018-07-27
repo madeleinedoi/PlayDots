@@ -341,7 +341,6 @@ function answerIncorrect(){
     currentTurn();
     currentCell.owner = "";
     deactivateLastClickedLine();
-    askQuestion();
 };
 function answerCorrectTrivia(){
     for (var cell = 0; cell < cellsNeedToBeFilledTrivia.length; cell++) {
