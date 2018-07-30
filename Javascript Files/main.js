@@ -344,7 +344,19 @@ function checkIfAnswerIsCorrect() {
 
     for(var i=0; i<answerArr.length; i++){
             console.log(answerArr[i]);
-            if(answerArr[i] === userInput){
+            if(answerArr[i].toLowerCase() === userInput.toLowerCase()){
+                answerCorrect();
+                askQuestion();
+                questionAnswered = true;
+                $('#myModal').modal('hide');
+            }
+            if(userInput.toLowerCase() ===  "The " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "the " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "THE " + answerArr[i].toLowerCase()){
+                answerCorrect();
+                askQuestion();
+                questionAnswered = true;
+                $('#myModal').modal('hide');
+            }
+            if(userInput.toLowerCase() ===  "A " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "a " + answerArr[i].toLowerCase()){
                 answerCorrect();
                 askQuestion();
                 questionAnswered = true;
@@ -352,14 +364,7 @@ function checkIfAnswerIsCorrect() {
             }
     }
 
-    // if(userInput.toLowerCase() ===  "The " + correctAnswer[x].toLowerCase() || userInput.toLowerCase() ===  "the " + correctAnswer[x].toLowerCase() || userInput.toLowerCase() ===  "THE " + correctAnswer[x].toLowerCase()){
-    //     answerCorrect();
-    //     askQuestion();
-    // }
-    // else if(userInput.toLowerCase() ===  "A " + correctAnswer[x].toLowerCase() || userInput.toLowerCase() ===  "a " + correctAnswer[x].toLowerCase()){
-    //     answerCorrect();
-    //     askQuestion();
-    // }
+
     if(questionAnswered ===false) {
         answerIncorrect();
         askQuestion();
