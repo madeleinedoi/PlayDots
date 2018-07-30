@@ -216,6 +216,20 @@ p5{
     left:50%;
 }
 
+.closetrivia{
+    background-color: grey;
+    cursor: pointer;
+    color: white;
+    border-style: outset;
+    border-color: darkgrey;
+    height: 35px;
+    width: 150px;
+    font: bold 15px Verdana, sans-serif;
+    text-shadow: none;
+    margin:0 auto;
+    display: block;
+}
+
 p6{
     font: bold 40px Verdana, sans-serif;
     color: #EC9F6F;

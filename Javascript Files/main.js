@@ -331,17 +331,10 @@ function answerIncorrect(){
 }
 
 
-
 function checkIfAnswerIsCorrect() {
     var userInput = document.getElementById('input_id').value;
     var answerArr = correctAnswer[x].split(",");
     var questionAnswered=false;
-
-    // if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
-    //     answerCorrect();
-    //     askQuestion();
-    // }
-
     for(var i=0; i<answerArr.length; i++){
             console.log(answerArr[i]);
             if(answerArr[i].toLowerCase() === userInput.toLowerCase()){
@@ -363,14 +356,10 @@ function checkIfAnswerIsCorrect() {
                 $('#myModal').modal('hide');
             }
     }
-
-
     if(questionAnswered ===false) {
         answerIncorrect();
         askQuestion();
     }
-
-
     cellsNeedToBeFilled=[];
     $('#myModal').modal('hide');
     checkIfGameOver();
@@ -810,7 +799,7 @@ function addRecordAnswers() {
 }
 
 function startTrivia() {
-    if (values.length >= 25 && answers.length >= 25) {
+    if (values.length >= 10 && answers.length >= 10) {
         trivia = true;
         document.getElementById("box").style.display = "none";
         document.getElementById("grid").style.display = "block";
@@ -828,10 +817,10 @@ function askQuestionTrivia(){
         alreadyAskedTrivia = [];
     }
     xTrivia = Math.floor(Math.random()*values.length);
-    // if(alreadyAsked.includes(values[xTrivia])) {
-    //     askQuestionTrivia();
-    // }
-    // alreadyAsked.push(values[xTrivia]);
+    if(alreadyAskedTrivia.includes(values[xTrivia])) {
+         askQuestionTrivia();
+     }
+     alreadyAskedTrivia.push(values[xTrivia]);
     document.getElementById("questionTrivia").innerHTML = values[xTrivia];
 }
 
