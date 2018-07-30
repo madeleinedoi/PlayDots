@@ -8,7 +8,7 @@ var pointThisTurn = false;
 var rowNum;
 var colNum;
 var lineType;
-var mostRecentlyClicked;//for deactivate
+var mostRecentlyClicked;
 var x;
 var correctAnswer = [];
 var currentCell;
@@ -29,12 +29,12 @@ function setUpBoard(){
     vLines=generateVertical(5,6);
     cells=generateCells(5,5);
     updateDisplayedPlayerTurn();
-};
+}
 
 window.onload = function(){
     addListenerForHElements();
     addListenerForVElements();
-};
+}
 
 function generateCells(numCol, numRow){
     var cells = [];
@@ -49,7 +49,7 @@ function generateCells(numCol, numRow){
         }
     }
     return cells;
-};
+}
 
 function generateHorizontal(numCol,numRow){
     var cells = [];
@@ -65,7 +65,7 @@ function generateHorizontal(numCol,numRow){
         cells.push(row);
     }
     return cells;
-};
+}
 
 function generateVertical(numCol,numRow){
     var cells = [];
@@ -81,11 +81,11 @@ function generateVertical(numCol,numRow){
         cells.push(row);
     }
     return cells;
-};
+}
 
 function checkLines(cell){
     return (checkHorizontal(cell) && checkVertical(cell));
-};
+}
 
 function checkHorizontal(cell){
     var topline = false;
@@ -97,7 +97,7 @@ function checkHorizontal(cell){
         bottomline = true;
     }
     return topline && bottomline;
-};
+}
 
 function checkVertical(cell){
     var rightline = false;
@@ -109,31 +109,25 @@ function checkVertical(cell){
         leftline = true;
     }
     return leftline && rightline;
-};
+}
 
 function addListenerForHElements(){
     var hElements = document.getElementsByClassName('linehorizontal');
     for(var i = 0; i < hElements.length; i++){
         hElements[i].addEventListener("click", clickFunction);
     }
-};
+}
 
 function addListenerForVElements(){
     var vElements = document.getElementsByClassName('linevertical');
     for(var i = 0; i < vElements.length; i++){
         vElements[i].addEventListener("click", clickFunction);
     }
-};
+}
 
 function onTimer() {
     document.getElementById('mycounter').innerHTML = counter;
     counter--;
-    // if(i>0 && answerIncorrect()){
-    //     i=10;
-    // }
-    // else if(i>0){
-    //     i=10;
-    // }
     if (counter < 0) {
         $('#myModal').modal('hide');
         counterFlag = false;
@@ -152,12 +146,6 @@ function onTimer() {
 function onTimerTwo() {
     document.getElementById('mycounter').innerHTML = counter;
     counter--;
-    // if(i>0 && answerIncorrect()){
-    //     i=10;
-    // }
-    // else if(i>0){
-    //     i=10;
-    // }
     if (counter < 0) {
         $('#myModal').modal('hide');
         counterFlag = false;
@@ -172,6 +160,7 @@ function onTimerTwo() {
         setTimeout(onTimer, 100000);
     }
 }
+
 function clickFunction(event) {
     element = event.target;
     mostRecentlyClicked = {
@@ -198,7 +187,7 @@ function clickFunction(event) {
         }
     }
     if (lineType === "linehorizontal" &&  hLines[rowNum][colNum].active !== true ){
-    hLines[rowNum][colNum].active = true;
+        hLines[rowNum][colNum].active = true;
         currentTurn();
     }
     if(lineType === "linevertical" &&  vLines[rowNum][colNum].active !== true)
@@ -207,8 +196,7 @@ function clickFunction(event) {
         currentTurn();
     }
     checkCells();
-
-};
+}
 
 function askQuestion(){
     var questions = [];
@@ -348,7 +336,7 @@ function answerCorrectTrivia(){
         changeCellBackgroundColor(cellsNeedToBeFilledTrivia[cell].row,  cellsNeedToBeFilledTrivia[cell].col);
         assignPoints();
     }
-};
+}
 
 function answerIncorrectTrivia(){
     currentCell.active = false;
@@ -357,7 +345,7 @@ function answerIncorrectTrivia(){
     currentCell.owner = "";
     deactivateLastClickedLine();
     askQuestionTrivia();
-};
+}
 
 
 function checkIfAnswerIsCorrect() {
@@ -365,7 +353,6 @@ function checkIfAnswerIsCorrect() {
     if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
         answerCorrect();
         askQuestion();
-
     }
     else {
         answerIncorrect();
@@ -376,7 +363,7 @@ function checkIfAnswerIsCorrect() {
     checkIfGameOver();
     counter = 30;
     counterFlag = false;
-};
+}
 
 function checkCells() {
     cells.forEach(function (cell) {
@@ -387,26 +374,27 @@ function checkCells() {
             twoManyCountDown();
         }
     });
-};
+}
+
 function twoManyCountDown(){
     countTimer = cellsNeedToBeFilled.length;
     if(countTimer>=2){
-        counter=30
+        counter=30;
         onTimerTwo();
     }
     else{
-        counter=30
+        counter=30;
         onTimer();
 
     }
 }
+
 function displayQuestion() {
     $('#myModal').modal('show');
     pointThisTurn = true;
     //render the dom
     counterFlag = true;
-
-};
+}
 
 function assignPoints() {
     if (turn === "p1") {
@@ -418,7 +406,7 @@ function assignPoints() {
         document.getElementById("p2").innerHTML = p2points;
     }
     pointThisTurn = true;
-};
+}
 
 function deactivateLastClickedLine(){
     if(mostRecentlyClicked.lineType === "linehorizontal"){
@@ -436,12 +424,12 @@ function currentTurn(){
         turn = turn === "p1" ? "p2" : "p1";
     }
     updateDisplayedPlayerTurn();
-};
+}
 
 function updateDisplayedPlayerTurn(){
     document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
     return true;
-};
+}
 
 function changeCellBackgroundColor(rowNum, colNum) {
     var htmlCells = [];
@@ -451,7 +439,7 @@ function changeCellBackgroundColor(rowNum, colNum) {
             htmlCells[c].classList.add(turn);
         }
     }
-};
+}
 
 function makeItConfetti() {
     var confetti = document.querySelectorAll('.confetti');
@@ -472,8 +460,6 @@ function makeItConfetti() {
             iterations: Infinity,
             delay: -(Math.random() * 5000)
         });
-
-
         confettiPlayers.push(player);
     }
 }
@@ -489,7 +475,6 @@ function checkIfGameOver(){
         makeItConfetti();
         return true;
     }
-
 }
 
 function refreshPage(){
@@ -652,21 +637,14 @@ function addRecordQuestions() {
         if(values.length === 25){
             document.getElementById("done").innerHTML = "Complete";
         }
-
-        // localStorage.setItem("values", JSON.stringify(values));
-
     }
-
     inp.value = "";
 }
 
 answers = [];
 
 function addRecordAnswers() {
-
     var inp = document.getElementById('input');
-
-
     answers.push(inp.value);
     for (var cell = 0; cell < answers.length; cell++) {
         document.getElementById('answers1').innerHTML =  "1." + answers[0];
@@ -818,12 +796,9 @@ function addRecordAnswers() {
             document.getElementById("done2").innerHTML = "Complete";
             break;
         }
-
-        // localStorage.setItem("answers", JSON.stringify(answers));
     }
     inp.value = "";
 }
-
 
 function startTrivia() {
     if (values.length >= 25 && answers.length >= 25) {
@@ -839,21 +814,19 @@ function startTrivia() {
     }
 }
 
-
 function askQuestionTrivia(){
     if(alreadyAskedTrivia.length === 25){
         alreadyAskedTrivia = [];
     }
     xTrivia = Math.floor(Math.random()*values.length);
-    if(alreadyAsked.includes(values[xTrivia])) {
-        askQuestionTrivia();
-    }
-    alreadyAsked.push(values[xTrivia]);
+    // if(alreadyAsked.includes(values[xTrivia])) {
+    //     askQuestionTrivia();
+    // }
+    // alreadyAsked.push(values[xTrivia]);
     document.getElementById("questionTrivia").innerHTML = values[xTrivia];
 }
 
 function checkIfAnswerIsCorrectTrivia(){
-    // var storedAnswers = JSON.parse(localStorage.getItem("answers"));
     var userInput = document.getElementById("inputgrid").value;
     if (userInput.toLowerCase() === answers[xTrivia].toLowerCase()) {
         answerCorrect();
@@ -865,7 +838,6 @@ function checkIfAnswerIsCorrectTrivia(){
         askQuestionTrivia();
         $('#myModal').modal('hide');
     }
-    // cellsNeedToBeFilledTrivia = [];
     cellsNeedToBeFilled=[];
     checkIfGameOver();
     counter = 30;
