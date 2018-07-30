@@ -128,8 +128,11 @@ canvas {
 .playfield {
     margin: 0 auto;
     width: 750px;
-    margin-left: 670px;
-    margin-top: 180px;
+    margin: 0 auto;
+    margin-left: 39%;
+    margin-top: 10%;
+    margin-right: 50%;
+
     position: absolute;
     z-index: 1000;
     animation-name: fade-in;

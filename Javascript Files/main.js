@@ -383,10 +383,22 @@ function twoManyCountDown(){
     if(countTimer>=2){
         counter=30;
         onTimerTwo();
+        var obj = document.createElement("audio");
+        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
+        obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;
+        obj.play();
     }
     else{
         counter=30;
         onTimer();
+        var obj = document.createElement("audio");
+        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp3";
+        obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;
+        obj.play();
     }
 }
 
