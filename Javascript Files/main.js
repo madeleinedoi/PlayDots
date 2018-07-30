@@ -188,14 +188,15 @@ function clickFunction(event) {
     }
     if (lineType === "linehorizontal" &&  hLines[rowNum][colNum].active !== true ){
         hLines[rowNum][colNum].active = true;
+        checkCells();
         currentTurn();
     }
     if(lineType === "linevertical" &&  vLines[rowNum][colNum].active !== true)
     {
         vLines[rowNum][colNum].active = true;
+        checkCells();
         currentTurn();
     }
-    checkCells();
 }
 
 function askQuestion(){
@@ -311,7 +312,7 @@ function askQuestion(){
     }
     alreadyAsked.push(questions[x]);
     document.getElementById('question').innerHTML = questions[x];
-};
+}
 
 function answerCorrect(){
     for (var cell = 0; cell < cellsNeedToBeFilled.length; cell++) {
@@ -320,7 +321,7 @@ function answerCorrect(){
         changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
         assignPoints();
     }
-};
+}
 
 function answerIncorrect(){
     currentCell.active = false;
@@ -328,7 +329,8 @@ function answerIncorrect(){
     currentTurn();
     currentCell.owner = "";
     deactivateLastClickedLine();
-};
+}
+
 function answerCorrectTrivia(){
     for (var cell = 0; cell < cellsNeedToBeFilledTrivia.length; cell++) {
         cellsNeedToBeFilled[cell].active = true;
@@ -385,14 +387,12 @@ function twoManyCountDown(){
     else{
         counter=30;
         onTimer();
-
     }
 }
 
 function displayQuestion() {
     $('#myModal').modal('show');
     pointThisTurn = true;
-    //render the dom
     counterFlag = true;
 }
 
@@ -443,11 +443,9 @@ function changeCellBackgroundColor(rowNum, colNum) {
 
 function makeItConfetti() {
     var confetti = document.querySelectorAll('.confetti');
-
     if (!confetti[0].animate) {
         return false;
     }
-
     for (var i = 0, len = confetti.length; i < len; ++i) {
         var snowball = confetti[i];
         snowball.innerHTML = '<div class="rotate"><div class="askew"></div></div>';
@@ -484,9 +482,7 @@ function refreshPage(){
 values = [];
 
 function addRecordQuestions() {
-
     var inp = document.getElementById('inputtext');
-
     values.push(inp.value);
     for (var cell = 0; cell < values.length; cell++) {
         document.getElementById('values1').innerHTML =  "1." + values[0];
