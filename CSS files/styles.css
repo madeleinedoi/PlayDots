@@ -165,6 +165,7 @@ h3{
     color:-moz-cellhighlight;
     font-size: 25px;
     font-family: Verdana, sans-serif;
+    margin-right: 30px;
 }
 
 p8{
@@ -281,7 +282,7 @@ body {
 
 .container .content {
     position: absolute;
-    bottom: 350px;
+    bottom: 305px;
     background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
     color: #f1f1f1;
     margin-left: 270px;
