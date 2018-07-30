@@ -3,7 +3,7 @@ var hLines;
 var vLines;
 var turn = "p1";
 var p1points = 0;
-var p2points = 23;
+var p2points = 0;
 var pointThisTurn = false;
 var rowNum;
 var colNum;
@@ -204,8 +204,10 @@ function askQuestion(){
     correctAnswer[0] = "Coffee";
     questions[1] = "What is the most common blood type in humans? Type: ";
     correctAnswer[1] = "O+";
+    correctAnswer[1] = "o positive";
     questions[2] = "How many people were part of the main cast of the hit tv show Friends?";
     correctAnswer[2] = "6";
+    correctAnswer[2] = "six";
     questions[3] = "Who was Mario's best friend in Super Mario Bros";
     correctAnswer[3] = "Luigi";
     questions[4] = "Which US state has the highest number of colleges and universities?";
@@ -262,6 +264,7 @@ function askQuestion(){
     correctAnswer[29]="Julia Roberts";
     questions[30] = "How many sides does an octagon have?";
     correctAnswer[30]="8";
+    correctAnswer[30]="eight";
     questions[31] = "Who topped the Billboard charts with the single \"Love Yourself\" in February, 2016?";
     correctAnswer[31]="Justin Bieber";
     questions[32] = "What is the name of the Dr Seuss character who steals Christmas?";
@@ -352,6 +355,10 @@ function answerIncorrectTrivia(){
 function checkIfAnswerIsCorrect() {
     var userInput = document.getElementById('input_id').value;
     if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
+        answerCorrect();
+        askQuestion();
+    }
+    else if(userInput.toLowerCase() ===  "The " + correctAnswer[x].toLowerCase() || userInput.toLowerCase() ===  "the " + correctAnswer[x].toLowerCase() || userInput.toLowerCase() ===  "THE " + correctAnswer[x].toLowerCase()){
         answerCorrect();
         askQuestion();
     }
