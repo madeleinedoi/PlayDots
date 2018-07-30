@@ -17,9 +17,6 @@ var cellsNeedToBeFilled = [];
 var cellsNeedToBeFilledTrivia =[];
 var alreadyAsked = [];
 var alreadyAskedTrivia=[];
-var alreadyAskedUserQuestions= [];
-var alreadyAskedUserAnswers= [];
-var cellCount;
 var confettiPlayers = [];
 var xTrivia;
 var trivia = false;
@@ -200,13 +197,17 @@ function clickFunction(event) {
             mostRecentlyClicked.col = className[c][className[c].length - 1];
         }
     }
-    if (lineType === "linehorizontal"){
-        hLines[rowNum][colNum].active = true;
-    } else {
+    if (lineType === "linehorizontal" &&  hLines[rowNum][colNum].active !== true ){
+    hLines[rowNum][colNum].active = true;
+        currentTurn();
+    }
+    if(lineType === "linevertical" &&  vLines[rowNum][colNum].active !== true)
+    {
         vLines[rowNum][colNum].active = true;
+        currentTurn();
     }
     checkCells();
-    currentTurn();
+
 };
 
 function askQuestion(){
@@ -844,10 +845,10 @@ function askQuestionTrivia(){
         alreadyAskedTrivia = [];
     }
     xTrivia = Math.floor(Math.random()*values.length);
-    // if(alreadyAsked.includes(values[xTrivia])) {
-    //     askQuestionTrivia();
-    // }
-    // alreadyAsked.push(values[xTrivia]);
+    if(alreadyAsked.includes(values[xTrivia])) {
+        askQuestionTrivia();
+    }
+    alreadyAsked.push(values[xTrivia]);
     document.getElementById("questionTrivia").innerHTML = values[xTrivia];
 }
 
