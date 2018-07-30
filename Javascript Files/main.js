@@ -1,4 +1,3 @@
-src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";
 var cells;
 var hLines;
 var vLines;
@@ -439,7 +438,7 @@ function currentTurn(){
 };
 
 function updateDisplayedPlayerTurn(){
-        document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
+    document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
     return true;
 };
 
@@ -485,7 +484,7 @@ function checkIfGameOver(){
         return true;
     }
     if((p1points + p2points === 25) && (p2points > p1points)){
-        $('#p2modal').modal('show');
+        $('#p1modal').modal('show');
         makeItConfetti();
         return true;
     }
@@ -841,17 +840,14 @@ function startTrivia() {
 
 
 function askQuestionTrivia(){
-    for(var i =0; i<values.length; i++){
-        console.log(values[i]);
-    }
     if(alreadyAskedTrivia.length === 25){
         alreadyAskedTrivia = [];
     }
     xTrivia = Math.floor(Math.random()*values.length);
-    if(alreadyAsked.includes(values[xTrivia])) {
-       askQuestionTrivia();
-    }
-    alreadyAsked.push(values[xTrivia]);
+    // if(alreadyAsked.includes(values[xTrivia])) {
+    //     askQuestionTrivia();
+    // }
+    // alreadyAsked.push(values[xTrivia]);
     document.getElementById("questionTrivia").innerHTML = values[xTrivia];
 }
 
@@ -893,4 +889,3 @@ function checkIfAnswerIsCorrectTrivia(){
 setUpBoard();
 //checkCells();
 //checkLines(cells[1]);
-
