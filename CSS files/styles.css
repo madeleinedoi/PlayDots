@@ -403,17 +403,17 @@ p{
 }
 
 .btnbtn{
+    display: inline-block;
     background-color: #EC9F6F;
     cursor: pointer;
-    background: darkgrey;
-    color: black;
+    background: #EC9F6F;
+    color: white;
     border-style: outset;
-    border-color: #0066A2;
-    height: 25px;
+    border-color: darkgrey;
+    height: 35px;
     width: 150px;
     font: bold 15px Verdana, sans-serif;
     text-shadow: none;
-    margin-left: 35%;
 }
 
 .btnaddquestions{
