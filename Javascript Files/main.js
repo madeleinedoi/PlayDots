@@ -134,6 +134,12 @@ function onTimer() {
         counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
+        var obj = document.createElement("audio");
+        obj.src="https://www.soundjay.com/misc/sounds/censor-beep-01.mp3";
+        obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;
+        obj.play();
         // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 1000);
     }
@@ -151,6 +157,12 @@ function onTimerTwo() {
         counterFlag = false;
         counter = 30;
         answerIncorrect();
+        var obj = document.createElement("audio");
+        obj.src="https://www.soundjay.com/misc/sounds/censor-beep-01.mp3";
+        obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;
+        obj.play();
         cellsNeedToBeFilled=[];
         // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 100000);
