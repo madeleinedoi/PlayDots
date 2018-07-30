@@ -464,11 +464,13 @@ function makeItConfetti() {
 function checkIfGameOver(){
     if((p1points + p2points === 25) && (p1points > p2points)){
         $('#p1modal').modal('show');
+        document.getElementById("winner").innerHTML = "Player 1 Wins!";
         makeItConfetti();
         return true;
     }
     if((p1points + p2points === 25) && (p2points > p1points)){
-        $('#p2modal').modal('show');
+        $('#p1modal').modal('show');
+        document.getElementById("winner").innerHTML = "Player 2 Wins!";
         makeItConfetti();
         return true;
     }
