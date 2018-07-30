@@ -205,6 +205,7 @@ function askQuestion(){
     questions[1] = "What is the most common blood type in humans? Type: ";
     correctAnswer[1] = "O+";
     correctAnswer[1] = "o positive";
+    correctAnswer[1] = "o";
     questions[2] = "How many people were part of the main cast of the hit tv show Friends?";
     correctAnswer[2] = "6";
     correctAnswer[2] = "six";
@@ -218,10 +219,12 @@ function askQuestion(){
     correctAnswer[6] = "Sacramento";
     questions[7] = "Whats the biggest ocean?";
     correctAnswer[7] = "Pacific";
+    correctAnswer[7] = "Pacific Ocean";
     questions[8] = "What is the largest country by area?";
     correctAnswer[8] = "Russia";
     questions[9] = "What is the tallest mountain in the world?";
     correctAnswer[9] = "Mount Everest";
+    correctAnswer[9] = "Everest";
     questions[10] = "In what year did the United States gain independence?";
     correctAnswer[10] = "1776";
     questions[11] = "In cooking, margarine is used as a substitute for what ingredient?";
@@ -238,8 +241,11 @@ function askQuestion(){
     correctAnswer[16] = "Seaweed";
     questions[17] = "How many colors are there in a rainbow?";
     correctAnswer[17]="7";
+    correctAnswer[17]="seven";
     questions[18] = "What is the biggest city in the United States by population size?";
     correctAnswer[18]="New York City";
+    correctAnswer[18]="New York";
+    correctAnswer[18]="NYC";
     questions[19] = "What is the biggest island in the world?";
     correctAnswer[19]="Greenland";
     questions[20] = "Which city is known as the City of Love?";
@@ -256,12 +262,14 @@ function askQuestion(){
     correctAnswer[25]="Pie";
     questions[26] = "Which planet is the closest to Earth?";
     correctAnswer[26]="Venus";
-    questions[27] = "Which is the tallest mammal?";
+    questions[27] = "What is the tallest mammal?";
     correctAnswer[27]="Giraffe";
+    correctAnswer[27]="A Giraffe";
+    correctAnswer[27]="Giraffes";
     questions[28] = "What color is the circle on the Japanese national flag?";
     correctAnswer[28]="Red";
-    questions[29] = "The title role of the 1990 movie \"Pretty Woman\" was played by which actress?";
-    correctAnswer[29]="Julia Roberts";
+    questions[29] = "The Statue of Liberty was given to the United States by which country?";
+    correctAnswer[29]="france";
     questions[30] = "How many sides does an octagon have?";
     correctAnswer[30]="8";
     correctAnswer[30]="eight";
@@ -271,12 +279,15 @@ function askQuestion(){
     correctAnswer[32]="Grinch";
     questions[33] = "What is the name of the pirate in Peter Pan?";
     correctAnswer[33]="Captain Hook";
-    questions[34] = "Which is the fastest land animal?";
+    questions[34] = "What is the fastest land animal?";
     correctAnswer[34]="Cheetah";
+    correctAnswer[34]="Cheetahs";
+    correctAnswer[34]="A Cheetah";
     questions[35] = "What color are emeralds?";
     correctAnswer[35]="Green";
-    questions[36] = "If you suffer from arachnophobia, which animal are you scared of?";
+    questions[36] = "If you suffer from arachnophobia, what insect are you scared of?";
     correctAnswer[36]="Spiders";
+    correctAnswer[36]="Spider";
     questions[37] = "Which movie features the song Ding Dong The Witch Is Dead?";
     correctAnswer[37]="Wizard of Oz";
     questions[38] = "Who was US president during World War I?";
@@ -291,8 +302,10 @@ function askQuestion(){
     correctAnswer[42]="Hockey";
     questions[43] = "What is rowing called in the United States?";
     correctAnswer[43]="Crew";
-    questions[44] = "Soccer's international championship is known as?";
-    correctAnswer[44]="World Cup";
+    questions[44] = "What is the boiling point of water in degrees Celsius?";
+    correctAnswer[44]="100";
+    correctAnswer[44]="100 degrees";
+    correctAnswer[44]="100 degrees celsius";
     questions[45] = "What is the formula for water?";
     correctAnswer[45]="H2O";
     questions[46] = "Name the largest continent";
@@ -303,7 +316,7 @@ function askQuestion(){
     correctAnswer[48]="George Washington";
     questions[49] = "Who sings the song \"Poker Face\"?";
     correctAnswer[49]="Lady Gaga";
-    questions[50] = "Where did the olympic games orginate?";
+    questions[50] = "Where did the olympic games originate?";
     correctAnswer[50]="Greece";
     if(alreadyAsked.length === 50){
         alreadyAsked = [];
@@ -359,6 +372,10 @@ function checkIfAnswerIsCorrect() {
         askQuestion();
     }
     else if(userInput.toLowerCase() ===  "The " + correctAnswer[x].toLowerCase() || userInput.toLowerCase() ===  "the " + correctAnswer[x].toLowerCase() || userInput.toLowerCase() ===  "THE " + correctAnswer[x].toLowerCase()){
+        answerCorrect();
+        askQuestion();
+    }
+    else if(userInput.toLowerCase() ===  "A " + correctAnswer[x].toLowerCase() || userInput.toLowerCase() ===  "a " + correctAnswer[x].toLowerCase()){
         answerCorrect();
         askQuestion();
     }
