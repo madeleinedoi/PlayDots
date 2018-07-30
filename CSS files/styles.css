@@ -151,10 +151,18 @@ h2{
     color:white;
     font-family: Verdana, sans-serif;
 }
-p8{
-    font-family: Verdana, sans-serif;
-    color:#EC9F6F;
+
+h3{
+    text-align:center;
+    color:white;
+    color:-moz-cellhighlight;
     font-size: 25px;
+    font-family: Verdana, sans-serif;
+}
+p8{
+    font: bold 25px Verdana, sans-serif;
+    color:darkgray;
+
 }
 
 
