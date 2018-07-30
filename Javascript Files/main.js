@@ -25,6 +25,8 @@ var confettiPlayers = [];
 var xTrivia;
 var trivia = false;
 var countTimer=0;
+var counter = 30;
+var counterFlag = false;
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -126,8 +128,7 @@ function addListenerForVElements(){
         vElements[i].addEventListener("click", clickFunction);
     }
 };
-var counter = 30;
-var counterFlag = false;
+
 function onTimer() {
     document.getElementById('mycounter').innerHTML = counter;
     counter--;
@@ -175,7 +176,6 @@ function onTimerTwo() {
         setTimeout(onTimer, 100000);
     }
 }
-
 function clickFunction(event) {
     element = event.target;
     mostRecentlyClicked = {
@@ -184,7 +184,6 @@ function clickFunction(event) {
         row: " ",
         col: " "
     };
-    // mostRecentlyClicked = element;
     var className = element.classList;
     element.classList.add("active");
     pointThisTurn=false;
@@ -362,7 +361,6 @@ function answerIncorrectTrivia(){
 
 
 function checkIfAnswerIsCorrect() {
-
     var userInput = document.getElementById('input_id').value;
     if (userInput.toLowerCase() === correctAnswer[x].toLowerCase()) {
         answerCorrect();
@@ -386,9 +384,7 @@ function checkCells() {
             displayQuestion();
             currentCell = cell;
             cellsNeedToBeFilled.push(cell);
-            // cellsNeedToBeFilledTrivia.push(cell);
             twoManyCountDown();
-            // onTimer();
         }
     });
 };
@@ -443,7 +439,7 @@ function currentTurn(){
 };
 
 function updateDisplayedPlayerTurn(){
-    document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
+        document.getElementById("turnTeller1").innerHTML = `Player ${turn === "p1" ? "1" : "2"} Go!`;
     return true;
 };
 
