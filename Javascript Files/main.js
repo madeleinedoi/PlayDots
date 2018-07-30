@@ -633,7 +633,8 @@ function addRecordQuestions() {
             document.getElementById('values25').innerHTML = "25." + values[24];
         }
         if(values.length === 25){
-            document.getElementById("done").innerHTML = "Complete";
+            // document.getElementById("done").innerHTML = "Complete";
+            $('#25questions').modal('show');
         }
     }
     inp.value = "";
@@ -791,7 +792,7 @@ function addRecordAnswers() {
             document.getElementById('answers25').innerHTML = "25." + answers[24];
         }
         if(answers.length === 25){
-            document.getElementById("done2").innerHTML = "Complete";
+            $('#25questions').modal('show');
             break;
         }
     }

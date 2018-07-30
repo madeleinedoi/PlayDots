@@ -466,7 +466,6 @@ p{
     text-shadow: none;
     top: 8px;
     margin-left: -10px;
-
 }
 
 * {
@@ -694,4 +693,29 @@ hr.style10 {
     border-top: 1px dotted #8c8b8b;
     border-bottom: 1px dotted #fff;
     width: 10px;
+}
+
+filled{
+    color: black;
+    border-color: darkgrey;
+    font: 30px Verdana, sans-serif;
+    text-shadow: none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.btnmaxfields{
+    background-color: #EC9F6F;
+    cursor: pointer;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 30px;
+    width: 250px;
+    font: bold 15px Verdana, sans-serif;
+    text-shadow: none;
+    top: 8px;
+    margin:0 auto;
+    display: block;
 }
