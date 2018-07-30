@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <script type="text/javascript" src="../Javascript%20Files/main.js"></script>
     <link rel="stylesheet" type="text/css" href="../CSS%20files/styles.css"  />
@@ -12,10 +12,9 @@
     <meta charset="UTF-8">
     <title>Play Dots</title>
 </head>
+
 <body style="background-color:lightgrey;">
 <img src=https://png.pngtree.com/element_origin_min_pic/16/11/05/35024b4c23212849a29801a14c60b04e.jpg class="bg">
-
-
 <div id = "box">
 <div class = "borderbox1">
     <p3>Questions</p3>
@@ -23,9 +22,7 @@
     <p7>**Must fill in 25 questions**</p7>
     <table>
         <tr>
-
             <td>Enter the Input</td>
-
             <td>
                 <input type="text" id="inputtext"/> <button type="button" id="add" class = "btnaddquestions" onclick="addRecordQuestions();">Add</button>
             </td>
@@ -39,7 +36,6 @@
                     }
                 }
             </script>
-
         </tr>
     </table>
     <div class = "input">
@@ -75,10 +71,6 @@
     </div>
 </div>
 
-
-
-
-
 <div class = "borderbox2">
     <p4> Answers</p4>
     <br/>
@@ -88,7 +80,6 @@
             <td>Enter the Input</td>
             <td><input type="text" id="input"/>  <button type="button" id="add" class = "btnaddanswers" onclick="addRecordQuestions();">Add</button>
             </td>
-
         </tr>
         <tr>
             <td></td>
@@ -102,8 +93,6 @@
             </td>
         </tr>
     </table>
-
-
     <div class = "input">
         <div id='answers1'></div>
         <div id='answers2'></div>
@@ -137,7 +126,6 @@
 </div>
 </div>
 
-
 <div class="score-board">
     <div class="score">
         <div id = "t" style="display:none;">
@@ -165,13 +153,9 @@
         </div>
     </div>
 
-
     <div class="container">
-        <!-- Modal -->
         <div class="modal fade" id="modalwrong" role="dialog">
             <div class="modal-dialog">
-
-                <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                     </div>
@@ -183,26 +167,17 @@
                     <div class="modal-footer">
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
-
     <div id ="startbutton">
     <button type="button" class="btnbtntriviapage" onClick="startTrivia()">Click Here to Begin</button>
     </div>
 </div>
 
-
-
 <div class="container">
-    <!-- Modal -->
-
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                 </div>
@@ -248,7 +223,6 @@
                                     obj.preLoad=true;
                                     obj.play();
                                 }
-
                             }
                         };
                     </script>
@@ -279,10 +253,8 @@
                                     obj.preLoad=true;
                                     obj.play();
                                 }
-
                             });
                         });
-
                     </script>
                     <div id = "teaserinput">
                     <button type="button" class="playSound submitbtn" onclick="checkIfAnswerIsCorrectTrivia()">Submit Answer</button>
@@ -293,19 +265,13 @@
                     <p8>Time Remaining:</p8> <div id="mycounter"></div>
                 </div>
             </div>
-
         </div>
     </div>
-
 </div>
 
-
 <div class="container">
-    <!-- Modal -->
     <div class="modal fade" id="p1modal" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                 </div>
@@ -535,16 +501,11 @@
 
         </div>
     </div>
-
 </div>
 
 <div class="container">
-
-    <!-- Modal -->
     <div class="modal fade" id="p2modal" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                 </div>
@@ -553,7 +514,6 @@
                         <script>
                             document.write("Player 2 You Win!");
                         </script>
-
                     <div class="confetti-land">
                         <div class="confetti"></div>
                         <div class="confetti"></div>
@@ -725,10 +685,8 @@
                     <button type="button" class="btnbtn" data-dismiss="modal" >Close</button>
                 </div>
             </div>
-
         </div>
     </div>
-
 </div>
 
 
@@ -748,7 +706,6 @@
         <div class= "linehorizontal row-0 col-4"></div>
         <div class= "dothorizontal"></div>
     </div>
-
     <div id="vert1">
         <div class="linevertical row-0 col-0 "></div>
         <div class="cell row-0 col-0"></div>
@@ -762,7 +719,6 @@
         <div class="cell row-0 col-4"></div>
         <div class = "linevertical row-0 col-5"></div>
     </div>
-
     <div id="hor2">
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-1 col-0"></div>
@@ -776,7 +732,6 @@
         <div class= "linehorizontal row-1 col-4"></div>
         <div class= "dothorizontal"></div>
     </div>
-
     <div id="vert2">
         <div class="linevertical row-1 col-0"></div>
         <div class="cell row-1 col-0"></div>
@@ -790,7 +745,6 @@
         <div class="cell row-1 col-4"></div>
         <div class = "linevertical row-1 col-5"></div>
     </div>
-
     <div id="hor3">
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-2 col-0"></div>
@@ -804,7 +758,6 @@
         <div class= "linehorizontal row-2 col-4"></div>
         <div class= "dothorizontal"></div>
     </div>
-
     <div id="vert3">
         <div class="linevertical row-2 col-0"></div>
         <div class="cell row-2 col-0"></div>
@@ -818,7 +771,6 @@
         <div class="cell row-2 col-4"></div>
         <div class = "linevertical row-2 col-5"></div>
     </div>
-
     <div id="hor4">
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-3 col-0"></div>
@@ -832,7 +784,6 @@
         <div class= "linehorizontal row-3 col-4"></div>
         <div class= "dothorizontal"></div>
     </div>
-
     <div id="vert4">
         <div class="linevertical row-3 col-0"></div>
         <div class="cell row-3 col-0"></div>
@@ -845,9 +796,7 @@
         <div class = "linevertical row-3 col-4"></div>
         <div class="cell row-3 col-4"></div>
         <div class = "linevertical row-3 col-5"></div>
-
     </div>
-
     <div id="hor5">
         <div class= "dothorizontal"></div>
         <div class= "linehorizontal row-4 col-0"></div>
@@ -861,7 +810,6 @@
         <div class= "linehorizontal row-4 col-4"></div>
         <div class= "dothorizontal"></div>
     </div>
-
     <div id="vert5">
         <div class="linevertical row-4 col-0"></div>
         <div class="cell row-4 col-0"></div>
@@ -874,7 +822,6 @@
         <div class = "linevertical row-4 col-4"></div>
         <div class="cell row-4 col-4"></div>
         <div class = "linevertical row-4 col-5"></div>
-
     </div>
     <div id="hor6">
         <div class= "dothorizontal"></div>
@@ -890,9 +837,9 @@
         <div class= "dothorizontal"></div>
     </div>
 </div>
-
 </div>
 </body>
+
 </html>
 
 

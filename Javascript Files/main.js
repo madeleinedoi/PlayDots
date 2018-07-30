@@ -3,7 +3,7 @@ var hLines;
 var vLines;
 var turn = "p1";
 var p1points = 0;
-var p2points = 0;
+var p2points = 23;
 var pointThisTurn = false;
 var rowNum;
 var colNum;
@@ -155,7 +155,6 @@ function onTimerTwo() {
         // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 100000);
     }
-
     else if (counterFlag) {
         setTimeout(onTimer, 100000);
     }
@@ -469,7 +468,7 @@ function checkIfGameOver(){
         return true;
     }
     if((p1points + p2points === 25) && (p2points > p1points)){
-        $('#p1modal').modal('show');
+        $('#p2modal').modal('show');
         makeItConfetti();
         return true;
     }
