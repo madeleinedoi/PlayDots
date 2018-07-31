@@ -2,7 +2,7 @@ var cells;
 var hLines;
 var vLines;
 var turn = "p1";
-var p1points = 23;
+var p1points = 0;
 var p2points = 0;
 var pointThisTurn = false;
 var rowNum;
@@ -295,7 +295,7 @@ function askQuestion(){
     questions[32] = "What is the name of the Dr Seuss character who steals Christmas?";
     correctAnswer[32]="Grinch";
     questions[33] = "What is the name of the pirate in Peter Pan?";
-    correctAnswer[33]="Captain Hook";
+    correctAnswer[33]="Captain Hook,Hook";
     questions[34] = "What is the fastest land animal?";
     correctAnswer[34]="Cheetah,Cheetahs ";
     questions[35] = "What color are emeralds?";
