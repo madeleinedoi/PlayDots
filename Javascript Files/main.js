@@ -170,11 +170,11 @@ function onTimerTwo() {
     }
     else if (counterFlag) {
         setTimeout(onTimer, 100000);
-        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
-        obj.volume=0.10;
-        obj.autoPlay=false;
-        obj.preLoad=true;
-        obj.play();
+        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
+        // obj.volume=0.10;
+        // obj.autoPlay=false;
+        // obj.preLoad=true;
+        // obj.play();
     }
 }
 
@@ -337,7 +337,7 @@ function answerCorrect(){
         cellsNeedToBeFilled[cell].owner = turn;
         changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
         assignPoints();
-         obj.pause();
+         // obj.pause();
     }
 }
 
@@ -347,7 +347,7 @@ function answerIncorrect(){
     currentTurn();
     currentCell.owner = "";
     deactivateLastClickedLine();
-    obj.pause();
+    // obj.pause();
 }
 
 
@@ -407,21 +407,21 @@ function twoManyCountDown(){
     if(countTimer>=2){
         counter=30;
         onTimerTwo();
-        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
-        obj.volume=0.10;
-        obj.autoPlay=false;
-        obj.preLoad=true;
-        obj.play();
+        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
+        // obj.volume=0.10;
+        // obj.autoPlay=false;
+        // obj.preLoad=true;
+        // obj.play();
 
     }
     else{
         counter=30;
         onTimer();
-        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp3";
-        obj.volume=0.10;
-        obj.autoPlay=false;
-        obj.preLoad=true;
-        obj.play();
+        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp3";
+        // obj.volume=0.10;
+        // obj.autoPlay=false;
+        // obj.preLoad=true;
+        // obj.play();
     }
 }
 
@@ -853,10 +853,10 @@ function askQuestionTrivia(){
         alreadyAskedTrivia = [];
     }
     xTrivia = Math.floor(Math.random()*values.length);
-    if(alreadyAskedTrivia.includes(values[xTrivia])) {
-        askQuestionTrivia();
-    }
-    alreadyAskedTrivia.push(values[xTrivia]);
+    // if(alreadyAskedTrivia.includes(values[xTrivia])) {
+    //     askQuestionTrivia();
+    // }
+    // alreadyAskedTrivia.push(values[xTrivia]);
     document.getElementById("questionTrivia").innerHTML = values[xTrivia];
 }
 
