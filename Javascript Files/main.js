@@ -853,10 +853,10 @@ function askQuestionTrivia(){
         alreadyAskedTrivia = [];
     }
     xTrivia = Math.floor(Math.random()*values.length);
-    // if(alreadyAskedTrivia.includes(values[xTrivia])) {
-    //     askQuestionTrivia();
-    // }
-    // alreadyAskedTrivia.push(values[xTrivia]);
+    if(alreadyAskedTrivia.includes(values[xTrivia])) {
+        askQuestionTrivia();
+    }
+    alreadyAskedTrivia.push(values[xTrivia]);
     document.getElementById("questionTrivia").innerHTML = values[xTrivia];
 }
 
