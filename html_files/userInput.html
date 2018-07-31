@@ -30,11 +30,7 @@
         <tr>
             <td></td>
             <script>
-                document.getElementById('inputtext').onkeydown = function(e) {
-                    if (e.keyCode == 13) {
-                        addRecordQuestions();
-                    }
-                }
+                enterButtonQuestions();
             </script>
         </tr>
     </table>
@@ -84,11 +80,7 @@
         <tr>
             <td></td>
             <script>
-                document.getElementById('input').onkeydown = function(e) {
-                    if (e.keyCode == 13) {
-                        addRecordAnswers();
-                    }
-                }
+                enterButtonAnswers();
             </script>
             </td>
         </tr>
@@ -186,7 +178,7 @@
                     <p>
                     <p id="questionTrivia"></p>
                     <script>
-                       openModal();
+                        openModal();
                         askQuestionTrivia();
                     </script>
                     <div id = "teaserinput">
@@ -194,9 +186,7 @@
                     </div>
                     <script>
                      enterKeyTrivia();
-                    </script>
-                    <script>
-                       enterButton();
+                     enterButton();
                     </script>
                     <div id = "teaserinput">
                     <button type="button" class="playSound submitbtn" onclick="checkIfAnswerIsCorrectTrivia()">Submit Answer</button>

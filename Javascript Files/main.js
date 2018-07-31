@@ -976,4 +976,23 @@ function openModal(){
     });
     $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
 }
+
+function enterButtonAnswers(){
+    document.getElementById('input').onkeydown = function(e) {
+        if (e.keyCode == 13) {
+            addRecordAnswers();
+        }
+    }
+}
+
+function enterButtonQuestions(){
+    document.getElementById('inputtext').onkeydown = function(e) {
+        if (e.keyCode == 13) {
+            addRecordQuestions();
+        }
+    }
+}
+
+
+
 setUpBoard();
