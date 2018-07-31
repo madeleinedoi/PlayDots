@@ -852,9 +852,9 @@ function askQuestionTrivia(){
     if(alreadyAskedTrivia.length === values.length){
         alreadyAskedTrivia = [];
     }
-    xTrivia = Math.floor(Math.random()*values.length);
-    if(alreadyAskedTrivia.includes(values[xTrivia])) {
-        askQuestionTrivia();
+    xTrivia = Math.floor(Math.random() * values.length);
+    while(alreadyAskedTrivia.includes(values[xTrivia])) {
+        xTrivia = Math.floor(Math.random() * values.length);
     }
     alreadyAskedTrivia.push(values[xTrivia]);
     document.getElementById('questionTrivia').innerHTML = values[xTrivia];

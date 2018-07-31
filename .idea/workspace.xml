@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f66c568-7769-49ce-8aa1-80897bfd3155" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Javascript Files/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javascript Files/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -37,7 +38,7 @@
       <file leaf-file-name="userInput.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML Files/userInput.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="811">
+            <state relative-caret-position="-2324">
               <caret line="233" column="53" lean-forward="true" selection-start-line="233" selection-start-column="53" selection-end-line="233" selection-end-column="53" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -83,10 +84,10 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Javascript Files/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="45" />
+            <state relative-caret-position="482">
+              <caret line="877" column="24" lean-forward="true" selection-start-line="877" selection-start-column="24" selection-end-line="877" selection-end-column="24" />
               <folding>
-                <element signature="e#16129#20622#0" />
+                <element signature="e#16940#21433#0" />
                 <element signature="e#20667#25181#0" />
               </folding>
             </state>
@@ -107,15 +108,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>checkCells</find>
-      <find>displayQuestion</find>
       <find>#myModal</find>
       <find />
       <find>value=&quot;&quot;</find>
       <find>Question</find>
       <find>onTimer</find>
-      <find>askQuestion</find>
-      <find>askQuestion()</find>
       <find>in</find>
       <find>cntr +</find>
       <find>p5</find>
@@ -137,6 +134,10 @@
       <find>counterFlag</find>
       <find>cellsNee</find>
       <find>var obj = document.createElement(&quot;audio&quot;);</find>
+      <find>askQuestion()</find>
+      <find>alreadyAskedTrivia</find>
+      <find>alreadyAsked</find>
+      <find>askQuestion</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -309,20 +310,6 @@
       <workItem from="1531505857261" duration="5226000" />
       <workItem from="1531771877580" duration="2683000" />
       <workItem from="1532967257095" duration="2686000" />
-    </task>
-    <task id="LOCAL-00033" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
-      <created>1531412337798</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1531412337798</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
-      <created>1531413917791</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1531413917791</updated>
     </task>
     <task id="LOCAL-00035" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
       <created>1531515423301</created>
@@ -653,20 +640,35 @@
       <option name="project" value="LOCAL" />
       <updated>1533052460608</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="working with modal when complete">
+      <created>1533053022844</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1533053022844</updated>
+    </task>
+    <task id="LOCAL-00083" summary="working with modal when complete">
+      <created>1533053424715</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1533053424715</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="435728000" />
+    <option name="totallyTimeSpent" value="438739000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15430982" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15430982" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" weight="0.3296593" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.32820514" />
       <window_info anchor="bottom" id="Run" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -688,7 +690,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" weight="0.3296593" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
       <window_info anchor="bottom" id="Terminal" order="17" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
@@ -823,14 +824,18 @@
     <entry file="file://$PROJECT_DIR$/Logo.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Logo.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/watercolorBG.jpeg" />
     <entry file="file://$PROJECT_DIR$/CSS files/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
           <caret line="131" column="19" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML Files/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-283">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="25" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -858,9 +863,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Logo.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/HTML Files/userInput.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
+        <state relative-caret-position="-2324">
           <caret line="233" column="53" lean-forward="true" selection-start-line="233" selection-start-column="53" selection-end-line="233" selection-end-column="53" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -871,19 +879,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML Files/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-283">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Javascript Files/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="45" />
+        <state relative-caret-position="482">
+          <caret line="877" column="24" lean-forward="true" selection-start-line="877" selection-start-column="24" selection-end-line="877" selection-end-column="24" />
           <folding>
-            <element signature="e#16129#20622#0" />
+            <element signature="e#16940#21433#0" />
             <element signature="e#20667#25181#0" />
           </folding>
         </state>
