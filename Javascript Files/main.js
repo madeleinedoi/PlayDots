@@ -716,7 +716,7 @@ function createDiv() {
         return boardDiv;
 }
 
-function createAndModifyDivs() {
+function createAndModifyDivsConfetti() {
     createDiv();
         var board = document.getElementById("confetti-land"),
             myDivs = [],
