@@ -865,10 +865,10 @@ function askQuestionTrivia(){
         alreadyAskedTrivia = [];
     }
     xTrivia = Math.floor(Math.random() * values.length);
-    while(alreadyAskedTrivia.includes(values[xTrivia])) {
-        xTrivia = Math.floor(Math.random() * values.length);
-    }
-    alreadyAskedTrivia.push(values[xTrivia]); 
+    // while(alreadyAskedTrivia.includes(values[xTrivia])) {
+    //     xTrivia = Math.floor(Math.random() * values.length);
+    // }
+    // alreadyAskedTrivia.push(values[xTrivia]);
     document.getElementById('questionTrivia').innerHTML = values[xTrivia];
 }
 
