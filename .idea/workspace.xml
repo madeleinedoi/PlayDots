@@ -310,13 +310,6 @@
       <workItem from="1532967257095" duration="2686000" />
       <workItem from="1533062426104" duration="1723000" />
     </task>
-    <task id="LOCAL-00042" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
-      <created>1531936439649</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1531936439649</updated>
-    </task>
     <task id="LOCAL-00043" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
       <created>1531936733336</created>
       <option name="number" value="00043" />
@@ -653,11 +646,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533073919695</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="working with modal when complete">
+      <created>1533074369226</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1533074369226</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="446044000" />
+    <option name="totallyTimeSpent" value="446089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
