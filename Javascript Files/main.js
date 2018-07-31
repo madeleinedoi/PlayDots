@@ -712,29 +712,54 @@ function enterButtonQuestions(){
 
 
 
-    function createDiv() {
-        var boardDiv = document.createElement("div");
-
-        boardDiv.className = "confetti";
-        return boardDiv;
+function createDivConfetti() {
+    var boardDiv = document.createElement("div");
+    boardDiv.className = "confetti";
+    return boardDiv;
     }
 
-    function createAndModifyDivs() {
-    createDiv();
-        var board = document.getElementById("confetti-land"),
-            myDivs = [],
-            i = 0,
-            numOfDivs = 100;
 
-        for (i; i < numOfDivs; i += 1) {
-            myDivs.push(createDiv());
-            board.appendChild(myDivs[i]);
+    function createAndModifyDivsConfetti() {
+    createDivConfetti();
+    var board = document.getElementById("confetti-land"),
+        myDivs = [],
+        i = 0,
+        numOfDivs = 300;
+
+    for (i; i < numOfDivs; i += 1) {
+        myDivs.push(createDivConfetti());
+        board.appendChild(myDivs[i]);
         }
 
     }
 
 
 
+
+// function createDivValues() {
+//     var boardDiv = document.createElement("div");
+//     var count=0;
+//     while(count <100) {
+//         count++;
+//         boardDiv.className = "values"${count+1};
+//     }
+//     return boardDiv;
+// }
+//
+//
+// function createAndModifyDivsValues() {
+//     createDivValues();
+//     var board = document.getElementById("inputValues"),
+//         myDivs = [],
+//         i = 0,
+//         numOfDivs = 100;
+//
+//     for (i; i < numOfDivs; i += 1) {
+//         myDivs.push(createDivValues());
+//         board.appendChild(myDivs[i]);
+//     }
+//
+// }
 
 
 
