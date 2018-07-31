@@ -849,15 +849,15 @@ function startTrivia() {
 }
 
 function askQuestionTrivia(){
-    if(alreadyAskedTrivia.length === 25){
+    if(alreadyAskedTrivia.length === values.length){
         alreadyAskedTrivia = [];
     }
     xTrivia = Math.floor(Math.random()*values.length);
-    // if(alreadyAskedTrivia.includes(values[xTrivia])) {
-    //     askQuestionTrivia();
-    // }
-    // alreadyAskedTrivia.push(values[xTrivia]);
-    document.getElementById("questionTrivia").innerHTML = values[xTrivia];
+    if(alreadyAskedTrivia.includes(values[xTrivia])) {
+        askQuestionTrivia();
+    }
+    alreadyAskedTrivia.push(values[xTrivia]);
+    document.getElementById('questionTrivia').innerHTML = values[xTrivia];
 }
 
 function checkIfAnswerIsCorrectTrivia(){
