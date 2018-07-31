@@ -856,7 +856,7 @@ function askQuestionTrivia(){
     while(alreadyAskedTrivia.includes(values[xTrivia])) {
         xTrivia = Math.floor(Math.random() * values.length);
     }
-    alreadyAskedTrivia.push(values[xTrivia]);
+    alreadyAskedTrivia.push(values[xTrivia]); 
     document.getElementById('questionTrivia').innerHTML = values[xTrivia];
 }
 
