@@ -710,29 +710,23 @@ function enterButtonQuestions(){
     }
 }
 
-
-
-    function createDiv() {
+function createDiv() {
         var boardDiv = document.createElement("div");
-
         boardDiv.className = "confetti";
         return boardDiv;
-    }
+}
 
-    function createAndModifyDivs() {
+function createAndModifyDivs() {
     createDiv();
         var board = document.getElementById("confetti-land"),
             myDivs = [],
             i = 0,
-            numOfDivs = 100;
-
+            numOfDivs = 350;
         for (i; i < numOfDivs; i += 1) {
             myDivs.push(createDiv());
             board.appendChild(myDivs[i]);
-        }
-
     }
-
+}
 
 
 
