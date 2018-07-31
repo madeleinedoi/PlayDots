@@ -144,6 +144,12 @@ function onTimer() {
         obj.autoPlay=false;
         obj.preLoad=true;
         obj.play();
+        if(trivia){
+            askQuestionTrivia();
+        }
+        else{
+            askQuestion();
+        }
     }
 
     else if (counterFlag) {
@@ -167,6 +173,12 @@ function onTimerTwo() {
         obj.preLoad=true;
         obj.play();
         setTimeout(onTimer, 100000);
+        if(trivia){
+            askQuestionTrivia();
+        }
+        else{
+            askQuestion();
+        }
     }
     else if (counterFlag) {
         setTimeout(onTimer, 100000);
