@@ -61,65 +61,10 @@
                         <input type="text" style="height:50px; color: darkgray; width: 500px; font: bold 30px Verdana, sans-serif ;text-align:center;" id="input_id" value="">
                         </div>
                         <script>
-                            document.getElementById('input_id').onkeydown = function(e){
-                                if(e.keyCode == 13){
-                                   checkIfAnswerIsCorrect();
-                                    if(pointThisTurn){
-                                        var obj = document.createElement("audio");
-                                        obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
-                                        obj.volume=0.10;
-                                        obj.autoPlay=false;
-                                        obj.preLoad=true;
-                                        obj.play();
-                                    }
-                                    else{
-                                        var obj = document.createElement("audio");
-                                        obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
-                                        obj.volume=0.10;
-                                        obj.autoPlay=false;
-                                        obj.preLoad=true;
-                                        obj.play();
-                                    }
-                                    if(checkIfGameOver() === true){
-                                        var obj = document.createElement("audio");
-                                        obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
-                                        obj.volume=0.10;
-                                        obj.autoPlay=false;
-                                        obj.preLoad=true;
-                                        obj.play();
-                                    }
-                                }
-                            };
+                           enterKey();
                         </script>
                         <script>
-                            $(document).ready(function() {
-                                $(".playSound").click(function() {
-                                    if(pointThisTurn=== true){
-                                        var obj = document.createElement("audio");
-                                        obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
-                                        obj.volume=0.10;
-                                        obj.autoPlay=false;
-                                        obj.preLoad=true;
-                                        obj.play();
-                                    }
-                                    else{
-                                        var obj = document.createElement("audio");
-                                        obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
-                                        obj.volume=0.10;
-                                        obj.autoPlay=false;
-                                        obj.preLoad=true;
-                                        obj.play();
-                                    }
-                                    if(checkIfGameOver() === true){
-                                        var obj = document.createElement("audio");
-                                        obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
-                                        obj.volume=0.10;
-                                        obj.autoPlay=false;
-                                        obj.preLoad=true;
-                                        obj.play();
-                                    }
-                                });
-                            });
+                            enterButton();
                         </script>
                         <div id="teaserinput">
                         <button type="button" class= "playSound submitbtn" onclick="checkIfAnswerIsCorrect()">Submit Answer</button>

@@ -14,7 +14,6 @@ var correctAnswer = [];
 var currentCell;
 var element;
 var cellsNeedToBeFilled = [];
-var cellsNeedToBeFilledTrivia =[];
 var alreadyAsked = [];
 var alreadyAskedTrivia=[];
 var confettiPlayers = [];
@@ -24,7 +23,6 @@ var countTimer=0;
 var counter = 30;
 var counterFlag = false;
 var questionAnsweredGlobal;
-var obj = document.createElement("audio");
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -157,7 +155,7 @@ function onTimer() {
     }
 }
 
-function onTimerTwo() {
+function onTimerForTwoSquares() {
     document.getElementById('mycounter').innerHTML = counter;
     counter--;
     if (counter < 0) {
@@ -349,7 +347,6 @@ function answerCorrect(){
         cellsNeedToBeFilled[cell].owner = turn;
         changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
         assignPoints();
-         // obj.pause();
     }
 }
 
@@ -359,7 +356,6 @@ function answerIncorrect(){
     currentTurn();
     currentCell.owner = "";
     deactivateLastClickedLine();
-    // obj.pause();
 }
 
 
@@ -418,22 +414,11 @@ function twoManyCountDown(){
     countTimer = cellsNeedToBeFilled.length;
     if(countTimer>=2){
         counter=30;
-        onTimerTwo();
-        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
-        // obj.volume=0.10;
-        // obj.autoPlay=false;
-        // obj.preLoad=true;
-        // obj.play();
-
+        onTimerForTwoSquares();
     }
     else{
         counter=30;
         onTimer();
-        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp3";
-        // obj.volume=0.10;
-        // obj.autoPlay=false;
-        // obj.preLoad=true;
-        // obj.play();
     }
 }
 
@@ -680,7 +665,6 @@ function addRecordQuestions() {
             document.getElementById('values25').innerHTML = "25." + values[24];
         }
         if(values.length === 25){
-            // document.getElementById("done").innerHTML = "Complete";
             $('#25questions').modal('show');
         }
     }
@@ -890,21 +874,101 @@ function checkIfAnswerIsCorrectTrivia(){
     counterFlag = false;
 }
 
+function enterKey(){
+    document.getElementById('input_id').onkeydown = function(e){
+        if(e.keyCode == 13){
+            checkIfAnswerIsCorrect();
+            if(pointThisTurn){
+                var obj = document.createElement("audio");
+                obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
+                obj.volume=0.10;
+                obj.autoPlay=false;
+                obj.preLoad=true;
+                obj.play();
+            }
+            else{
+                var obj = document.createElement("audio");
+                obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
+                obj.volume=0.10;
+                obj.autoPlay=false;
+                obj.preLoad=true;
+                obj.play();
+            }
+            if(checkIfGameOver() === true){
+                var obj = document.createElement("audio");
+                obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
+                obj.volume=0.10;
+                obj.autoPlay=false;
+                obj.preLoad=true;
+                obj.play();
+            }
+        }
+    };
+}
+
+function enterButton(){
+    $(document).ready(function() {
+        $(".playSound").click(function() {
+            if(pointThisTurn=== true){
+                var obj = document.createElement("audio");
+                obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
+                obj.volume=0.10;
+                obj.autoPlay=false;
+                obj.preLoad=true;
+                obj.play();
+            }
+            else{
+                var obj = document.createElement("audio");
+                obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
+                obj.volume=0.10;
+                obj.autoPlay=false;
+                obj.preLoad=true;
+                obj.play();
+            }
+            if(checkIfGameOver() === true){
+                var obj = document.createElement("audio");
+                obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
+                obj.volume=0.10;
+                obj.autoPlay=false;
+                obj.preLoad=true;
+                obj.play();
+            }
+        });
+    });
+}
+
+function enterKeyTrivia() {
+    document.getElementById('inputgrid').onkeydown = function (e) {
+        if (e.keyCode == 13) {
+            checkIfAnswerIsCorrectTrivia();
+            if (pointThisTurn) {
+                var obj = document.createElement("audio");
+                obj.src = "https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
+                obj.volume = 0.10;
+                obj.autoPlay = false;
+                obj.preLoad = true;
+                obj.play();
+            }
+            else {
+                var obj = document.createElement("audio");
+                obj.src = "https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
+                obj.volume = 0.10;
+                obj.autoPlay = false;
+                obj.preLoad = true;
+                obj.play();
+            }
+            if (checkIfGameOver() === true) {
+                var obj = document.createElement("audio");
+                obj.src = "https://www.soundjay.com/human/sounds/applause-01.mp3";
+                obj.volume = 0.10;
+                obj.autoPlay = false;
+                obj.preLoad = true;
+                obj.play();
+            }
+        }
+    };
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//Tests
 setUpBoard();
-//checkCells();
-//checkLines(cells[1]);

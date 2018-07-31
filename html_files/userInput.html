@@ -197,65 +197,10 @@
                     <input type="text"  style="height:50px; width: 500px; color: darkgray; font: bold 30px Verdana, sans-serif ;text-align:center;" id="inputgrid" value="">
                     </div>
                     <script>
-                        document.getElementById('inputgrid').onkeydown = function(e){
-                            if(e.keyCode == 13){
-                               checkIfAnswerIsCorrectTrivia();
-                                if(pointThisTurn){
-                                    var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
-                                    obj.volume=0.10;
-                                    obj.autoPlay=false;
-                                    obj.preLoad=true;
-                                    obj.play();
-                                }
-                                else{
-                                    var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
-                                    obj.volume=0.10;
-                                    obj.autoPlay=false;
-                                    obj.preLoad=true;
-                                    obj.play();
-                                }
-                                if(checkIfGameOver() === true){
-                                    var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
-                                    obj.volume=0.10;
-                                    obj.autoPlay=false;
-                                    obj.preLoad=true;
-                                    obj.play();
-                                }
-                            }
-                        };
+                     enterKeyTrivia();
                     </script>
                     <script>
-                        $(document).ready(function() {
-                            $(".playSound").click(function() {
-                                if(pointThisTurn=== true){
-                                    var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
-                                    obj.volume=0.10;
-                                    obj.autoPlay=false;
-                                    obj.preLoad=true;
-                                    obj.play();
-                                }
-                                else{
-                                    var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
-                                    obj.volume=0.10;
-                                    obj.autoPlay=false;
-                                    obj.preLoad=true;
-                                    obj.play();
-                                }
-                                if(checkIfGameOver() === true){
-                                    var obj = document.createElement("audio");
-                                    obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
-                                    obj.volume=0.10;
-                                    obj.autoPlay=false;
-                                    obj.preLoad=true;
-                                    obj.play();
-                                }
-                            });
-                        });
+                       enterButton();
                     </script>
                     <div id = "teaserinput">
                     <button type="button" class="playSound submitbtn" onclick="checkIfAnswerIsCorrectTrivia()">Submit Answer</button>
