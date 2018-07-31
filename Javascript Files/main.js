@@ -23,6 +23,7 @@ var trivia = false;
 var countTimer=0;
 var counter = 30;
 var counterFlag = false;
+var questionAnsweredGlobal;
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -134,14 +135,14 @@ function onTimer() {
         counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
+        // cellsNeedToBeFilledTrivia=[];
+        setTimeout(onTimer, 1000);
         var obj = document.createElement("audio");
         obj.src="https://www.soundjay.com/misc/sounds/censor-beep-01.mp3";
         obj.volume=0.10;
         obj.autoPlay=false;
         obj.preLoad=true;
         obj.play();
-        // cellsNeedToBeFilledTrivia=[];
-        setTimeout(onTimer, 1000);
     }
 
     else if (counterFlag) {
@@ -157,13 +158,13 @@ function onTimerTwo() {
         counterFlag = false;
         counter = 30;
         answerIncorrect();
+        cellsNeedToBeFilled=[];
         var obj = document.createElement("audio");
         obj.src="https://www.soundjay.com/misc/sounds/censor-beep-01.mp3";
         obj.volume=0.10;
         obj.autoPlay=false;
         obj.preLoad=true;
         obj.play();
-        cellsNeedToBeFilled=[];
         // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 100000);
     }
@@ -348,29 +349,33 @@ function checkIfAnswerIsCorrect() {
     var answerArr = correctAnswer[x].split(",");
     var questionAnswered=false;
     for(var i=0; i<answerArr.length; i++){
-            console.log(answerArr[i]);
-            if(answerArr[i].toLowerCase() === userInput.toLowerCase()){
-                answerCorrect();
-                askQuestion();
-                questionAnswered = true;
-                $('#myModal').modal('hide');
-            }
-            if(userInput.toLowerCase() ===  "The " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "the " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "THE " + answerArr[i].toLowerCase()){
-                answerCorrect();
-                askQuestion();
-                questionAnswered = true;
-                $('#myModal').modal('hide');
-            }
-            if(userInput.toLowerCase() ===  "A " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "a " + answerArr[i].toLowerCase()){
-                answerCorrect();
-                askQuestion();
-                questionAnswered = true;
-                $('#myModal').modal('hide');
-            }
+        console.log(answerArr[i]);
+        if(answerArr[i].toLowerCase() === userInput.toLowerCase()){
+            answerCorrect();
+            askQuestion();
+            questionAnswered = true;
+            questionAnsweredGlobal=true;
+            $('#myModal').modal('hide');
+        }
+        if(userInput.toLowerCase() ===  "The " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "the " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "THE " + answerArr[i].toLowerCase()){
+            answerCorrect();
+            askQuestion();
+            questionAnswered = true;
+            questionAnsweredGlobal=true;
+            $('#myModal').modal('hide');
+        }
+        if(userInput.toLowerCase() ===  "A " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "a " + answerArr[i].toLowerCase()){
+            answerCorrect();
+            askQuestion();
+            questionAnswered = true;
+            questionAnsweredGlobal=true;
+            $('#myModal').modal('hide');
+        }
     }
     if(questionAnswered ===false) {
         answerIncorrect();
         askQuestion();
+        questionAnsweredGlobal=false;
     }
     cellsNeedToBeFilled=[];
     $('#myModal').modal('hide');
@@ -395,22 +400,25 @@ function twoManyCountDown(){
     if(countTimer>=2){
         counter=30;
         onTimerTwo();
-        var obj = document.createElement("audio");
-        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
-        obj.volume=0.10;
-        obj.autoPlay=false;
-        obj.preLoad=true;
-        obj.play();
+        // var obj = document.createElement("audio");
+        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
+        // obj.volume=0.10;
+        // obj.autoPlay=false;
+        // obj.preLoad=true;
+        // obj.play();
     }
     else{
         counter=30;
         onTimer();
-        var obj = document.createElement("audio");
-        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp3";
-        obj.volume=0.10;
-        obj.autoPlay=false;
-        obj.preLoad=true;
-        obj.play();
+        // var obj = document.createElement("audio");
+        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp3";
+        // obj.volume=0.10;
+        // obj.autoPlay=false;
+        // obj.preLoad=true;
+        // obj.play();
+        // if(questionAnsweredGlobal ===true){
+        //     obj.stop()
+        // }
     }
 }
 
@@ -842,10 +850,10 @@ function askQuestionTrivia(){
         alreadyAskedTrivia = [];
     }
     xTrivia = Math.floor(Math.random()*values.length);
-    if(alreadyAskedTrivia.includes(values[xTrivia])) {
-         askQuestionTrivia();
-     }
-     alreadyAskedTrivia.push(values[xTrivia]);
+    // if(alreadyAskedTrivia.includes(values[xTrivia])) {
+    //     askQuestionTrivia();
+    // }
+    // alreadyAskedTrivia.push(values[xTrivia]);
     document.getElementById("questionTrivia").innerHTML = values[xTrivia];
 }
 
