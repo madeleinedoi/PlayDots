@@ -24,6 +24,7 @@ var countTimer=0;
 var counter = 30;
 var counterFlag = false;
 var questionAnsweredGlobal;
+var obj = document.createElement("audio");
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -169,6 +170,11 @@ function onTimerTwo() {
     }
     else if (counterFlag) {
         setTimeout(onTimer, 100000);
+        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
+        obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;
+        obj.play();
     }
 }
 
@@ -331,6 +337,7 @@ function answerCorrect(){
         cellsNeedToBeFilled[cell].owner = turn;
         changeCellBackgroundColor(cellsNeedToBeFilled[cell].row,  cellsNeedToBeFilled[cell].col);
         assignPoints();
+         obj.pause();
     }
 }
 
@@ -340,6 +347,7 @@ function answerIncorrect(){
     currentTurn();
     currentCell.owner = "";
     deactivateLastClickedLine();
+    obj.pause();
 }
 
 
@@ -399,25 +407,21 @@ function twoManyCountDown(){
     if(countTimer>=2){
         counter=30;
         onTimerTwo();
-        // var obj = document.createElement("audio");
-        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
-        // obj.volume=0.10;
-        // obj.autoPlay=false;
-        // obj.preLoad=true;
-        // obj.play();
+        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
+        obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;
+        obj.play();
+
     }
     else{
         counter=30;
         onTimer();
-        // var obj = document.createElement("audio");
-        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp3";
-        // obj.volume=0.10;
-        // obj.autoPlay=false;
-        // obj.preLoad=true;
-        // obj.play();
-        // if(questionAnsweredGlobal ===true){
-        //     obj.stop()
-        // }
+        obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp3";
+        obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;
+        obj.play();
     }
 }
 
