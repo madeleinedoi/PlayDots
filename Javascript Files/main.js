@@ -138,7 +138,7 @@ function onTimer() {
         // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 1000);
         var obj = document.createElement("audio");
-        obj.src="https://www.soundjay.com/misc/sounds/censor-beep-01.mp3";
+        obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
         obj.volume=0.10;
         obj.autoPlay=false;
         obj.preLoad=true;
@@ -160,12 +160,11 @@ function onTimerTwo() {
         answerIncorrect();
         cellsNeedToBeFilled=[];
         var obj = document.createElement("audio");
-        obj.src="https://www.soundjay.com/misc/sounds/censor-beep-01.mp3";
+        obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
         obj.volume=0.10;
         obj.autoPlay=false;
         obj.preLoad=true;
         obj.play();
-        // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 100000);
     }
     else if (counterFlag) {
