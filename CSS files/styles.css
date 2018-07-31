@@ -640,7 +640,7 @@ p{
 }
 
 td{
-    font: 17px Verdana, sans-serif;
+    font: 18px Verdana, sans-serif;
 
 }
 
@@ -722,4 +722,8 @@ filled{
     top: 8px;
     margin:0 auto;
     display: block;
+}
+
+.questionAndAnswerInput{
+    font: 18px Verdana, sans-serif;
 }
