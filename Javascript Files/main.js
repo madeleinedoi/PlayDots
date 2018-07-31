@@ -969,6 +969,11 @@ function enterKeyTrivia() {
     };
 }
 
-
-
+function openModal(){
+    $('#myModal').on('hidden.bs.modal', function() {
+        $(this)
+            .find("input,textarea,select").val('');
+    });
+    $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
+}
 setUpBoard();
