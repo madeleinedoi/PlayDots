@@ -2,7 +2,7 @@ var cells;
 var hLines;
 var vLines;
 var turn = "p1";
-var p1points = 23;
+var p1points = 0;
 var p2points = 0;
 var pointThisTurn = false;
 var rowNum;
@@ -23,6 +23,11 @@ var countTimer=0;
 var counter = 30;
 var counterFlag = false;
 var questionAnsweredGlobal;
+var className;
+var questions;
+var questionAnswered;
+values = [];
+answers = [];
 
 function setUpBoard(){
     hLines=generateHorizontal(6,5);
@@ -130,28 +135,50 @@ function onTimer() {
     counter--;
     if (counter < 0) {
         $('#myModal').modal('hide');
-        counterFlag = false;
-        counter = 30;
         answerIncorrect();
-        cellsNeedToBeFilled=[];
-        // cellsNeedToBeFilledTrivia=[];
         setTimeout(onTimer, 1000);
-        var obj = document.createElement("audio");
-        obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
-        obj.volume=0.10;
-        obj.autoPlay=false;
-        obj.preLoad=true;
-        obj.play();
-        if(trivia){
-            askQuestionTrivia();
-        }
-        else{
-            askQuestion();
-        }
+        playWrongSound();
+        resetVariables();
+        callAskQuestion();
     }
-
     else if (counterFlag) {
         setTimeout(onTimer, 1000);
+    }
+}
+
+function playWrongSound(){
+    var obj = document.createElement("audio");
+    obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
+    obj.volume=0.10;
+    obj.autoPlay=false;
+    obj.preLoad=true;
+    obj.play();
+}
+
+function playCorrectSound(){
+    var obj = document.createElement("audio");
+    obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
+    obj.volume=0.10;
+    obj.autoPlay=false;
+    obj.preLoad=true;
+    obj.play();
+}
+
+function playWinnerSound(){
+    var obj = document.createElement("audio");
+    obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
+    obj.volume=0.10;
+    obj.autoPlay=false;
+    obj.preLoad=true;
+    obj.play();
+}
+
+function callAskQuestion(){
+    if(trivia){
+        askQuestionTrivia();
+    }
+    else{
+        askQuestion();
     }
 }
 
@@ -164,27 +191,12 @@ function onTimerForTwoSquares() {
         counter = 30;
         answerIncorrect();
         cellsNeedToBeFilled=[];
-        var obj = document.createElement("audio");
-        obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
-        obj.volume=0.10;
-        obj.autoPlay=false;
-        obj.preLoad=true;
-        obj.play();
+        playWrongSound();
         setTimeout(onTimer, 100000);
-        if(trivia){
-            askQuestionTrivia();
-        }
-        else{
-            askQuestion();
-        }
+        callAskQuestion();
     }
     else if (counterFlag) {
         setTimeout(onTimer, 100000);
-        // obj.src="https://www.soundjay.com/clock/sounds/clock-ticking-4.mp33";
-        // obj.volume=0.10;
-        // obj.autoPlay=false;
-        // obj.preLoad=true;
-        // obj.play();
     }
 }
 
@@ -196,9 +208,14 @@ function clickFunction(event) {
         row: " ",
         col: " "
     };
-    var className = element.classList;
+    className = element.classList;
     element.classList.add("active");
     pointThisTurn=false;
+    assignRowNumAndColNum();
+    setLineToActive();
+}
+
+function assignRowNumAndColNum(){
     for (var c = 0; c < className.length; c++){
         if (className[c].startsWith("line")){
             lineType = className[c];
@@ -213,6 +230,9 @@ function clickFunction(event) {
             mostRecentlyClicked.col = className[c][className[c].length - 1];
         }
     }
+}
+
+function setLineToActive(){
     if (lineType === "linehorizontal" &&  hLines[rowNum][colNum].active !== true ){
         hLines[rowNum][colNum].active = true;
         checkCells();
@@ -226,8 +246,8 @@ function clickFunction(event) {
     }
 }
 
-function askQuestion(){
-    var questions = [];
+function assignQuestions(){
+    questions = [];
     questions[0] = "What is the most popular drink in the world that does not contain alcohol?";
     correctAnswer[0] = "Coffee";
     questions[1] = "What is the most common blood type in humans? Type: ";
@@ -330,6 +350,10 @@ function askQuestion(){
     correctAnswer[49]="Lady Gaga";
     questions[50] = "Where did the olympic games originate?";
     correctAnswer[50]="Greece";
+}
+
+function askQuestion(){
+    assignQuestions();
     if(alreadyAsked.length === 50){
         alreadyAsked = [];
     }
@@ -358,43 +382,41 @@ function answerIncorrect(){
     deactivateLastClickedLine();
 }
 
+function answerCorrectEdgeCases(){
+    answerCorrect();
+    askQuestion();
+    questionAnswered = true;
+    questionAnsweredGlobal=true;
+}
 
 function checkIfAnswerIsCorrect() {
-    var userInput = document.getElementById('input_id').value;
-    var answerArr = correctAnswer[x].split(",");
-    var questionAnswered=false;
-    for(var i=0; i<answerArr.length; i++){
-        console.log(answerArr[i]);
-        if(answerArr[i].toLowerCase() === userInput.toLowerCase()){
-            answerCorrect();
-            askQuestion();
-            questionAnswered = true;
-            questionAnsweredGlobal=true;
-            $('#myModal').modal('hide');
-        }
-        if(userInput.toLowerCase() ===  "The " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "the " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "THE " + answerArr[i].toLowerCase()){
-            answerCorrect();
-            askQuestion();
-            questionAnswered = true;
-            questionAnsweredGlobal=true;
-            $('#myModal').modal('hide');
-        }
-        if(userInput.toLowerCase() ===  "A " + answerArr[i].toLowerCase() || userInput.toLowerCase() ===  "a " + answerArr[i].toLowerCase()){
-            answerCorrect();
-            askQuestion();
-            questionAnswered = true;
-            questionAnsweredGlobal=true;
-            $('#myModal').modal('hide');
-        }
-    }
+    questionAnswered = false;
+    edgeCases();
     if(questionAnswered ===false) {
         answerIncorrect();
         askQuestion();
         questionAnsweredGlobal=false;
     }
-    cellsNeedToBeFilled=[];
-    $('#myModal').modal('hide');
+    resetVariables();
     checkIfGameOver();
+    $('#myModal').modal('hide');
+}
+
+function edgeCases(){
+    var userInput = document.getElementById('input_id').value;
+    var answerArr = correctAnswer[x].split(",");
+    for(var i=0; i<answerArr.length; i++) {
+        if (answerArr[i].toLowerCase() === userInput.toLowerCase())
+            answerCorrectEdgeCases();
+        if (userInput.toLowerCase() === "The " + answerArr[i].toLowerCase() || userInput.toLowerCase() === "the " + answerArr[i].toLowerCase() || userInput.toLowerCase() === "THE " + answerArr[i].toLowerCase())
+            answerCorrectEdgeCases();
+        if (userInput.toLowerCase() === "A " + answerArr[i].toLowerCase() || userInput.toLowerCase() === "a " + answerArr[i].toLowerCase())
+            answerCorrectEdgeCases();
+    }
+}
+
+function resetVariables(){
+    cellsNeedToBeFilled=[];
     counter = 30;
     counterFlag = false;
 }
@@ -513,11 +535,7 @@ function refreshPage(){
     window.location.reload();
 }
 
-values = [];
-
-function addRecordQuestions() {
-    var inp = document.getElementById('inputtext');
-    values.push(inp.value);
+function addQuestionsToValuesArrayForTrivia(){
     for (var cell = 0; cell < values.length; cell++) {
         document.getElementById(`values${cell+1}`).innerHTML =  `${cell+1}.` + values[cell];
         if(`values${cell+1}` === undefined){
@@ -527,14 +545,9 @@ function addRecordQuestions() {
             $('#25questions').modal('show');
         }
     }
-    inp.value = "";
 }
 
-answers = [];
-
-function addRecordAnswers() {
-    var inp = document.getElementById('input');
-    answers.push(inp.value);
+function addAnswersToAnswersArrayForTrivia(){
     for (var cell = 0; cell < answers.length; cell++) {
         document.getElementById(`answers${cell+1}`).innerHTML =  `${cell+1}.` + answers[cell];
         if(`answers${cell+1}` === undefined){
@@ -544,21 +557,38 @@ function addRecordAnswers() {
             $('#25questions').modal('show');
         }
     }
+}
+
+function addRecordQuestions() {
+    var inp = document.getElementById('inputtext');
+    values.push(inp.value);
+    addQuestionsToValuesArrayForTrivia();
+    inp.value = "";
+}
+
+function addRecordAnswers() {
+    var inp = document.getElementById('input');
+    answers.push(inp.value);
+    addAnswersToAnswersArrayForTrivia();
     inp.value = "";
 }
 
 function startTrivia() {
     if (values.length >= 10 && answers.length >= 10) {
         trivia = true;
-        document.getElementById("box").style.display = "none";
-        document.getElementById("grid").style.display = "block";
-        document.getElementById("startbutton").style.display = "none";
-        document.getElementById("t").style.display="block";
+        transitionToGridFromTrivia();
         askQuestionTrivia();
     }
     else{
         $('#modalwrong').modal('show');
     }
+}
+
+function transitionToGridFromTrivia(){
+    document.getElementById("box").style.display = "none";
+    document.getElementById("grid").style.display = "block";
+    document.getElementById("startbutton").style.display = "none";
+    document.getElementById("t").style.display="block";
 }
 
 function askQuestionTrivia(){
@@ -577,48 +607,33 @@ function checkIfAnswerIsCorrectTrivia(){
     var userInput = document.getElementById("inputgrid").value;
     if (userInput.toLowerCase() === answers[xTrivia].toLowerCase()) {
         answerCorrect();
-        askQuestionTrivia();
-        $('#myModal').modal('hide');
     }
     else {
         answerIncorrect();
-        askQuestionTrivia();
-        $('#myModal').modal('hide');
     }
-    cellsNeedToBeFilled=[];
+    askQuestionTrivia();
+    resetVariables();
     checkIfGameOver();
-    counter = 30;
-    counterFlag = false;
+    $('#myModal').modal('hide');
+}
+
+function playSound(){
+    if(pointThisTurn=== true){
+       playCorrectSound();
+    }
+    else{
+        playWrongSound();
+    }
+    if(checkIfGameOver() === true){
+        playWinnerSound();
+    }
 }
 
 function enterKey(){
     document.getElementById('input_id').onkeydown = function(e){
         if(e.keyCode == 13){
             checkIfAnswerIsCorrect();
-            if(pointThisTurn){
-                var obj = document.createElement("audio");
-                obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
-                obj.volume=0.10;
-                obj.autoPlay=false;
-                obj.preLoad=true;
-                obj.play();
-            }
-            else{
-                var obj = document.createElement("audio");
-                obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
-                obj.volume=0.10;
-                obj.autoPlay=false;
-                obj.preLoad=true;
-                obj.play();
-            }
-            if(checkIfGameOver() === true){
-                var obj = document.createElement("audio");
-                obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
-                obj.volume=0.10;
-                obj.autoPlay=false;
-                obj.preLoad=true;
-                obj.play();
-            }
+            playSound();
         }
     };
 }
@@ -626,30 +641,7 @@ function enterKey(){
 function enterButton(){
     $(document).ready(function() {
         $(".playSound").click(function() {
-            if(pointThisTurn=== true){
-                var obj = document.createElement("audio");
-                obj.src="https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
-                obj.volume=0.10;
-                obj.autoPlay=false;
-                obj.preLoad=true;
-                obj.play();
-            }
-            else{
-                var obj = document.createElement("audio");
-                obj.src="https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
-                obj.volume=0.10;
-                obj.autoPlay=false;
-                obj.preLoad=true;
-                obj.play();
-            }
-            if(checkIfGameOver() === true){
-                var obj = document.createElement("audio");
-                obj.src="https://www.soundjay.com/human/sounds/applause-01.mp3";
-                obj.volume=0.10;
-                obj.autoPlay=false;
-                obj.preLoad=true;
-                obj.play();
-            }
+          playSound();
         });
     });
 }
@@ -658,30 +650,7 @@ function enterKeyTrivia() {
     document.getElementById('inputgrid').onkeydown = function (e) {
         if (e.keyCode == 13) {
             checkIfAnswerIsCorrectTrivia();
-            if (pointThisTurn) {
-                var obj = document.createElement("audio");
-                obj.src = "https://www.soundjay.com/misc/sounds/magic-chime-02.mp3";
-                obj.volume = 0.10;
-                obj.autoPlay = false;
-                obj.preLoad = true;
-                obj.play();
-            }
-            else {
-                var obj = document.createElement("audio");
-                obj.src = "https://www.soundjay.com/misc/sounds/fail-trombone-03.mp3";
-                obj.volume = 0.10;
-                obj.autoPlay = false;
-                obj.preLoad = true;
-                obj.play();
-            }
-            if (checkIfGameOver() === true) {
-                var obj = document.createElement("audio");
-                obj.src = "https://www.soundjay.com/human/sounds/applause-01.mp3";
-                obj.volume = 0.10;
-                obj.autoPlay = false;
-                obj.preLoad = true;
-                obj.play();
-            }
+            playSound();
         }
     };
 }
@@ -694,7 +663,7 @@ function openModal(){
     $.fn.modal.prototype.constructor.Constructor.DEFAULTS.backdrop = 'static';
 }
 
-function enterButtonAnswers(){
+function enterKeyAnswers(){
     document.getElementById('input').onkeydown = function(e) {
         if (e.keyCode == 13) {
             addRecordAnswers();
@@ -702,7 +671,7 @@ function enterButtonAnswers(){
     }
 }
 
-function enterButtonQuestions(){
+function enterKeyQuestions(){
     document.getElementById('inputtext').onkeydown = function(e) {
         if (e.keyCode == 13) {
             addRecordQuestions();
@@ -716,7 +685,7 @@ function createDiv() {
         return boardDiv;
 }
 
-function createAndModifyDivs() {
+function createAndModifyDivsConfetti() {
     createDiv();
         var board = document.getElementById("confetti-land"),
             myDivs = [],
@@ -727,9 +696,5 @@ function createAndModifyDivs() {
             board.appendChild(myDivs[i]);
     }
 }
-
-
-
-
 
 setUpBoard();

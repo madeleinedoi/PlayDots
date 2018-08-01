@@ -132,7 +132,6 @@ canvas {
     margin-left: 39%;
     margin-top: 10.5%;
     margin-right: 50%;
-
     position: absolute;
     z-index: 1000;
     animation-name: fade-in;
