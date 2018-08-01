@@ -39,7 +39,7 @@ function setUpBoard(){
 window.onload = function(){
     addListenerForHElements();
     addListenerForVElements();
-}
+};
 
 function generateCells(numCol, numRow){
     var cells = [];
