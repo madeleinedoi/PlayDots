@@ -12,10 +12,10 @@ var mostRecentlyClicked;
 var x;
 var correctAnswer = [];
 var currentCell;
-var element;
+var currentlyClickedLine;
 var cellsNeedToBeFilled = [];
 var alreadyAsked = [];
-var alreadyAskedTrivia=[];
+var alreadyAskedTrivia =[];
 var confettiPlayers = [];
 var xTrivia;
 var trivia = false;
@@ -201,15 +201,15 @@ function onTimerForTwoSquares() {
 }
 
 function clickFunction(event) {
-    element = event.target;
+    currentlyClickedLine = event.target;
     mostRecentlyClicked = {
-        element,
+        currentlyClickedLine,
         lineType: " ",
         row: " ",
         col: " "
     };
-    className = element.classList;
-    element.classList.add("active");
+    className = currentlyClickedLine.classList;
+    currentlyClickedLine.classList.add("active");
     pointThisTurn=false;
     assignRowNumAndColNum();
     setLineToActive();
@@ -465,12 +465,11 @@ function assignPoints() {
 function deactivateLastClickedLine(){
     if(mostRecentlyClicked.lineType === "linehorizontal"){
         hLines[mostRecentlyClicked.row][mostRecentlyClicked.col].active = false;
-        element.classList.remove("active");
     }
     else{
         vLines[mostRecentlyClicked.row][mostRecentlyClicked.col].active = false;
-        element.classList.remove("active");
     }
+    currentlyClickedLine.classList.remove("active");
 }
 
 function currentTurn(){
