@@ -311,11 +311,11 @@ function assignQuestions(){
     questions[30] = "How many sides does an octagon have?";
     correctAnswer[30]="8,eight";
     questions[31] = "Who topped the Billboard charts with the single \"Love Yourself\" in February, 2016?";
-    correctAnswer[31]="Justin Bieber";
+    correctAnswer[31]="Justin Bieber,Bieber";
     questions[32] = "What is the name of the Dr Seuss character who steals Christmas?";
     correctAnswer[32]="Grinch";
     questions[33] = "What is the name of the pirate in Peter Pan?";
-    correctAnswer[33]="Captain Hook";
+    correctAnswer[33]="Captain Hook,Hook";
     questions[34] = "What is the fastest land animal?";
     correctAnswer[34]="Cheetah,Cheetahs ";
     questions[35] = "What color are emeralds?";
@@ -325,7 +325,7 @@ function assignQuestions(){
     questions[37] = "Which movie features the song Ding Dong The Witch Is Dead?";
     correctAnswer[37]="Wizard of Oz";
     questions[38] = "Who was US president during World War I?";
-    correctAnswer[38]="Woodrow Wilson";
+    correctAnswer[38]="Woodrow Wilson,Wilson";
     questions[39] = "What is the largest bone in the human body?";
     correctAnswer[39]="femur";
     questions[40] = "What is a female deer called?";
@@ -345,9 +345,9 @@ function assignQuestions(){
     questions[47] = "Name the largest country by population";
     correctAnswer[47]="China";
     questions[48] = "Who was the first president of the United States?";
-    correctAnswer[48]="George Washington";
+    correctAnswer[48]="George Washington,Washington";
     questions[49] = "Who sings the song \"Poker Face\"?";
-    correctAnswer[49]="Lady Gaga";
+    correctAnswer[49]="Lady Gaga,Gaga";
     questions[50] = "Where did the olympic games originate?";
     correctAnswer[50]="Greece";
 }
