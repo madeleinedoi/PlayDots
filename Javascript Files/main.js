@@ -9,7 +9,7 @@ var rowNum;
 var colNum;
 var lineType;
 var mostRecentlyClicked;
-var x;
+var randomIndex;
 var correctAnswer = [];
 var currentCell;
 var currentlyClickedLine;
@@ -17,7 +17,7 @@ var cellsNeedToBeFilled = [];
 var alreadyAsked = [];
 var alreadyAskedTrivia =[];
 var confettiPlayers = [];
-var xTrivia;
+var triviaRandomIndex;
 var trivia = false;
 var countTimer=0;
 var counter = 30;
@@ -357,12 +357,12 @@ function askQuestion(){
     if(alreadyAsked.length === 50){
         alreadyAsked = [];
     }
-    x = Math.floor(Math.random()*questions.length);
-    if(alreadyAsked.includes(questions[x])) {
+    randomIndex = Math.floor(Math.random()*questions.length);
+    if(alreadyAsked.includes(questions[randomIndex])) {
         askQuestion();
     }
-    alreadyAsked.push(questions[x]);
-    document.getElementById('question').innerHTML = questions[x];
+    alreadyAsked.push(questions[randomIndex]);
+    document.getElementById('question').innerHTML = questions[randomIndex];
 }
 
 function answerCorrect(){
@@ -404,7 +404,7 @@ function checkIfAnswerIsCorrect() {
 
 function edgeCases(){
     var userInput = document.getElementById('input_id').value;
-    var answerArr = correctAnswer[x].split(",");
+    var answerArr = correctAnswer[randomIndex].split(",");
     for(var i=0; i<answerArr.length; i++) {
         if (answerArr[i].toLowerCase() === userInput.toLowerCase())
             answerCorrectEdgeCases();
@@ -594,17 +594,17 @@ function askQuestionTrivia(){
     if(alreadyAskedTrivia.length === values.length){
         alreadyAskedTrivia = [];
     }
-    xTrivia = Math.floor(Math.random() * values.length);
-    // while(alreadyAskedTrivia.includes(values[xTrivia])) {
-    //     xTrivia = Math.floor(Math.random() * values.length);
+    triviaRandomIndex = Math.floor(Math.random() * values.length);
+    // while(alreadyAskedTrivia.includes(values[triviaRandomIndex])) {
+    //     triviaRandomIndex = Math.floor(Math.random() * values.length);
     // }
-    // alreadyAskedTrivia.push(values[xTrivia]);
-    document.getElementById('questionTrivia').innerHTML = values[xTrivia];
+    // alreadyAskedTrivia.push(values[triviaRandomIndex]);
+    document.getElementById('questionTrivia').innerHTML = values[triviaRandomIndex];
 }
 
 function checkIfAnswerIsCorrectTrivia(){
     var userInput = document.getElementById("inputgrid").value;
-    if (userInput.toLowerCase() === answers[xTrivia].toLowerCase()) {
+    if (userInput.toLowerCase() === answers[triviaRandomIndex].toLowerCase()) {
         answerCorrect();
     }
     else {
