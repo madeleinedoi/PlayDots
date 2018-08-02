@@ -293,7 +293,7 @@ function assignQuestions(){
     questions[21] = "What is the only American state to begin with a P?";
     correctAnswer[21]="Pennsylvania";
     questions[22] = "What is soccer called in Europe?";
-    correctAnswer[22]="Futbol";
+    correctAnswer[22]="Futbol,Football";
     questions[23] = "What is the capital of Spain?";
     correctAnswer[23]="Madrid";
     questions[24] = "If you _________ too hard, you might fracture a rib.";

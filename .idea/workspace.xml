@@ -20,11 +20,10 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Javascript Files/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="204" column="24" selection-start-line="204" selection-start-column="24" selection-end-line="204" selection-end-column="24" />
+            <state relative-caret-position="579">
+              <caret line="295" column="38" lean-forward="true" selection-start-line="295" selection-start-column="38" selection-end-line="295" selection-end-column="38" />
               <folding>
                 <element signature="e#3610#4507#0" />
-                <element signature="e#5436#5444#0" />
               </folding>
             </state>
           </provider>
@@ -92,8 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>in</find>
-      <find>cntr +</find>
       <find>p5</find>
       <find>tr</find>
       <find>td</find>
@@ -122,6 +119,8 @@
       <find>borderbox</find>
       <find>done2</find>
       <find>element</find>
+      <find>x</find>
+      <find>xTrivia</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -142,6 +141,8 @@
       <replace>onTimerForTwoSquares</replace>
       <replace>enterKeyQuestions()</replace>
       <replace>currentlyClickedLine</replace>
+      <replace>randomIndex</replace>
+      <replace>triviaRandomIndex</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -289,27 +290,6 @@
       <workItem from="1531771877580" duration="2683000" />
       <workItem from="1532967257095" duration="2686000" />
       <workItem from="1533062426104" duration="1723000" />
-    </task>
-    <task id="LOCAL-00048" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
-      <created>1532451467246</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1532451467246</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
-      <created>1532467831489</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1532467831489</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
-      <created>1532472877865</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1532472877866</updated>
     </task>
     <task id="LOCAL-00051" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Sara.try.html">
       <created>1532473182719</created>
@@ -633,11 +613,32 @@
       <option name="project" value="LOCAL" />
       <updated>1533139044100</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="changed element variable name">
+      <created>1533139457119</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1533139457119</updated>
+    </task>
+    <task id="LOCAL-00098" summary="single letter variables">
+      <created>1533139713266</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1533139713266</updated>
+    </task>
+    <task id="LOCAL-00099" summary="single letter variables">
+      <created>1533139835933</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1533139835933</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="452269000" />
+    <option name="totallyTimeSpent" value="454576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -708,7 +709,9 @@
     <MESSAGE value="fixed modal text box style" />
     <MESSAGE value="working with modal when complete" />
     <MESSAGE value="condensed functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="condensed functions" />
+    <MESSAGE value="changed element variable name" />
+    <MESSAGE value="single letter variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="single letter variables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -810,29 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html_files/userInput.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html_files/grid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html_files/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -850,13 +830,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html_files/grid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html_files/userInput.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Javascript Files/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="204" column="24" selection-start-line="204" selection-start-column="24" selection-end-line="204" selection-end-column="24" />
+        <state relative-caret-position="579">
+          <caret line="295" column="38" lean-forward="true" selection-start-line="295" selection-start-column="38" selection-end-line="295" selection-end-column="38" />
           <folding>
             <element signature="e#3610#4507#0" />
-            <element signature="e#5436#5444#0" />
           </folding>
         </state>
       </provider>
