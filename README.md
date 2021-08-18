@@ -1,4 +1,4 @@
-#PlayDots
+# PlayDots
 PlayDots is an eLearning SaaS application based off of the game Dots and Boxes. There are two game modes (Standard and Create Your Own Trivia).
 
 How To Play:
